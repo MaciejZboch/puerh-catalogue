@@ -1,0 +1,72 @@
+<% layout('layouts/boilerplate') %>
+    <div class="row">
+        <h1 class="text-center">New Tea</h1>
+        <div class="col-6 offset-3">
+            <form action="/tea" method="post">
+                <div class="mb-3">
+                    <label class="form-label" for="name">Name:</label>
+                    <input class="form-control" type="text" id="name" name="tea[name]">
+                    <div class="valid-feedback">Well done!</div>
+                </div>
+                <label class="form-label" for="type">Type:</label>
+                <select class="form-select" aria-label="type" id="type" name="tea[type]">
+                    <option selected value="Raw / Sheng">Raw / Sheng</option>
+                    <option value="Ripe / Shu">Ripe / Shu</option>
+
+                <label for="tea[year]">Year of production (leave blank if unknown):</label>
+
+<input type="number" id="tea[year]" name="tea[year]" value="year" min="1900">
+
+                <div class="mb-3">
+                    <label class="form-label" for="region">Growing region:</label>
+                    <input class="form-control" type="text" id="region" name="tea[region]">
+                    <div class="valid-feedback">Well done!</div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="region">Growing village:</label>
+                    <input class="form-control" type="text" id="region" name="tea[village]">
+                    <div class="valid-feedback">Well done!</div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="location">Ageing location:</label>
+                    <input class="form-control" type="text" id="location" name="tea[ageing_location]">
+                    <div class="valid-feedback">Well done!</div>
+                </div>
+
+                <label class="form-label" for="storage">Type of storage:</label>
+                <select class="form-select" aria-label="Type of storage" id="storage" name="tea[ageing_conditions]">
+                    <option selected value="Dry">Dry</option>
+                    <option value="Natural">Natural</option>
+                    <option value="Wet">Wet</option>
+                    <option value="Hong-Kong Traditional">Hong-Kong Traditional</option>
+                  </select>
+
+
+                    <div class="mb-3">
+                        <label class="form-label" for="description">Description:</label>
+                        <textarea class="form-control" id="description"
+                            name="tea[description]"></textarea>
+                    </div>
+                    
+                    <label class="form-label" for="shape">Shape:</label>
+                    <select class="form-select" aria-label="shape" id="shape" name="tea[shape]">
+                        <option selected value="Loose">Loose</option>
+                        <option value="Cake">Cake</option>
+                        <option value="Tuo">Tuo</option>
+                        <option value="Brick">Brick</option>
+                        <option value="Mushroom">Mushroom</option>
+                        <option value="Dragon ball">Dragon ball</option>
+                        <option value="Tube">Bamboo Tube</option>
+                        <option value="Melon">Melon</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    <div class="mb-3">
+                        <button class="btn btn-success">Add tea</button>
+                    </div>
+            </form>
+
+        </div>
+
+    </div>

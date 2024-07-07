@@ -1,0 +1,50 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="card" style="width: 18rem;">
+
+
+
+    <div class="card-body mb-3">
+        <h5 class="card-title">
+            <%=tea.name%> <%=tea.year%>
+        </h5>
+        <p class="card-text">
+            Sold by <%=tea.vendor%>
+        </p>
+        <p class="card-text">
+            Producer: <%=tea.producer%>
+        </p>
+        <p class="card-text">
+            <%=tea.description%>
+        </p>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+            <%=tea.type%>
+        </li>
+        <% if (tea.shape) { %>
+            <li class="list-group-item">
+                Shape: <%=tea.shape%>
+            </li>
+        <% } %>
+
+        <% if (tea.village && tea.region) { %>
+        <li class="list-group-item">
+            Material from <%=tea.village%> village, <%=tea.region%> region.
+        </li>
+    <% } if (tea.region && !tea.village) {%>
+        <li class="list-group-item">
+            Material from <%=tea.region%> region.
+        </li>
+        <% } %>
+        <% if (tea.ageing_location) { %>
+        <li class="list-group-item">
+           Aged in: <%=tea.ageing_location%>
+        </li>
+    <% } %>
+    <% if (tea.ageing_conditions) { %>
+        <li class="list-group-item">
+            Storage: <%=tea.ageing_conditions%>
+        </li>
+    <% } %>
+    </ul>
