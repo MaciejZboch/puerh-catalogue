@@ -17,7 +17,8 @@ const helmet = require('helmet');
 const MongoStore = require('connect-mongo');
 const userRoutes = require('./routes/users')
 const teaRoutes = require('./routes/tea')
-const $ = require('jquery')
+const reviewRoutes = require('./routes/review')
+
 
 
 const dbUrl = 'mongodb://localhost:27017/test'
@@ -94,8 +95,9 @@ app.use((req, res, next) => {
 
 //routes
 
-app.use('/', userRoutes)
-app.use('/tea', teaRoutes)
+app.use('/', userRoutes);
+app.use('/tea', teaRoutes);
+app.use('/tea/', reviewRoutes);
 
 
 
