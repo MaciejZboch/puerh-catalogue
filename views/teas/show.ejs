@@ -48,6 +48,7 @@
         </li>
     <% } %>
     </ul>
+    <% if (currentUser) { %>
 Review this tea:
     <form action="/tea/<%=tea._id%>/review" method="post" class="mb-3 validated-form" id="review-form">
         <div class="mb-3">
@@ -62,5 +63,23 @@ Review this tea:
             <div class="valid-feedback">Great!</div>
         </div>
         <button form="review-form" class="btn btn-success">Submit</button>
-
     </form>
+<% } %>
+<% for (let review of tea.reviews) { %>
+    <div class="card-body">
+        <h5> Rating: <%=review.rating%>
+        </h5>
+        <h6>By: <%=review.author.username%>
+        </h6>
+        <p> Review: <%=review.body%>
+        </p>
+        <form
+            action="/tea/<%=tea._id%>/review/<%=review._id%>?_method=DELETE"
+            method="POST">
+            <% if (currentUser && review.author.equals(currentUser._id)) {%>
+                <button class="btn btn-sm btn-danger">Delete</button>
+                <% } %>
+        </form>
+    </div>
+    <% } %>
+</div>

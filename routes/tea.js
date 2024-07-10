@@ -21,7 +21,12 @@ router.get('/new', (req, res) => {
     res.render('teas/new')
 })
 router.get('/:id', catchAsync(async (req, res) => {
-    const tea = await Tea.findById(req.params.id).populate('producer').populate('vendor')
+    const tea = await Tea.findById(req.params.id).populate({
+        path: 'reviews',
+        populate: {
+            path: 'author'
+        }
+    }).populate('producer').populate('vendor');
     if (!tea) {
         req.flash('error', 'Cannot find that tea!')
         return res.redirect('/')}

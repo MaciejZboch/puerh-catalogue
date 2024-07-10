@@ -15,4 +15,10 @@ router.post('/:id/review', catchAsync(async (req, res) => {
     res.redirect(`/tea/${tea._id}`)
 }))
 
+router.delete('/:id/review/:reviewId', catchAsync(async (req, res) => {
+    const tea = await Tea.findByIdAndUpdate(req.params.id, {$pull: { reviews: req.params.reviewId } });
+    await Review.findByIdAndDelete(req.params.reviewId);
+    req.flash('success', 'Succesfully deleted a review!');
+    res.redirect(`/tea/${tea._id}`);
+}))
 module.exports = router;
