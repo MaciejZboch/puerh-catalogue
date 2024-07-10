@@ -16,7 +16,7 @@ const TeaSchema = new Schema({
     description: String,
     image: [ImageSchema],
     type: {type: String,
-        enum: ['Raw / Sheng', 'Ripe / Shu']},
+        enum: ['Raw / Sheng', 'Ripe / Shu', 'blend']},
     year: Number,
     region: String,
     village: String,

@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const Tea = require('../models/tea')
-const catchAsync = require('../utilities/catchAsync')
-const DataTable = require("datatables.net-dt");
-
+const Tea = require('../models/tea');
+const catchAsync = require('../utilities/catchAsync');
+const DataTable = require('datatables.net-dt');
+const {isLoggedIn, isAuthor, validateTea} = require('../middleware');
 
 
 router.get('/', (req, res) => {
@@ -12,12 +12,12 @@ router.get('/', (req, res) => {
 router.get('/browse', (req, res) => {
     res.render('teas/browse', {Tea, DataTable})
 })
-router.post('/', async (req, res) => {
+router.post('/', isLoggedIn, validateTea, async (req, res) => {
     const newTea = new Tea(req.body.tea)
     await newTea.save()
     res.redirect('/tea')
 })
-router.get('/new', (req, res) => {
+router.get('/new', isLoggedIn, (req, res) => {
     res.render('teas/new')
 })
 router.get('/:id', catchAsync(async (req, res) => {
