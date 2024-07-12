@@ -2,20 +2,10 @@
     <div class="row">
         <h1 class="text-center">New Tea</h1>
         <div class="col-6 offset-3">
-            <form action="/tea" method="post" novalidate class="validated-form">
+            <form action="/tea" method="post" novalidate class="validated-form" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label class="form-label" for="name">Name (required):</label>
                     <input required class="form-control" type="text" id="name" name="tea[name]">
-                    <div class="valid-feedback">Well done!</div>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label" for="vendor">Bought from (required):</label>
-                    <input required class="form-control" type="text" id="vendor" name="tea[vendor]">
-                    <div class="valid-feedback">Well done!</div>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label" for="producer">Produced by:</label>
-                    <input class="form-control" type="text" id="producer" name="tea[producer]">
                     <div class="valid-feedback">Well done!</div>
                 </div>
                 <label class="form-label" for="type">Type (required):</label>
@@ -27,6 +17,11 @@
                   
                 <label for="tea[year]">Year of production:</label>
 <input type="number" id="tea[year]" name="tea[year]" value="year" min="1900">
+
+<div class="mb-3">
+    <label for="formFile" class="form-label">Upload image:</label>
+    <input class="form-control" type="file" id="formFile" name="image">
+</div>
                 
                 <div class="mb-3">
                     <label class="form-label" for="region">Growing region:</label>

@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config();
+}
+
 //requires
 const express = require('express');
 const mongoose = require('mongoose');
@@ -18,7 +22,6 @@ const MongoStore = require('connect-mongo');
 const userRoutes = require('./routes/users')
 const teaRoutes = require('./routes/tea')
 const reviewRoutes = require('./routes/review')
-
 
 
 const dbUrl = 'mongodb://localhost:27017/test'

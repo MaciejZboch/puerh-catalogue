@@ -13,13 +13,15 @@ module.exports.reviewSchema = Joi.object({
 module.exports.teaSchema = Joi.object({
     tea: Joi.object({
         name: Joi.string().required(),
-    description: Joi.string(),
+        vendor: Joi.string().required(),
+        producer: Joi.string().allow(''),
+    description: Joi.string().allow(''),
     type: Joi.string().required(),
     year: Joi.number().min(1900),
-    region: Joi.string(),
-    village: Joi.string(),
-    ageing_location: Joi.string(),
-    ageing_conditions: Joi.string(),
-    shape: Joi.string()
+    region: Joi.string().allow(''),
+    village: Joi.string().allow(''),
+    ageing_location: Joi.string().allow(''),
+    ageing_conditions: Joi.string().allow(''),
+    shape: Joi.string().allow(''),
 })
 })
