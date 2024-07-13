@@ -2,7 +2,7 @@
     <div class="row">
         <h1 class="text-center">New Tea</h1>
         <div class="col-6 offset-3">
-            <form action="/tea" method="post" novalidate class="validated-form" enctype="multipart/form-data">
+            <form action="/tea?vendor=<%=vendor%>&producer=<%=producer%>" method="post" novalidate class="validated-form" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label class="form-label" for="name">Name (required):</label>
                     <input required class="form-control" type="text" id="name" name="tea[name]">
@@ -22,7 +22,6 @@
     <label for="formFile" class="form-label">Upload image:</label>
     <input class="form-control" type="file" id="formFile" name="image">
 </div>
-                
                 <div class="mb-3">
                     <label class="form-label" for="region">Growing region:</label>
                     <input class="form-control" type="text" id="region" name="tea[region]">
