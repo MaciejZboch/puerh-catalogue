@@ -45,7 +45,8 @@ if (!producer) {
     const newProducer = new Producer({name: req.body.producer.name});
     producer = await newProducer.save();
  }
-    res.render('teas/new', {vendor, producer});
+ const currentYear = new Date().getFullYear();
+    res.render('teas/new', {vendor, producer, currentYear});
 })
 router.get('/:id', catchAsync(async (req, res) => {
     const tea = await Tea.findById(req.params.id).populate({
@@ -59,4 +60,10 @@ router.get('/:id', catchAsync(async (req, res) => {
         return res.redirect('/')}
 res.render('teas/show', {tea})
     }))
+
+    router.delete('/:id', catchAsync(async (req, res) => {
+        await Tea.findByIdAndDelete(req.params.id);
+        res.redirect('/');
+    }))
+
 module.exports = router;

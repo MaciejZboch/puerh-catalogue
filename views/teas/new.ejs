@@ -14,10 +14,10 @@
                     <option value="Ripe / Shu">Ripe / Shu</option>
                     <option value="blend">A blend of Ripe and Raw</option>
                  
-                  
-                <label for="tea[year]">Year of production:</label>
-<input type="number" id="tea[year]" name="tea[year]" value="year" min="1900">
-
+                    <div class="mb-3"> 
+                <label for="tea[year]" class="form-label">Year of production:</label>
+<input class="form-control" type="number" id="tea[year]" name="tea[year]" value="year" min="1900" max="<%=currentYear%>">
+</div>
 <div class="mb-3">
     <label for="formFile" class="form-label">Upload image:</label>
     <input class="form-control" type="file" id="formFile" name="image">
