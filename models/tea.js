@@ -14,7 +14,7 @@ ImageSchema.virtual('thumbnail').get(function () {
 const TeaSchema = new Schema({
     name: String,
     description: String,
-    image: [ImageSchema],
+    images: [ImageSchema],
     type: {type: String,
         enum: ['Raw / Sheng', 'Ripe / Shu', 'blend']},
     year: Number,
