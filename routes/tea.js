@@ -31,7 +31,7 @@ router.post('/', isLoggedIn, upload.array('image'), async (req, res) => {
     newTea.producer = req.query.producer._id;
     newTea.images = req.files.map(f => ({ url: f.path, filename: f.filename }));
     await newTea.save();
-    res.redirect('/tea');
+    res.redirect('/tea/' + newTea._id);
 })
 router.get('/newVendor', isLoggedIn, (req, res) => {
     res.render('teas/newVendor')
@@ -68,12 +68,12 @@ router.put(':id', catchAsync(async (req, res) => {
     const imgs = req.files.map(f => ({ url: f.path, filename: f.filename }));
     tea.images.push(...imgs);
     await foundTea.save();
-    
+
 }))
 
     router.delete('/:id', catchAsync(async (req, res) => {
         await Tea.findByIdAndDelete(req.params.id);
-        res.redirect('/');
+        res.redirect('/tea');
     }))
 
 module.exports = router;
