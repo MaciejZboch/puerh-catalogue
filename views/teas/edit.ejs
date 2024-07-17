@@ -16,29 +16,27 @@
                  
                     <div class="mb-3"> 
                 <label for="tea[year]" class="form-label">Year of production:</label>
-<input class="form-control" type="number" id="tea[year]" name="tea[year]" value="year" min="1900" max="<%=currentYear%>">
+<input class="form-control" type="number" id="tea[year]" name="tea[year]" value="year" min="1900" max="<%=currentYear%>" value="<%=t.year%>">
 </div>
 <div class="mb-3">
     <label for="formFile" class="form-label">Upload image:</label>
     <input class="form-control" type="file" id="formFile" name="image" multiple>
 </div>
-<input type="text" value="<%=vendor%>" hidden>
-<input type="text" value="<%=producer%>" hidden>
                 <div class="mb-3">
                     <label class="form-label" for="region">Growing region:</label>
-                    <input class="form-control" type="text" id="region" name="tea[region]">
+                    <input class="form-control" type="text" id="region" name="tea[region]" value="<%=t.region%>">
                     <div class="valid-feedback">Well done!</div>
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label" for="village">Growing village:</label>
-                    <input class="form-control" type="text" id="village" name="tea[village]">
+                    <input class="form-control" type="text" id="village" name="tea[village]" value="<%=t.village%>">
                     <div class="valid-feedback">Well done!</div>
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label" for="location">Ageing location:</label>
-                    <input class="form-control" type="text" id="location" name="tea[ageing_location]">
+                    <input class="form-control" type="text" id="location" name="tea[ageing_location]" value="<%=t.location%>">
                     <div class="valid-feedback">Well done!</div>
                 </div>
 
@@ -54,7 +52,7 @@
                     <div class="mb-3">
                         <label class="form-label" for="description">Description:</label>
                         <textarea class="form-control" id="description"
-                            name="tea[description]"></textarea>
+                            name="tea[description]" value="<%=t.description%>"></textarea>
                     </div>
                     
                     <label class="form-label" for="shape">Shape:</label>

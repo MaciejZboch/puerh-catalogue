@@ -59,16 +59,31 @@ router.get('/:id', catchAsync(async (req, res) => {
     }).populate('producer').populate('vendor');
     if (!tea) {
         req.flash('error', 'Cannot find that tea!')
-        return res.redirect('/')}
+        return res.redirect('/tea')}
 res.render('teas/show', {tea})
     }))
 
-router.put(':id', catchAsync(async (req, res) => {
+router.get('/:id/edit', catchAsync(async (req, res) => {
+    const t = await Tea.findById(req.params.id);
+    if (!t) {
+        req.flash('error', 'Cannot find that tea!')
+        return res.redirect('/tea')}
+    res.render('teas/edit', {t})
+}))
+
+router.put('/:id', catchAsync(async (req, res) => {
     const foundTea = await Tea.findById(req.params.id);
     const imgs = req.files.map(f => ({ url: f.path, filename: f.filename }));
     tea.images.push(...imgs);
     await foundTea.save();
-
+    if (req.body.deleteImages) {
+        for (let filename of req.body.deleteImages) {
+            await cloudinary.uploader.destroy(filename);
+        }
+        await foundTea.updateOne({ $pull: { images: { filename: { $in: req.body.deleteImages } } } })
+    }
+    req.flash('success', 'Succesfully updated!');
+    res.redirect(`/tea/${foundTea._id}`);
 }))
 
     router.delete('/:id', catchAsync(async (req, res) => {
