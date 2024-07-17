@@ -33,10 +33,10 @@
             <%=tea.name%> <%=tea.year%>
         </h5>
         <p class="card-text">
-            Sold by <%=tea.vendor%>
+            Sold by: <%=tea.vendor.name%>
         </p>
         <p class="card-text">
-            Producer: <%=tea.producer%>
+            Producer: <%=tea.producer.name%>
         </p>
         <p class="card-text">
             <%=tea.description%>
@@ -75,6 +75,9 @@
     <form action="/tea/<%=tea._id%>?_method=DELETE" method="post">
         <button class="btn btn-danger">Delete tea</button>
     </form>
+    <form action="/tea/<%=tea._id%>/edit" method="get">
+        <button class="btn btn-warning">Edit tea</button>
+        </form>
     <% if (currentUser) { %>
 Review this tea:
     <form action="/tea/<%=tea._id%>/review" method="post" class="mb-3 validated-form" id="review-form">
