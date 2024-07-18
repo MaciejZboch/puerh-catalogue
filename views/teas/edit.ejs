@@ -2,10 +2,10 @@
     <div class="row">
         <h1 class="text-center">New Tea</h1>
         <div class="col-6 offset-3">
-            <form action="/tea?vendor=<%=vendor%>&producer=<%=producer%>" method="post" novalidate class="validated-form" enctype="multipart/form-data">
+            <form action="/tea/<%=t._id%>?_method=put" method="post" novalidate class="validated-form" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label class="form-label" for="name">Name (required):</label>
-                    <input required class="form-control" type="text" id="name" name="tea[name]">
+                    <input required class="form-control" type="text" id="name" name="tea[name]" value="<%=t.name%>">
                     <div class="valid-feedback">Well done!</div>
                 </div>
                 <label class="form-label" for="type">Type (required):</label>
@@ -16,11 +16,21 @@
                  
                     <div class="mb-3"> 
                 <label for="tea[year]" class="form-label">Year of production:</label>
-<input class="form-control" type="number" id="tea[year]" name="tea[year]" value="year" min="1900" max="<%=currentYear%>" value="<%=t.year%>">
+<input class="form-control" type="number" id="tea[year]" name="tea[year]" min="1900" max="<%=currentYear%>" value="<%=t.year%>">
 </div>
 <div class="mb-3">
     <label for="formFile" class="form-label">Upload image:</label>
     <input class="form-control" type="file" id="formFile" name="image" multiple>
+</div>
+<div class="mb-3">
+    <label class="form-label" for="vendor">Bought from (required):</label>
+    <input required class="form-control" type="text" id="vendor" name="vendor[name]">
+    <div class="valid-feedback">Well done!</div>
+</div>
+<div class="mb-3">
+    <label class="form-label" for="producer">Produced by:</label>
+    <input class="form-control" type="text" id="producer" name="producer[name]">
+    <div class="valid-feedback">Well done!</div>
 </div>
                 <div class="mb-3">
                     <label class="form-label" for="region">Growing region:</label>
@@ -68,7 +78,17 @@
                         <option value="Other">Other</option>
                       </select>
                     <div class="mb-3">
-                        <button class="btn btn-success">Add tea</button>
+                        <button class="btn btn-success">Edit tea</button>
+                    </div>
+                    <div class="mb-3">
+                        <% t.images.forEach(function(img, i) { %>
+                            <img src="<%=img.thumbnail%>">
+                            <div class="form-check-inline">
+                                <input type="checkbox" id="image-<%=i%>" name="deleteImages[]"
+                                    value="<%=img.filename%>">
+                            </div>
+                            <label for="image-<%=i%>">Delete?</label>
+                            <% }) %>
                     </div>
             </form>
 

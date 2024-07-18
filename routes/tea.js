@@ -10,6 +10,8 @@ const multer = require('multer');
 const {storage} = require('../cloudinary');
 const vendor = require('../models/vendor');
 const upload = multer({ storage});
+const currentYear = new Date().getFullYear();
+const { cloudinary } = require('../cloudinary')
 
 
 router.get('/', (req, res) => {
@@ -23,46 +25,20 @@ router.get('/browse', (req, res) => {
 
 router.get('/new', isLoggedIn, (req, res) => {
 
-    const currentYear = new Date().getFullYear();
+    
     res.render('teas/new', {currentYear})
 })
 router.post('/', isLoggedIn, upload.array('image'), async (req, res) => {
-    let vendor = await Vendor.findOne({ name: req.body.vendor.name});
-    let producer = await Producer.findOne({ name: req.body.producer.name});
-if (!vendor) {
-   let vendor = new Vendor({ name: req.body.vendor.name});
-   
-}
-if (!producer) {
-    let producer = new Producer({name: req.body.producer.name});
-    
- }
- const newTea = new Tea(req.body.tea);
- newTea.vendor = vendor;
- newTea.producer = producer;
+    const newTea = new Tea(req.body.tea);
+    newTea.vendor = await Vendor.findOne({ name: req.body.vendor.name});
+    newTea.producer = await Producer.findOne({ name: req.body.producer.name});
+ console.log(req.body.tea);
  newTea.images = req.files.map(f => ({ url: f.path, filename: f.filename }));
  await newTea.save();
- await vendor.save();
- await producer.save();
  res.redirect('/tea/' + newTea._id);
 })
-router.get('/newVendor', isLoggedIn, (req, res) => {
-    res.render('teas/newVendor')
-})
-router.post('/newVendor', async(req, res) => {
-    let vendor = await Vendor.findOne({ name: req.body.vendor.name});
-    let producer = await Producer.findOne({ name: req.body.producer.name});
-if (!vendor) {
-   const newVendor = new Vendor({ name: req.body.vendor.name});
-   vendor = await newVendor.save();
-}
-if (!producer) {
-    const newProducer = new Producer({name: req.body.producer.name});
-    producer = await newProducer.save();
- }
 
-    res.render('teas/new', {vendor, producer, currentYear});
-})
+
 router.get('/:id', catchAsync(async (req, res) => {
     const tea = await Tea.findById(req.params.id).populate({
         path: 'reviews',
@@ -81,18 +57,20 @@ router.get('/:id/edit', catchAsync(async (req, res) => {
     if (!t) {
         req.flash('error', 'Cannot find that tea!')
         return res.redirect('/tea')}
-    res.render('teas/edit', {t})
+    res.render('teas/edit', {t, currentYear})
 }))
 
-router.put('/:id', catchAsync(async (req, res) => {
-    const foundTea = await Tea.findById(req.params.id);
-    const imgs = req.files.map(f => ({ url: f.path, filename: f.filename }));
-    tea.images.push(...imgs);
+router.put('/:id', upload.array('image'), catchAsync(async (req, res) => {
+    console.log(req.body.tea)
+    const foundTea = await Tea.findByIdAndUpdate(req.params.id, {...req.body.tea});
+    if (req.files) {
+        const imgs = req.files.map(f => ({ url: f.path, filename: f.filename }));
     await foundTea.save();
     if (req.body.deleteImages) {
         for (let filename of req.body.deleteImages) {
             await cloudinary.uploader.destroy(filename);
         }
+        foundTea.images.push(...imgs)}
         await foundTea.updateOne({ $pull: { images: { filename: { $in: req.body.deleteImages } } } })
     }
     req.flash('success', 'Succesfully updated!');
