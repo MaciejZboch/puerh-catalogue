@@ -10,22 +10,23 @@ module.exports.reviewSchema = Joi.object({
     }).required()
 })
 
+module.exports.vendorSchema = Joi.object({
+   name: Joi.any()});
+
+
+module.exports.producerSchema = Joi.object({
+    name: Joi.string().allow('')
+})
 module.exports.teaSchema = Joi.object({
-    tea: Joi.object({
         name: Joi.string().required(),
-        vendor: Joi.object({
-            name: Joi.string()
-        }).required(),
-        producer:  Joi.object({
-            name: Joi.string().allow('')
-        }),
+        vendor: Joi.any(),
+        producer:  Joi.any(),
     description: Joi.string().allow(''),
     type: Joi.string().required(),
-    year: Joi.number().min(1900),
+    year: Joi.any(),
     region: Joi.string().allow(''),
     village: Joi.string().allow(''),
     ageing_location: Joi.string().allow(''),
     ageing_conditions: Joi.string().allow(''),
     shape: Joi.string().allow(''),
-})
 })

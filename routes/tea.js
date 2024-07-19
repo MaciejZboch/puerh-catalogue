@@ -28,11 +28,11 @@ router.get('/new', isLoggedIn, (req, res) => {
     
     res.render('teas/new', {currentYear})
 })
-router.post('/', isLoggedIn, upload.array('image'), async (req, res) => {
+router.post('/', isLoggedIn, upload.array('image'), validateTea, async (req, res) => {
     const newTea = new Tea(req.body.tea);
+    newTea.author = req.user._id;
     newTea.vendor = await Vendor.findOne({ name: req.body.vendor.name});
     newTea.producer = await Producer.findOne({ name: req.body.producer.name});
- console.log(req.body.tea);
  newTea.images = req.files.map(f => ({ url: f.path, filename: f.filename }));
  await newTea.save();
  res.redirect('/tea/' + newTea._id);
@@ -52,7 +52,7 @@ router.get('/:id', catchAsync(async (req, res) => {
 res.render('teas/show', {tea})
     }))
 
-router.get('/:id/edit', catchAsync(async (req, res) => {
+router.get('/:id/edit', isAuthor, catchAsync(async (req, res) => {
     const t = await Tea.findById(req.params.id);
     if (!t) {
         req.flash('error', 'Cannot find that tea!')
@@ -60,7 +60,7 @@ router.get('/:id/edit', catchAsync(async (req, res) => {
     res.render('teas/edit', {t, currentYear})
 }))
 
-router.put('/:id', upload.array('image'), catchAsync(async (req, res) => {
+router.put('/:id', upload.array('image'), validateTea, catchAsync(async (req, res) => {
     console.log(req.body.tea)
     const foundTea = await Tea.findByIdAndUpdate(req.params.id, {...req.body.tea});
     if (req.files) {

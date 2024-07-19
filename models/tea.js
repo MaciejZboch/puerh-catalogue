@@ -42,6 +42,10 @@ const TeaSchema = new Schema({
     vendor: {
         type: Schema.Types.ObjectId,
         ref: 'Vendor'
+    },
+    author: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
     }
 })
 

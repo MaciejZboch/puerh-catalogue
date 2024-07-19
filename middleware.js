@@ -1,5 +1,5 @@
 const ExpressError = require('./utilities/ExpressError');
-const { teaSchema, reviewSchema } = require('./schemas.js');
+const { teaSchema, reviewSchema, vendorSchema } = require('./schemas.js');
 
 const Tea = require('./models/tea');
 const Review = require('./models/review');
@@ -21,8 +21,9 @@ module.exports.isAuthor = async (req, res, next) => {
     next();
 }
 module.exports.validateTea = (req, res, next) => {
-const { error } = teaSchema.validate(req.body);
-    if (error) {
+const { error } = teaSchema.validate(req.body.tea);
+const { error2 } = vendorSchema.validate(req.body.vendor);
+    if (error || error2) {
         const msg = error.details.map(el => el.message).join(',')
         throw new ExpressError(msg, 400)
     } else {

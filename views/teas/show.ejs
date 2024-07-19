@@ -72,12 +72,14 @@
         </li>
     <% } %>
     </ul>
+    <% if (currentUser && tea.author.equals(currentUser._id)) {%>
     <form action="/tea/<%=tea._id%>?_method=DELETE" method="post">
         <button class="btn btn-danger">Delete tea</button>
     </form>
     <form action="/tea/<%=tea._id%>/edit" method="get">
         <button class="btn btn-warning">Edit tea</button>
         </form>
+    <%}%>
     <% if (currentUser) { %>
 Review this tea:
     <form action="/tea/<%=tea._id%>/review" method="post" class="mb-3 validated-form" id="review-form">
