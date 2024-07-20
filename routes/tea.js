@@ -23,11 +23,11 @@ router.get('/browse', (req, res) => {
 })
 
 
-router.get('/new', isLoggedIn, (req, res) => {
-
-    
-    res.render('teas/new', {currentYear})
-})
+router.get('/new', isLoggedIn, catchAsync(async (req, res) => {
+    const vendors = await Vendor.find();
+    const producers = await Producer.find();
+    res.render('teas/new', {currentYear, vendors, producers})
+}))
 router.post('/', isLoggedIn, upload.array('image'), validateTea, async (req, res) => {
     const newTea = new Tea(req.body.tea);
     newTea.author = req.user._id;
@@ -57,7 +57,9 @@ router.get('/:id/edit', isAuthor, catchAsync(async (req, res) => {
     if (!t) {
         req.flash('error', 'Cannot find that tea!')
         return res.redirect('/tea')}
-    res.render('teas/edit', {t, currentYear})
+        const vendors = await Vendor.find();
+        const producers = await Producer.find();    
+    res.render('teas/edit', {t, currentYear, vendors, producers})
 }))
 
 router.put('/:id', upload.array('image'), validateTea, catchAsync(async (req, res) => {
