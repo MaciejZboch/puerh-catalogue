@@ -9,8 +9,8 @@
                     <div class="valid-feedback">Well done!</div>
                 </div>
                 <label class="form-label" for="type">Type (required):</label>
-                <select class="form-select" aria-label="type" id="type" name="tea[type]">
-                    <option selected value="Raw / Sheng">Raw / Sheng</option>
+                <select class="form-select" aria-label="type" id="type" name="tea[type]" value="<%=t.type%>">
+                    <option value="Raw / Sheng">Raw / Sheng</option>
                     <option value="Ripe / Shu">Ripe / Shu</option>
                     <option value="blend">A blend of Ripe and Raw</option>
                  
@@ -24,7 +24,7 @@
 </div>
 <div>
     <label for="vendor" class="form-label">Bought from:</label>
-    <input class="form-control" list="datalistOptions" id="vendor" placeholder="Type to search..." name="vendor[name]">
+    <input class="form-control" list="datalistOptions" id="vendor" placeholder="Type to search..." name="vendor[name]" value="<%=t.vendor.name%>">
     <datalist id="datalistOptions">
         <%for (let vendor of vendors) {%>
       <option value="<%=vendor.name%>">
@@ -33,7 +33,7 @@
     </div>
     <div>
     <label for="producer" class="form-label">Producer (factory):</label>
-    <input class="form-control" list="datalistOptions2" id="producer" placeholder="Type to search..." name="producer[name]">
+    <input class="form-control" list="datalistOptions2" id="producer" placeholder="Type to search..." name="producer[name]" value="<%=t.producer.name%>">
     <datalist id="datalistOptions2">
         <%for (let producer of producers) {%>
       <option value="<%=producer.name%>">
@@ -58,24 +58,27 @@
                     <div class="valid-feedback">Well done!</div>
                 </div>
 
-                <label class="form-label" for="storage">Type of storage:</label>
-                <select class="form-select" aria-label="Type of storage" id="storage" name="tea[ageing_conditions]">
-                    <option selected value="Dry">Dry</option>
+                <div class="mb-3">
+                    <label class="form-label" for="storage">Storage conditions:</label>
+                <input class="form-select" id="storage" list="storagelist" aria-label="Type of storage" name="tea[ageing_conditions]" placeholder="Type to search..." value="<%=t.ageing_conditions%>">
+                <datalist id="storagelist">                  
+                    <option value="Dry">Dry</option>
                     <option value="Natural">Natural</option>
                     <option value="Wet">Wet</option>
                     <option value="Hong-Kong Traditional">Hong-Kong Traditional</option>
-                  </select>
-
-
+                </datalist> 
+</div>
                     <div class="mb-3">
                         <label class="form-label" for="description">Description:</label>
                         <textarea class="form-control" id="description"
                             name="tea[description]" value="<%=t.description%>"></textarea>
                     </div>
                     
-                    <label class="form-label" for="shape">Shape:</label>
-                    <select class="form-select" aria-label="shape" id="shape" name="tea[shape]">
-                        <option selected value="Loose">Loose</option>
+                      <div class="mb-3">
+<label for="shape" class="form-label">Shape:</label>
+                      <input class="form-control" id="shape" list="shapelist" placeholder="Type to search..." name="tea[shape]" value="<%=t.shape%>">
+                      <datalist id="shapelist">
+                        <option value="Loose">Loose</option>
                         <option value="Cake">Cake</option>
                         <option value="Tuo">Tuo</option>
                         <option value="Brick">Brick</option>
@@ -84,10 +87,13 @@
                         <option value="Tube">Bamboo Tube</option>
                         <option value="Melon">Melon</option>
                         <option value="Other">Other</option>
-                      </select>
+                    </datalist>
+                </div>
                     <div class="mb-3">
                         <button class="btn btn-success">Edit tea</button>
                     </div>
+                  
+
                     <div class="mb-3">
                         <% t.images.forEach(function(img, i) { %>
                             <img src="<%=img.thumbnail%>">

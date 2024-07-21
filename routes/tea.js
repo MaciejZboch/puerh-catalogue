@@ -53,7 +53,7 @@ res.render('teas/show', {tea})
     }))
 
 router.get('/:id/edit', isAuthor, catchAsync(async (req, res) => {
-    const t = await Tea.findById(req.params.id);
+    const t = await Tea.findById(req.params.id).populate('vendor').populate('producer');
     if (!t) {
         req.flash('error', 'Cannot find that tea!')
         return res.redirect('/tea')}
@@ -63,7 +63,6 @@ router.get('/:id/edit', isAuthor, catchAsync(async (req, res) => {
 }))
 
 router.put('/:id', upload.array('image'), validateTea, catchAsync(async (req, res) => {
-    console.log(req.body.tea)
     const foundTea = await Tea.findByIdAndUpdate(req.params.id, {...req.body.tea});
     if (req.files) {
         const imgs = req.files.map(f => ({ url: f.path, filename: f.filename }));

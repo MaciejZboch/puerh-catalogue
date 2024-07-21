@@ -11,7 +11,8 @@ const storage = new CloudinaryStorage({
     cloudinary,
     params: {
         folder: 'puer',
-        format: 'png'
+        format: 'jpg',
+        allowed_formats: ['jpg', 'jpeg', 'png', 'webp']
     }
 })
 
