@@ -52,7 +52,7 @@ router.get('/:id', catchAsync(async (req, res) => {
 res.render('teas/show', {tea})
     }))
 
-router.get('/:id/edit', isAuthor, catchAsync(async (req, res) => {
+router.get('/:id/edit', isLoggedIn, isAuthor, validateTea, catchAsync(async (req, res) => {
     const t = await Tea.findById(req.params.id).populate('vendor').populate('producer');
     if (!t) {
         req.flash('error', 'Cannot find that tea!')
@@ -62,7 +62,7 @@ router.get('/:id/edit', isAuthor, catchAsync(async (req, res) => {
     res.render('teas/edit', {t, currentYear, vendors, producers})
 }))
 
-router.put('/:id', upload.array('image'), validateTea, catchAsync(async (req, res) => {
+router.put('/:id', isLoggedIn, isAuthor, upload.array('image'), validateTea, catchAsync(async (req, res) => {
     const foundTea = await Tea.findByIdAndUpdate(req.params.id, {...req.body.tea});
     if (req.files) {
         const imgs = req.files.map(f => ({ url: f.path, filename: f.filename }));
@@ -78,7 +78,7 @@ router.put('/:id', upload.array('image'), validateTea, catchAsync(async (req, re
     res.redirect(`/tea/${foundTea._id}`);
 }))
 
-    router.delete('/:id', catchAsync(async (req, res) => {
+    router.delete('/:id', isLoggedIn, isAuthor, catchAsync(async (req, res) => {
         await Tea.findByIdAndDelete(req.params.id);
         res.redirect('/tea');
     }))
