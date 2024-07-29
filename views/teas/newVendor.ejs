@@ -1,14 +1,25 @@
 <% layout('layouts/boilerplate') %>
 <form action="/tea/newVendor" method="post">
-<div class="mb-3">
+  <div class="mb-3">
     <label class="form-label" for="vendor">Bought from (required):</label>
-    <input required class="form-control" type="text" id="vendor" name="vendor[name]">
+    <input
+      required
+      class="form-control"
+      type="text"
+      id="vendor"
+      name="vendor[name]"
+    />
     <div class="valid-feedback">Well done!</div>
-</div>
-<div class="mb-3">
+  </div>
+  <div class="mb-3">
     <label class="form-label" for="producer">Produced by:</label>
-    <input class="form-control" type="text" id="producer" name="producer[name]">
+    <input
+      class="form-control"
+      type="text"
+      id="producer"
+      name="producer[name]"
+    />
     <div class="valid-feedback">Well done!</div>
-</div>
-<button class="btn btn-success">Submit</button>
+  </div>
+  <button class="btn btn-success">Submit</button>
 </form>
