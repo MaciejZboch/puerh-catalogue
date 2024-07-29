@@ -68,5 +68,6 @@ res.render('teas/show', {tea})
 
     module.exports.delete = async (req, res) => {
         await Tea.findByIdAndDelete(req.params.id);
+        req.flash('success', 'Succesfully deleted!');
         res.redirect('/tea');
     }
