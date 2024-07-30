@@ -1,47 +1,72 @@
 <% layout('layouts/boilerplate') %>
-<h1>Register</h1>
-<form action="/register" method="post" class="validated-form" novalidate>
-  <div class="mb-3">
-    <label class="form-label" for="username">Username</label>
-    <input
-      required
-      name="username"
-      type="text"
-      id="username"
-      class="form-control"
-      placeholder="username"
-      aria-label="username"
-      aria-describedby="email-label"
-    />
-    <div class="valid-feedback">Well done!</div>
+
+<div
+  class="container d-flex justify-content-center align-items-center mt-5"
+></div>
+<div class="row">
+  <div class="col-md-6 offset-md-3 col-xl-4 offset-xl-4">
+    <div class="card shadow">
+      <img
+        src="https://media.istockphoto.com/id/531755635/photo/chinese-pu-erh-tea-with-two-cups-and-pot.jpg?s=612x612&w=0&k=20&c=3kbfSX8Vm3DJjvx71NOvEM6j5mSWmw7HdYdRLckJwrg="
+        alt=""
+        class="card-image-top"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Register</h5>
+        <form
+          action="/register"
+          method="post"
+          class="validated-form"
+          novalidate
+        >
+          <div class="mb-3">
+            <label class="form-label" for="email">Email:</label>
+            <input
+              autofocus
+              required
+              name="email"
+              type="email"
+              id="email"
+              class="form-control"
+              placeholder="email"
+              aria-label="email"
+              aria-describedby="email-label"
+            />
+            <div class="valid-feedback">Well done!</div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="username">Username:</label>
+            <input
+              required
+              name="username"
+              type="text"
+              id="username"
+              class="form-control"
+              placeholder="username"
+              aria-label="username"
+              aria-describedby="email-label"
+            />
+            <div class="valid-feedback">Well done!</div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="password">Password:</label>
+            <input
+              required
+              name="password"
+              type="password"
+              id="password"
+              class="form-control"
+              placeholder="password"
+              aria-label="password"
+              aria-describedby="password-label"
+            />
+            <div class="valid-feedback">Well done!</div>
+          </div>
+          <div class="d-grid gap-2 col-12 mx-auto">
+            <button class="btn btn-success">Register</button>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
-  <div class="mb-3">
-    <label class="form-label" for="email">Email</label>
-    <input
-      required
-      name="email"
-      type="email"
-      id="email"
-      class="form-control"
-      placeholder="email"
-      aria-label="email"
-      aria-describedby="email-label"
-    />
-    <div class="valid-feedback">Well done!</div>
-  </div>
-  <div class="mb-3">
-    <label class="form-label" for="password">Password</label>
-    <input
-      required
-      name="password"
-      type="password"
-      id="password"
-      class="form-control"
-      placeholder="password"
-      aria-label="password"
-      aria-describedby="password-label"
-    />
-    <div class="valid-feedback">Well done!</div>
-  </div>
-  <button class="btn btn-success">Register</button>
-</form>
+</div>

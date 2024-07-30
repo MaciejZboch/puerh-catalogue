@@ -10,7 +10,7 @@ module.exports.register = async (req, res) => {
     req.login(registeredUser, (err) => {
       if (err) return next(err);
 
-      req.flash("success", "welcome to camp!");
+      req.flash("success", "Welcome!");
       res.redirect("/tea");
     });
   } catch (e) {
@@ -33,7 +33,7 @@ module.exports.logout = (req, res, next) => {
     if (err) {
       return next(err);
     }
-    req.flash("success", "goodbye!");
+    req.flash("success", "Goodbye!");
     res.redirect("/tea");
   });
 };

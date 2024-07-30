@@ -2,6 +2,8 @@
     <div class="row">
         <h1 class="text-center">New Tea</h1>
         <div class="col-6 offset-3">
+ 
+       <div class="card-body">
             <form action="/tea" method="post" novalidate class="validated-form" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label class="form-label" for="name">Name (required):</label>
@@ -13,16 +15,16 @@
                     <option selected value="Raw / Sheng">Raw / Sheng</option>
                     <option value="Ripe / Shu">Ripe / Shu</option>
                     <option value="blend">A blend of Ripe and Raw</option>
-                 
-                    <div class="mb-3"> 
-                <label for="tea[year]" class="form-label">Year of production:</label>
+    <div class="mb-3">
+        <div class="mb-3">
+            <label for="formFile" class="form-label">Upload image:</label>
+            <input class="form-control" type="file" id="formFile" name="image" multiple>
+        </div>
+        <div class="mb-3"> 
+            <label for="tea[year]" class="form-label">Year of production:</label>
 <input class="form-control" type="number" id="tea[year]" name="tea[year]" value="year" min="1900" max="<%=currentYear%>">
 </div>
-<div class="mb-3">
-    <label for="formFile" class="form-label">Upload image:</label>
-    <input class="form-control" type="file" id="formFile" name="image" multiple>
-</div>
-<div>
+
 <label for="vendor" class="form-label">Bought from:</label>
 <input class="form-control" list="datalistOptions" id="vendor" placeholder="Type to search..." name="vendor[name]">
 <datalist id="datalistOptions">
@@ -30,8 +32,8 @@
   <option value="<%=vendor.name%>">
     <%}%>
 </datalist>
-</div>
-<div>
+
+<div class="mb-3">
 <label for="producer" class="form-label">Producer (factory):</label>
 <input class="form-control" list="datalistOptions2" id="producer" placeholder="Type to search..." name="producer[name]">
 <datalist id="datalistOptions2">
@@ -88,8 +90,8 @@
                     <div class="mb-3">
                         <button class="btn btn-success">Add tea</button>
                     </div>
+                </div>
             </form>
-
         </div>
-
-    </div>
+        </div>
+   

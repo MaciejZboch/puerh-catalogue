@@ -6,12 +6,18 @@
 <div class="row">
   <div class="col-md-6 offset-md-3 col-xl-4 offset-xl-4">
     <div class="card shadow">
+      <img
+        src="https://media.istockphoto.com/id/531755635/photo/chinese-pu-erh-tea-with-two-cups-and-pot.jpg?s=612x612&w=0&k=20&c=3kbfSX8Vm3DJjvx71NOvEM6j5mSWmw7HdYdRLckJwrg="
+        alt=""
+        class="card-image-top"
+      />
       <div class="card-body">
-        <h5 class="card-title"></h5>
+        <h5 class="card-title">Log in to proceed</h5>
         <form action="/login" method="post" class="validated-form" novalidate>
           <div class="mb-3">
-            <label class="form-label" for="username">Username</label>
+            <label class="form-label" for="username">Username:</label>
             <input
+              autofocus
               required
               name="username"
               type="text"
@@ -24,7 +30,7 @@
             <div class="valid-feedback">Well done!</div>
           </div>
           <div class="mb-3">
-            <label class="form-label" for="password">Password</label>
+            <label class="form-label" for="password">Password:</label>
             <input
               required
               name="password"
@@ -37,7 +43,9 @@
             />
             <div class="valid-feedback">Well done!</div>
           </div>
-          <button class="btn btn-success">Login</button>
+          <div class="d-grid gap-2 col-12 mx-auto">
+            <button class="btn btn-success">Login</button>
+          </div>
         </form>
       </div>
     </div>

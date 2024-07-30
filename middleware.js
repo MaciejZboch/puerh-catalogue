@@ -7,7 +7,7 @@ const Review = require("./models/review");
 //tea middleware
 module.exports.isLoggedIn = (req, res, next) => {
   if (!req.isAuthenticated()) {
-    req.flash("error", "sign in first!");
+    req.flash("error", "Log in to proceed!");
     return res.redirect("/login");
   }
   next();
