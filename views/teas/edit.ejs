@@ -2,6 +2,7 @@
     <div class="row">
         <h1 class="text-center">New Tea</h1>
         <div class="col-6 offset-3">
+            <div class="card-body">
             <form action="/tea/<%=t._id%>?_method=put" method="post" novalidate class="validated-form" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label class="form-label" for="name">Name (required):</label>
@@ -15,13 +16,13 @@
                     <option value="blend">A blend of Ripe and Raw</option>
                  
                     <div class="mb-3"> 
-                <label for="tea[year]" class="form-label">Year of production:</label>
-<input class="form-control" type="number" id="tea[year]" name="tea[year]" min="1900" max="<%=currentYear%>" value="<%=t.year%>">
+               <label for="tea[year]" class="form-label">Year of production:</label> 
+<input placeholder="Year of production" class="form-control" type="number" id="tea[year]" name="tea[year]" min="1900" max="<%=currentYear%>" value="<%=t.year%>">
 </div>
 <div class="mb-3">
     <label for="formFile" class="form-label">Upload image:</label>
     <input class="form-control" type="file" id="formFile" name="image" multiple>
-</div>
+
 <div>
     <label for="vendor" class="form-label">Bought from:</label>
     <input class="form-control" list="datalistOptions" id="vendor" placeholder="Type to search..." name="vendor[name]" value="<%=t.vendor.name%>">
@@ -107,5 +108,7 @@
             </form>
 
         </div>
-
     </div>
+</div>
+    </div>
+</div>
