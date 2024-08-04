@@ -22,7 +22,6 @@ const MongoStore = require("connect-mongo");
 const userRoutes = require("./routes/users");
 const teaRoutes = require("./routes/tea");
 const reviewRoutes = require("./routes/review");
-
 const dbUrl = "mongodb://localhost:27017/test";
 //connecting to mongoDB
 mongoose
