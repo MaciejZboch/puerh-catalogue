@@ -14,9 +14,14 @@ const currentYear = new Date().getFullYear();
 const { cloudinary } = require("../cloudinary");
 const tea = require("../controllers/tea");
 
-router.get("/browse", (req, res) => {
-  res.render("teas/browse", { Tea, DataTable });
-});
+router.get(
+  "/collection",
+  catchAsync(async (req, res) => {
+    let teas = await Tea.find({ author: req.user._id });
+
+    res.render("teas/collection", { Tea, DataTable, teas });
+  })
+);
 router
   .route("/")
   .get(tea.index)

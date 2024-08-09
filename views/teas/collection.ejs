@@ -1,0 +1,27 @@
+<% layout('layouts/boilerplate') %>
+
+<table id="myTable" class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Image</th>
+      <th>Year</th>
+      <th>Shape</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for (let tea of teas) { %>
+
+    <tr>
+      <td><%=tea.name%></td>
+      <td>
+        <% if (tea.images.length > 0) { %>
+        <img src="<%=tea.images[0].thumbnail%>" />
+        <%} else {%> no image <%}%>
+      </td>
+      <td><%=tea.year%></td>
+      <td><%=tea.shape%></td>
+    </tr>
+    <%}%>
+  </tbody>
+</table>

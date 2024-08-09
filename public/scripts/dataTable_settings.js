@@ -1,6 +1,6 @@
 $(document).ready(function () {
   let table = $("#myTable").DataTable({
-    order: [[5, "desc"]],
+    order: [[2, "desc"]],
 
     language: {
       paginate: {

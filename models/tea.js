@@ -10,7 +10,7 @@ const ImageSchema = new Schema({
 });
 
 ImageSchema.virtual("thumbnail").get(function () {
-  return this.url.replace("/upload", "/upload/c_scale,w_399");
+  return this.url.replace("/upload", "/upload/c_scale,w_100");
 });
 
 const TeaSchema = new Schema({
