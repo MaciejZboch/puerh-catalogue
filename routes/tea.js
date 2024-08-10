@@ -17,9 +17,20 @@ const tea = require("../controllers/tea");
 router.get(
   "/collection",
   catchAsync(async (req, res) => {
-    let teas = await Tea.find({ author: req.user._id });
+    let teas = await Tea.find({ author: req.user._id })
+      .populate("vendor")
+      .populate("producer");
+    res.render("teas/collection", { teas });
+  })
+);
 
-    res.render("teas/collection", { Tea, DataTable, teas });
+router.get(
+  "/browse/:vendorid",
+  catchAsync(async (req, res) => {
+    let teas = await Tea.find({ vendor: req.params.vendorid })
+      .populate("vendor")
+      .populate("producer");
+    res.render("teas/collection", { teas });
   })
 );
 router
