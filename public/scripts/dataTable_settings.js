@@ -1,5 +1,6 @@
 $(document).ready(function () {
   let table = $("#myTable").DataTable({
+    columnDefs: [{ orderable: false, targets: [0] }],
     order: [[2, "desc"]],
     responsive: true,
     language: {
