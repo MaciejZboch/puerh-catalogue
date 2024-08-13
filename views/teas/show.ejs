@@ -1,5 +1,6 @@
 <% layout('layouts/boilerplate') %>
 
+<!--image carousel-->
 <div class="col-6 offset-3">
   <div
     id="carouselExampleControls"
@@ -40,11 +41,19 @@
     <% } %>
   </div>
 
+  <!--tea info-->
   <div class="card" style="width: 18rem">
     <div class="card-body mb-3">
       <h5 class="card-title"><%=tea.name%> <%=tea.year%></h5>
-      <p class="card-text">Sold by: <%=tea.vendor.name%></p>
-      <p class="card-text">Producer: <%=tea.producer.name%></p>
+      <p class="card-text">
+        Sold by: <%if (tea.vendor) {%> <%=tea.vendor.name%> <%} else {%> unknown
+        <%}%>
+      </p>
+      <p class="card-text">
+        Producer: <%if (tea.producer) {%> <%=tea.producer.name%> <%} else {%>
+        unknown <%}%>
+      </p>
+
       <p class="card-text"><%=tea.description%></p>
     </div>
     <ul class="list-group list-group-flush">
@@ -70,6 +79,8 @@
     <form action="/tea/<%=tea._id%>/edit" method="get">
       <button class="btn btn-warning">Edit tea</button>
     </form>
+
+    <!--reviews-->
     <%}%> <% if (currentUser) { %> Review this tea:
     <form
       action="/tea/<%=tea._id%>/review"

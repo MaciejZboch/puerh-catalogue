@@ -15,14 +15,17 @@
                     <option selected value="Raw / Sheng">Raw / Sheng</option>
                     <option value="Ripe / Shu">Ripe / Shu</option>
                     <option value="blend">A blend of Ripe and Raw</option>
+                    <div class="valid-feedback">Well done!</div>
     <div class="mb-3">
         <div class="mb-3">
             <label for="formFile" class="form-label">Upload image:</label>
             <input class="form-control" type="file" id="formFile" name="image" multiple>
+            <div class="valid-feedback">Well done!</div>
         </div>
         <div class="mb-3"> 
             <label for="tea[year]" class="form-label">Year of production:</label>
 <input placeholder="Year of production"  class="form-control" type="number" id="tea[year]" name="tea[year]" value="year" min="1900" max="<%=currentYear%>">
+<div class="valid-feedback">Well done!</div>
 </div>
 
 <label for="vendor" class="form-label">Bought from:</label>
@@ -31,6 +34,7 @@
     <%for (let vendor of vendors) {%>
   <option value="<%=vendor.name%>">
     <%}%>
+    <div class="valid-feedback">Well done!</div>
 </datalist>
 
 <div class="mb-3">
@@ -41,6 +45,7 @@
   <option value="<%=producer.name%>">
     <%}%>
 </datalist>
+<div class="valid-feedback">Well done!</div>
 </div>
                 <div class="mb-3">
                     <label class="form-label" for="region">Growing region:</label>
@@ -73,6 +78,7 @@
                         <label class="form-label" for="description">Description:</label>
                         <textarea class="form-control" id="description"
                             name="tea[description]"></textarea>
+                            <div class="valid-feedback">Well done!</div>
                     </div>
                     
                     <label class="form-label" for="shape">Shape:</label>
