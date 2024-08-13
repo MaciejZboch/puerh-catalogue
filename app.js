@@ -94,7 +94,9 @@ app.use((req, res, next) => {
 });
 
 //routes
-
+app.get("/", (req, res) => {
+  res.redirect("/tea");
+});
 app.use("/", userRoutes);
 app.use("/tea", teaRoutes);
 app.use("/tea/", reviewRoutes);
