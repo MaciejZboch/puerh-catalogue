@@ -29,7 +29,7 @@ router.get(
 );
 router
   .route("/")
-  .get(tea.index)
+  .get(catchAsync(tea.index))
   .post(isLoggedIn, upload.array("image"), validateTea, catchAsync(tea.new));
 
 router.get("/new", isLoggedIn, catchAsync(tea.newForm));

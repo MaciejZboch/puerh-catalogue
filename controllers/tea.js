@@ -5,8 +5,10 @@ const currentYear = new Date().getFullYear();
 const { cloudinary } = require("../cloudinary");
 
 //index
-module.exports.index = (req, res) => {
-  res.render("teas/index");
+module.exports.index = async (req, res) => {
+  const vendors = await Vendor.find();
+  const producers = await Producer.find();
+  res.render("teas/index", { vendors, producers });
 };
 
 //new
