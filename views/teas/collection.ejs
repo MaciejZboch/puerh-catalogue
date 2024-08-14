@@ -1,6 +1,5 @@
 <% layout('layouts/boilerplate') %>
 
-
 <table id="myTable" class="table">
   <thead>
     <tr>
@@ -30,8 +29,8 @@
         <%}%>
       </td>
       <td><a href="/tea/<%=tea._id%>"><%=tea.name%></a></td>
-      <td><%=tea.vendor.name%></td>
-      <td><%=tea.producer.name%></td>
+      <td><% if (tea.vendor) {%> <%=tea.vendor.name%><%}%></td>
+      <td><%if (tea.producer) {%><%=tea.producer.name%><%}%></td>
       <td><%=tea.year%></td>
       <td><%=tea.region%></td>
       <td><%=tea.village%></td>

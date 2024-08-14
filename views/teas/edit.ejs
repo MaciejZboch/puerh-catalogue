@@ -1,45 +1,56 @@
 <% layout('layouts/boilerplate') %>
     <div class="row">
-        <h1 class="text-center">New Tea</h1>
+        <h1 class="text-center">Edit Tea</h1>
         <div class="col-6 offset-3">
+
             <div class="card-body">
             <form action="/tea/<%=t._id%>?_method=put" method="post" novalidate class="validated-form" enctype="multipart/form-data">
                 <div class="mb-3">
-                    <label class="form-label" for="name">Name (required):</label>
+                    <label class="form-label" for="name"><b>Name (required):</b></label>
                     <input required class="form-control" type="text" id="name" name="tea[name]" value="<%=t.name%>">
                     <div class="valid-feedback">Well done!</div>
+                    <div class="invalid-feedback">This field is required!</div>
                 </div>
-                <label class="form-label" for="type">Type (required):</label>
-                <select class="form-select" aria-label="type" id="type" name="tea[type]" value="<%=t.type%>">
+                <div class="mb-3">
+                <label class="form-label" for="type"><b>Type (required):</b></label>
+                <select required class="form-select" aria-label="type" id="type" name="tea[type]" value="<%=t.type%>">
                     <option value="Raw / Sheng">Raw / Sheng</option>
                     <option value="Ripe / Shu">Ripe / Shu</option>
                     <option value="blend">A blend of Ripe and Raw</option>
-                 
+                    </select>
+                    <div class="valid-feedback">Well done!</div>
+                    <div class="invalid-feedback">This field is required!</div>
+                </div>
                     <div class="mb-3"> 
                <label for="tea[year]" class="form-label">Year of production:</label> 
 <input placeholder="Year of production" class="form-control" type="number" id="tea[year]" name="tea[year]" min="1900" max="<%=currentYear%>" value="<%=t.year%>">
+<div class="valid-feedback">Well done!</div>
 </div>
 <div class="mb-3">
     <label for="formFile" class="form-label">Upload image:</label>
     <input class="form-control" type="file" id="formFile" name="image" multiple>
-
-<div>
-    <label for="vendor" class="form-label">Bought from:</label>
-    <input class="form-control" list="datalistOptions" id="vendor" placeholder="Type to search..." name="vendor[name]" value="<%=t.vendor.name%>">
+    <div class="valid-feedback">Well done!</div>
+    </div>
+<div class="mb-3">
+    <label for="vendor" class="form-label"><b>Purchased from (required):</b></label>
+    <input required class="form-control" list="datalistOptions" id="vendor" placeholder="Type to search..." name="vendor[name]" <%if (t.vendor) {%> value="<%=t.vendor.name%>" <%}%>>
     <datalist id="datalistOptions">
         <%for (let vendor of vendors) {%>
       <option value="<%=vendor.name%>">
         <%}%>
     </datalist>
+    <div class="valid-feedback">Well done!</div>
+    <div class="invalid-feedback">This field is required!</div>
     </div>
-    <div>
-    <label for="producer" class="form-label">Producer (factory):</label>
-    <input class="form-control" list="datalistOptions2" id="producer" placeholder="Type to search..." name="producer[name]" value="<%=t.producer.name%>">
+    <div class="mb-3">
+    <label for="producer" class="form-label">Producer / factory:</label>
+    <input class="form-control" list="datalistOptions2" id="producer" placeholder="Type to search..." name="producer[name]" <%if (t.producer) {%> value="<%=t.producer.name%>"<%}%>>
     <datalist id="datalistOptions2">
         <%for (let producer of producers) {%>
       <option value="<%=producer.name%>">
         <%}%>
     </datalist>
+    <div class="valid-feedback">Well done!</div>
     </div>
                 <div class="mb-3">
                     <label class="form-label" for="region">Growing region:</label>
@@ -68,11 +79,13 @@
                     <option value="Wet">Wet</option>
                     <option value="Hong-Kong Traditional">Hong-Kong Traditional</option>
                 </datalist> 
+                <div class="valid-feedback">Well done!</div>
 </div>
                     <div class="mb-3">
                         <label class="form-label" for="description">Description:</label>
                         <textarea class="form-control" id="description"
                             name="tea[description]" value="<%=t.description%>"></textarea>
+                            <div class="valid-feedback">Well done!</div>
                     </div>
                     
                       <div class="mb-3">
@@ -89,6 +102,7 @@
                         <option value="Melon">Melon</option>
                         <option value="Other">Other</option>
                     </datalist>
+                    <div class="valid-feedback">Well done!</div>
                 </div>
                     <div class="mb-3">
                         <button class="btn btn-success">Edit tea</button>

@@ -63,6 +63,8 @@ module.exports.update = async (req, res) => {
   const foundTea = await Tea.findByIdAndUpdate(req.params.id, {
     ...req.body.tea,
   });
+  foundTea.vendor = await Vendor.findOne({ name: req.body.vendor.name });
+  foundTea.producer = await Producer.findOne({ name: req.body.producer.name });
   if (req.files) {
     const imgs = req.files.map((f) => ({ url: f.path, filename: f.filename }));
     await foundTea.save();
