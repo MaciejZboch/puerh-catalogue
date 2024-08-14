@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const Tea = require("../models/tea");
+const Vendor = require("../models/vendor");
+const Producer = require("../models/producer");
 const catchAsync = require("../utilities/catchAsync");
 const { isLoggedIn, isAuthor, validateTea } = require("../middleware");
 const multer = require("multer");
@@ -19,11 +21,27 @@ router.get(
 );
 
 router.get(
-  "/browse/:vendorid",
+  "/browse",
   catchAsync(async (req, res) => {
-    const teas = await Tea.find({ vendor: req.params.vendorid })
-      .populate("vendor")
-      .populate("producer");
+    const searchedVendor = await Vendor.findOne({ name: req.query.vendor });
+    const searchedProducer = await Producer.findOne({
+      name: req.query.producer,
+    });
+    let teas = {};
+    if (searchedVendor) {
+      teas = await Tea.find({
+        vendor: searchedVendor._id,
+      })
+        .populate("vendor")
+        .populate("producer");
+    }
+    if (searchedProducer) {
+      teas = await Tea.find({
+        producer: searchedProducer._id,
+      })
+        .populate("vendor")
+        .populate("producer");
+    }
     res.render("teas/collection", { teas });
   })
 );

@@ -1,7 +1,7 @@
 <% layout('layouts/boilerplate') %>
 <h1>Browse pu-erh</h1>
 
-<form action="/tea/browse/:vendorid" method="get">
+<form action="/tea/browse" method="get">
 <div>
   <label for="vendor" class="form-label">By vendor:</label>
   <input
@@ -9,7 +9,7 @@
     list="datalistOptions"
     id="vendor"
     placeholder="Type to search..."
-    name="vendor[name]"
+    name="vendor"
   />
   <datalist id="datalistOptions">
     <%for (let vendor of vendors) {%>
@@ -18,7 +18,7 @@
 <button class="btn btn-success">Search</button>
 </div>
 </form>
-<form action="" method="get">
+<form action="/tea/browse" method="get">
 <div>
   <label for="producer" class="form-label">By producer / factory:</label>
   <input
@@ -26,7 +26,7 @@
     list="datalistOptions2"
     id="producer"
     placeholder="Type to search..."
-    name="producer[name]"
+    name="producer"
   />
   <datalist id="datalistOptions2">
     <%for (let producer of producers) {%>
