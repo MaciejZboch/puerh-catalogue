@@ -22,10 +22,14 @@ const MongoStore = require("connect-mongo");
 const userRoutes = require("./routes/users");
 const teaRoutes = require("./routes/tea");
 const reviewRoutes = require("./routes/review");
-const dbUrl = "mongodb://localhost:27017/test";
+
 //connecting to mongoDB
+//const dbUrl = "mongodb://localhost:27017/test";
+const dbUrl = process.env.DB_URL;
+//local DB for development:  'mongodb://localhost:27017/test'
+//production DB on cloud: dbUrl
 mongoose
-  .connect("mongodb://localhost:27017/test", {
+  .connect(dbUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
