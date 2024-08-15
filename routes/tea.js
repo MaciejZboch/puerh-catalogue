@@ -12,6 +12,7 @@ const tea = require("../controllers/tea");
 
 router.get(
   "/collection",
+  isLoggedIn,
   catchAsync(async (req, res) => {
     const teas = await Tea.find({ author: req.user._id })
       .populate("vendor")
