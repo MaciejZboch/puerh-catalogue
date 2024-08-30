@@ -1,6 +1,6 @@
-<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar sticky-top navbar-expand-lg mx-2 bg-color-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Pu-erh Catalogue</a>
+    <a class="navbar-brand text-light" href="/">Pu-erh Catalogue</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -12,18 +12,22 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link active" href="/tea">Browse teas</a>
-        <a class="nav-link" href="/tea/new">New tea</a>
+    <div
+      class="collapse navbar-collapse justify-content-end"
+      id="navbarNavAltMarkup"
+    >
+      <% if (currentUser) { %>
+      <div class="navbar-nav mx-1">
+        <a class="nav-link active text-light" href="/tea">Browse teas</a>
+        <a class="nav-link text-light" href="/tea/new">New tea</a>
+        <a class="nav-link text-light" href="/tea/collection">Your collection</a>
       </div>
-      <div class="navbar-nav ml-auto">
+      <% } %>
+      <div class="navbar-nav mx-1">
         <% if(!currentUser) {%>
-        <a class="nav-link" href="/login">Login</a>
-        <a class="nav-link" href="/register">Register</a>
+        <a class="nav-link text-light" href="/login">Sign in</a>
         <%} else {%>
-        <a class="nav-link" href="/tea/collection">Your collection</a>
-        <a class="nav-link" href="/logout">Logout</a>
+        <a class="nav-link text-light" href="/logout">Logout</a>
         <%}%>
       </div>
     </div>
