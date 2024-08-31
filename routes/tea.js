@@ -52,6 +52,10 @@ router
   .post(isLoggedIn, upload.array("image"), validateTea, catchAsync(tea.new));
 
 router.get("/new", isLoggedIn, catchAsync(tea.newForm));
+router
+  .route("/newVendor")
+  .get(isLoggedIn, tea.newVendor)
+  .post(catchAsync(tea.newVendor));
 
 router
   .route("/:id")

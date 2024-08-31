@@ -87,3 +87,17 @@ module.exports.delete = async (req, res) => {
   req.flash("success", "Succesfully deleted!");
   res.redirect("/tea");
 };
+
+module.exports.newVendor = (req, res) => {
+  res.render("teas/newVendor");
+};
+module.exports.postVendor = async (req, res) => {
+  const typedVendor = Vendor.findOne({ name: req.body.vendor });
+  if (!typedVendor) {
+    new Vendor(req.body.vendor);
+    req.flash("success", "Vendor succesfully added!");
+  } else {
+    req.flash("failure", "There is already a vendor with that name!");
+  }
+  res.redirect("/tea");
+};

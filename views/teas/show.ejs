@@ -71,6 +71,7 @@
       <% } %> <% if (tea.ageing_conditions) { %>
       <li class="list-group-item">Storage: <%=tea.ageing_conditions%></li>
       <% } %>
+      <li class="list-group-item">Average rating: <%=tea.averageRating%></li>
     </ul>
     <% if (currentUser && tea.author.equals(currentUser._id)) {%>
     <form action="/tea/<%=tea._id%>?_method=DELETE" method="post">
