@@ -87,3 +87,12 @@ module.exports.delete = async (req, res) => {
   req.flash("success", "Succesfully deleted!");
   res.redirect("/tea");
 };
+module.exports.newVendor = async (req, res) => {
+  const vendors = await Vendor.find();
+  const producers = await Producer.find();
+  res.render("teas/newVendor", { vendors, producers });
+};
+
+module.exports.postVendor = async (req, res) => {
+  new Vendor({ name: Vendor.new });
+};

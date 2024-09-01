@@ -10,6 +10,11 @@ const { storage } = require("../cloudinary");
 const upload = multer({ storage });
 const tea = require("../controllers/tea");
 
+router
+  .route("/newVendor")
+  .get(catchAsync(tea.newVendor))
+  .post(catchAsync(tea.postVendor));
+
 router.get(
   "/collection",
   isLoggedIn,
