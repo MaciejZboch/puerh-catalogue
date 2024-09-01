@@ -87,6 +87,7 @@ module.exports.delete = async (req, res) => {
   req.flash("success", "Succesfully deleted!");
   res.redirect("/tea");
 };
+<<<<<<< HEAD
 
 module.exports.newVendor = (req, res) => {
   res.render("teas/newVendor");
@@ -100,7 +101,7 @@ module.exports.postVendor = async (req, res) => {
     req.flash("failure", "There is already a vendor with that name!");
   }
   res.redirect("/tea");
-};
+=======
 module.exports.newVendor = async (req, res) => {
   const vendors = await Vendor.find();
   const producers = await Producer.find();
@@ -109,4 +110,5 @@ module.exports.newVendor = async (req, res) => {
 
 module.exports.postVendor = async (req, res) => {
   new Vendor({ name: Vendor.new });
+>>>>>>> main
 };

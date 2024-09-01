@@ -1,0 +1,18 @@
+.bg-color-mid {
+  background-color: #1d2529;
+}
+
+.bg-color-light {
+  background-color: #a69080;
+}
+
+.bg-color-dark {
+  background-color: #1d2529;
+}
+
+/* table.dataTable td {
+  max-width: 85px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+} */
