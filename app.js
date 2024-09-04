@@ -52,6 +52,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(mongoSanitize());
+app.use("/public", express.static("public"));
 
 const store = MongoStore.create({
   mongoUrl: dbUrl,
