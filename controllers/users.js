@@ -25,7 +25,6 @@ module.exports.loginForm = (req, res) => {
 
 module.exports.login = async (req, res) => {
   req.flash("success", "Welcome back!");
-  console.log(req.session);
   const redirectUrl = req.session.returnTo || "/tea";
   delete req.session.returnTo;
   res.redirect(redirectUrl);

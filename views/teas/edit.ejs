@@ -55,18 +55,6 @@
           <div class="valid-feedback">Well done!</div>
         </div>
         <div class="mb-3">
-          <label for="formFile" class="form-label">Upload image:</label>
-          <input
-            class="form-control"
-            type="file"
-            id="formFile"
-            name="image"
-            multiple
-            accept="image/png, image/jpeg, image/jpg"
-          />
-          <div class="valid-feedback">Well done!</div>
-        </div>
-        <div class="mb-3">
           <label for="vendor" class="form-label"
             ><b>Purchased from (required):</b></label
           >
@@ -79,9 +67,9 @@
             name="vendor[name]"
             <%if
             (t.vendor)
-            {%
+            {%>
+          value="<%=t.vendor.name%>" <%}%>
           />
-          value="<%=t.vendor.name%>" <%}%>>
           <datalist id="datalistOptions">
             <%for (let vendor of vendors) {%>
             <option value="<%=vendor.name%>"><%}%></option>
@@ -100,9 +88,9 @@
             name="producer[name]"
             <%if
             (t.producer)
-            {%
+            {%>
+          value="<%=t.producer.name%>"<%}%>
           />
-          value="<%=t.producer.name%>"<%}%>>
           <datalist id="datalistOptions2">
             <%for (let producer of producers) {%>
             <option value="<%=producer.name%>"><%}%></option>
@@ -110,18 +98,6 @@
 
           <div class="valid-feedback">Well done!</div>
         </div>
-        <div class="mb-3">
-          <label class="form-label" for="region">Growing region:</label>
-          <input
-            class="form-control"
-            type="text"
-            id="region"
-            name="tea[region]"
-            value="<%=t.region%>"
-          />
-          <div class="valid-feedback">Well done!</div>
-        </div>
-
         <div class="mb-3">
           <label class="form-label" for="village">Growing village:</label>
           <input

@@ -82,4 +82,14 @@ router.get(
   catchAsync(tea.editForm)
 );
 
+router.post(
+  "/:id/add",
+  catchAsync(async (req, res) => {
+    const foundTea = await Tea.findById(req.params.id);
+    console.log(foundTea);
+    foundTea.owners.push(req.user._id);
+    await foundTea.save();
+    req.flash("success", "Tea added to collection!");
+  })
+);
 module.exports = router;

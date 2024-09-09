@@ -50,9 +50,9 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "/public")));
+
 app.use(mongoSanitize());
-app.use("/public", express.static("public"));
 
 const store = MongoStore.create({
   mongoUrl: dbUrl,
@@ -92,6 +92,7 @@ passport.deserializeUser(User.deserializeUser());
 
 app.use((req, res, next) => {
   res.locals.currentUser = req.user;
+  res.locals.baseUrl = req.baseUrl;
   res.locals.success = req.flash("success");
   res.locals.error = req.flash("error");
   res.locals.filters = req.query;
