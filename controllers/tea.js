@@ -110,3 +110,16 @@ module.exports.newVendor = async (req, res) => {
 module.exports.postVendor = async (req, res) => {
   new Vendor({ name: Vendor.new });
 };
+
+module.exports.add = async (req, res) => {
+  const t = await Tea.findById(req.params.id);
+  if (!t.owners.includes(req.user._id)) {
+    t.owners.push(req.user._id);
+    await t.save();
+    req.flash("success", "Tea added to collection!");
+    res.redirect(`/tea/${t._id}`);
+  } else {
+    req.flash("failure", "This tea is already in your collection!");
+    res.redirect(`/tea/${t._id}`);
+  }
+};

@@ -67,12 +67,4 @@ const TeaSchema = new Schema({
 TeaSchema.set("toObject", { virtuals: true });
 TeaSchema.set("toJSON", { virtuals: true });
 
-TeaSchema.virtual("averageRating").get(function () {
-  const populatedReviews = tea.populate("reviews").reviews.map((x) => x.rating);
-  const sum = populatedReviews.reduce(
-    (accumulator, currentValue) => accumulator + currentValue,
-    0
-  );
-  return sum / populatedReviews.length;
-});
 module.exports = mongoose.model("Tea", TeaSchema);
