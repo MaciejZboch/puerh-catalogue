@@ -84,6 +84,10 @@
         <form action="/tea/<%=tea._id%>/add" method="post">
           <button class="btn btn-success">Add to collection</button>
         </form>
+        <%}%> <%if (currentUser && tea.owners.includes(currentUser._id)) {%>
+        <form action="/tea/<%=tea._id%>/add?_method=DELETE" method="post">
+          <button class="btn btn-success">Remove from collection</button>
+        </form>
         <%}%> <% if (currentUser && tea.author.equals(currentUser._id)) {%>
         <form action="/tea/<%=tea._id%>?_method=DELETE" method="post">
           <button class="btn btn-danger width">Delete tea</button>

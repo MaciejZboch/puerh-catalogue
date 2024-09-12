@@ -82,5 +82,8 @@ router.get(
   catchAsync(tea.editForm)
 );
 
-router.post("/:id/add", isLoggedIn, catchAsync(tea.add));
+router
+  .route("/:id/add")
+  .post(isLoggedIn, catchAsync(tea.add))
+  .delete(isLoggedIn, catchAsync(tea.remove));
 module.exports = router;

@@ -113,6 +113,7 @@ module.exports.postVendor = async (req, res) => {
 
 module.exports.add = async (req, res) => {
   const t = await Tea.findById(req.params.id);
+  console.log(t);
   if (!t.owners.includes(req.user._id)) {
     t.owners.push(req.user._id);
     await t.save();
@@ -120,6 +121,21 @@ module.exports.add = async (req, res) => {
     res.redirect(`/tea/${t._id}`);
   } else {
     req.flash("failure", "This tea is already in your collection!");
+    res.redirect(`/tea/${t._id}`);
+  }
+};
+
+module.exports.remove = async (req, res) => {
+  const t = await Tea.findById(req.params.id);
+  if (t.owners.includes(req.user._id)) {
+    await t.updateOne({
+      $pull: { owners: req.user._id },
+    });
+    await t.save();
+    req.flash("success", "Tea removed from collection!");
+    res.redirect(`/tea/${t._id}`);
+  } else {
+    req.flash("failure", "This tea is not in your collection!");
     res.redirect(`/tea/${t._id}`);
   }
 };
