@@ -104,7 +104,7 @@ app.get("/", (req, res) => {
   res.redirect("/tea");
 });
 app.use("/", userRoutes);
-app.use("/tea", teaRoutes);
+app.use("/tea", teaRoutes, express.static(path.join(__dirname, "/public")));
 app.use("/tea/", reviewRoutes);
 
 //error handler
