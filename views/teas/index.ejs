@@ -4,12 +4,12 @@
     <h1 class="text-light display-2 text-xl text-center my-5">
       Pu-erh Catalogue
     </h1>
-    <section class="col-md-6 px-5">
+    <section class="col-md-6 px-5 d-flex justify-content-center">
       <div class="my-5 my-md-0">
-        <h2 class="text-light display-5 my-4">Browse Pu-erh</h2>
-        <span class="text-light">
-          A website for pu-erh tea lovers. Log in to add teas to your collection
-          or search to see what has already been added!
+        <h2 class="text-light text-center display-5 my-4">Welcome!</h2>
+        <span class="text-light text-center">
+          This is a website for pu-erh tea lovers. Log in to add teas to your
+          collection or search to see what has already been added!
         </span>
       </div>
     </section>
@@ -32,14 +32,34 @@
               <%for (let vendor of vendors) {%>
               <option value="<%=vendor.name%>"><%}%></option>
             </datalist>
+            <button class="btn btn-success">Search</button>
           </div>
           <div class="row my-3">
             <div class="col-4"></div>
             <div class="col-6 d-flex justify-content-end">
               <label class="text-light">Search by:</label>
-              <div class="ms-2">
-                <button>Vendor</button>
-                <button>Producer</button>
+              <div class="ms-2 text-light">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="search"
+                    id="vendor"
+                    checked
+                  />
+                  <label class="form-check-label" for="vendor"> Vendor </label>
+                </div>
+                <div class="form-check text-light">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="search"
+                    id="producer"
+                  />
+                  <label class="form-check-label" for="producer">
+                    Producer
+                  </label>
+                </div>
               </div>
             </div>
           </div>
