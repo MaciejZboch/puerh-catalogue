@@ -1,21 +1,39 @@
 const User = require("../models/user");
+
 module.exports.registerForm = (req, res) => {
   res.render("users/register");
 };
-module.exports.register = async (req, res) => {
-  try {
-    const { email, username, password } = req.body;
-    const user = new User({ email, username });
-    const registeredUser = await User.register(user, password);
-    req.login(registeredUser, (err) => {
-      if (err) return next(err);
 
-      req.flash("success", "Welcome!");
-      res.redirect("/tea");
-    });
-  } catch (e) {
-    req.flash("error", e.message);
+module.exports.register = async (req, res) => {
+  function hasWhiteSpace(s) {
+    return s.indexOf(" ") >= 0;
+  }
+  const { email, username, password } = req.body;
+  if (
+    username.length < 6 ||
+    password.length < 6 ||
+    hasWhiteSpace(password) ||
+    hasWhiteSpace(username)
+  ) {
+    req.flash(
+      "error",
+      "Please make your username and password at least 6 characters long and contain no spaces!"
+    );
     res.redirect("/register");
+  } else {
+    try {
+      const user = new User({ email, username });
+      const registeredUser = await User.register(user, password);
+      req.login(registeredUser, (err) => {
+        if (err) return next(err);
+
+        req.flash("success", "Welcome!");
+        res.redirect("/tea");
+      });
+    } catch (e) {
+      req.flash("error", e.message);
+      res.redirect("/register");
+    }
   }
 };
 

@@ -19,6 +19,10 @@ module.exports.newForm = async (req, res) => {
 };
 
 module.exports.new = async (req, res) => {
+  function isProperLength(t) {
+    return (t.length > 3 && t.length < 20) || !t;
+  }
+
   const newTea = new Tea(req.body.tea);
   newTea.author = req.user._id;
   newTea.vendor = await Vendor.findOne({ name: req.body.vendor.name });
