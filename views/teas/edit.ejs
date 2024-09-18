@@ -19,6 +19,8 @@
             id="name"
             name="tea[name]"
             value="<%=t.name%>"
+            minlength="3"
+            maxlength="20"
           />
           <div class="valid-feedback">Well done!</div>
           <div class="invalid-feedback">This field is required!</div>
@@ -51,6 +53,7 @@
             min="1900"
             max="<%=currentYear%>"
             value="<%=t.year%>"
+            oninput="javascript: if (this.value.length > 4) this.value = this.value.slice(0, 4);"
           />
           <div class="valid-feedback">Well done!</div>
         </div>
@@ -106,6 +109,8 @@
             id="village"
             name="tea[village]"
             value="<%=t.village%>"
+            minlength="3"
+            maxlength="20"
           />
           <div class="valid-feedback">Well done!</div>
         </div>
@@ -118,6 +123,8 @@
             id="location"
             name="tea[ageing_location]"
             value="<%=t.location%>"
+            minlength="3"
+            maxlength="20"
           />
           <div class="valid-feedback">Well done!</div>
         </div>
@@ -148,6 +155,8 @@
             id="description"
             name="tea[description]"
             value="<%=t.description%>"
+            minlength="3"
+            maxlength="200"
           ></textarea>
           <div class="valid-feedback">Well done!</div>
         </div>

@@ -18,6 +18,8 @@
             type="text"
             id="name"
             name="tea[name]"
+            minlength="3"
+            maxlength="20"
           />
           <div class="valid-feedback">Well done!</div>
           <div class="invalid-feedback">This field is required!</div>
@@ -64,6 +66,8 @@
               value="year"
               min="1900"
               max="<%=currentYear%>"
+              oninput="javascript: if (this.value.length > 4) this.value = this.value.slice(0, 4);"
+
             />
             <div class="valid-feedback">Well done!</div>
           </div>
@@ -114,6 +118,8 @@
             type="text"
             id="region"
             name="tea[region]"
+            minlength="3"
+            maxlength="20"
           />
           <div class="valid-feedback">Well done!</div>
         </div>
@@ -125,6 +131,8 @@
             type="text"
             id="village"
             name="tea[village]"
+            minlength="3"
+            maxlength="20"
           />
           <div class="valid-feedback">Well done!</div>
         </div>
@@ -138,6 +146,8 @@
             type="text"
             id="location"
             name="tea[ageing_location]"
+            minlength="3"
+            maxlength="20"
           />
           <div class="valid-feedback">Well done!</div>
         </div>
@@ -165,6 +175,8 @@
             class="form-control"
             id="description"
             name="tea[description]"
+            minlength="3"
+            maxlength="200"
           ></textarea>
           <div class="valid-feedback">Well done!</div>
         </div>
