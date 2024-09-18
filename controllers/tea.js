@@ -19,15 +19,38 @@ module.exports.newForm = async (req, res) => {
 };
 
 module.exports.new = async (req, res) => {
-  function isProperLength(t) {
-    return (t.length > 3 && t.length < 20) || !t;
+  function isProperLength(t, x) {
+    return (t.length > 3 && t.length < x) || !t;
   }
-
-  const newTea = new Tea(req.body.tea);
+  const tea = req.body.tea;
+  if (!isProperLength(tea.name, 20)) {
+    req.flash("error", "Name must be 3 to 20 characters long!");
+    return res.redirect("/tea/new");
+  }
+  if (!isProperLength(tea.region, 20)) {
+    req.flash("error", "Region must be 3 to 20 characters long!");
+    return res.redirect("/tea/new");
+  }
+  if (!isProperLength(tea.village, 20)) {
+    req.flash("error", "Village must be 3 to 20 characters long!");
+    return res.redirect("/tea/new");
+  }
+  if (!isProperLength(tea.ageing_location, 20)) {
+    req.flash("error", "Ageing location must be 3 to 20 characters long!");
+    return res.redirect("/tea/new");
+  }
+  if (!isProperLength(tea.description, 200)) {
+    req.flash("error", "Description must be 3 to 200 characters long!");
+    return res.redirect("/tea/new");
+  }
+  const newTea = new Tea(tea);
   newTea.author = req.user._id;
   newTea.vendor = await Vendor.findOne({ name: req.body.vendor.name });
   newTea.producer = await Producer.findOne({ name: req.body.producer.name });
-  newTea.images = req.files.map((f) => ({ url: f.path, filename: f.filename }));
+  newTea.images = req.files.map((f) => ({
+    url: f.path,
+    filename: f.filename,
+  }));
   await newTea.save();
   res.redirect("/tea/" + newTea._id);
 };

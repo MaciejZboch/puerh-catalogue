@@ -17,7 +17,7 @@ module.exports.register = async (req, res) => {
   ) {
     req.flash(
       "error",
-      "Please make your username and password at least 6 characters long and contain no spaces!"
+      "Please make sure your username and password are at least 6 characters long and contain no spaces!"
     );
     res.redirect("/register");
   } else {
