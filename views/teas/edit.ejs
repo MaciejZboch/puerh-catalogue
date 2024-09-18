@@ -99,6 +99,20 @@
             <option value="<%=producer.name%>"><%}%></option>
           </datalist>
 
+          <div class="mb-3">
+            <label class="form-label" for="region">Growing region:</label>
+            <input
+              class="form-control"
+              type="text"
+              id="region"
+              name="tea[region]"
+              value="<%=t.region%>"
+              minlength="3"
+              maxlength="20"
+            />
+            <div class="valid-feedback">Well done!</div>
+          </div>
+
           <div class="valid-feedback">Well done!</div>
         </div>
         <div class="mb-3">

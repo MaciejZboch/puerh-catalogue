@@ -3,7 +3,9 @@ const Vendor = require("../models/vendor");
 const Producer = require("../models/producer");
 const currentYear = new Date().getFullYear();
 const { cloudinary } = require("../cloudinary");
-
+function isProperLength(t, x) {
+  return (t.length > 3 && t.length < x) || !t;
+}
 //index
 module.exports.index = async (req, res) => {
   const vendors = await Vendor.find();
@@ -19,10 +21,8 @@ module.exports.newForm = async (req, res) => {
 };
 
 module.exports.new = async (req, res) => {
-  function isProperLength(t, x) {
-    return (t.length > 3 && t.length < x) || !t;
-  }
   const tea = req.body.tea;
+
   if (!isProperLength(tea.name, 20)) {
     req.flash("error", "Name must be 3 to 20 characters long!");
     return res.redirect("/tea/new");
@@ -87,6 +87,27 @@ module.exports.editForm = async (req, res) => {
 };
 
 module.exports.update = async (req, res) => {
+  const tea = req.body.tea;
+  if (!isProperLength(tea.name, 20)) {
+    req.flash("error", "Name must be 3 to 20 characters long!");
+    return res.redirect("/tea/new");
+  }
+  if (!isProperLength(tea.region, 20)) {
+    req.flash("error", "Region must be 3 to 20 characters long!");
+    return res.redirect("/tea/new");
+  }
+  if (!isProperLength(tea.village, 20)) {
+    req.flash("error", "Village must be 3 to 20 characters long!");
+    return res.redirect("/tea/new");
+  }
+  if (!isProperLength(tea.ageing_location, 20)) {
+    req.flash("error", "Ageing location must be 3 to 20 characters long!");
+    return res.redirect("/tea/new");
+  }
+  if (!isProperLength(tea.description, 200)) {
+    req.flash("error", "Description must be 3 to 200 characters long!");
+    return res.redirect("/tea/new");
+  }
   const foundTea = await Tea.findByIdAndUpdate(req.params.id, {
     ...req.body.tea,
   });
