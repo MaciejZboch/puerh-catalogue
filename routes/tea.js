@@ -74,16 +74,9 @@ router
   )
   .delete(isLoggedIn, isAuthor, catchAsync(tea.delete));
 
-router.get(
-  "/:id/edit",
-  isLoggedIn,
-  isAuthor,
-  validateTea,
-  catchAsync(tea.editForm)
-);
-
 router
   .route("/:id/add")
   .post(isLoggedIn, catchAsync(tea.add))
   .delete(isLoggedIn, catchAsync(tea.remove));
+
 module.exports = router;

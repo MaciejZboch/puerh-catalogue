@@ -22,6 +22,7 @@ const MongoStore = require("connect-mongo");
 const userRoutes = require("./routes/users");
 const teaRoutes = require("./routes/tea");
 const reviewRoutes = require("./routes/review");
+const editRoutes = require("./routes/edit");
 
 //connecting to mongoDB
 //const dbUrl = "mongodb://localhost:27017/test";
@@ -106,6 +107,7 @@ app.get("/", (req, res) => {
 app.use("/", userRoutes);
 app.use("/tea", teaRoutes, express.static(path.join(__dirname, "/public")));
 app.use("/tea/", reviewRoutes);
+app.use("/edit", editRoutes, express.static(path.join(__dirname, "/public")));
 
 //error handler
 app.use((err, req, res, next) => {
