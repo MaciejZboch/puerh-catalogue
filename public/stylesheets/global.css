@@ -10,9 +10,9 @@
   background-color: #1d2529;
 }
 
-/* table.dataTable td {
+table.dataTable td {
   max-width: 85px;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-} */
+}
