@@ -8,21 +8,22 @@ function isProperLength(t, x) {
 }
 //index
 module.exports.index = async (req, res) => {
+  const pageTitle = "Pu-erh catalogue";
   const vendors = await Vendor.find();
   const producers = await Producer.find();
-  res.render("teas/index", { vendors, producers });
+  res.render("teas/index", { vendors, producers, pageTitle });
 };
 
 //new
 module.exports.newForm = async (req, res) => {
+  const pageTitle = "New tea";
   const vendors = await Vendor.find();
   const producers = await Producer.find();
-  res.render("teas/new", { currentYear, vendors, producers });
+  res.render("teas/new", { currentYear, vendors, producers, pageTitle });
 };
 
 module.exports.new = async (req, res) => {
   const tea = req.body.tea;
-
   if (!isProperLength(tea.name, 20)) {
     req.flash("error", "Name must be 3 to 20 characters long!");
     return res.redirect("/tea/new");
@@ -70,7 +71,8 @@ module.exports.show = async (req, res) => {
     req.flash("error", "Cannot find that tea!");
     return res.redirect("/tea");
   }
-  res.render("teas/show", { tea });
+  const pageTitle = tea.name;
+  res.render("teas/show", { tea, pageTitle });
 };
 
 module.exports.editForm = async (req, res) => {
@@ -83,7 +85,8 @@ module.exports.editForm = async (req, res) => {
   }
   const vendors = await Vendor.find();
   const producers = await Producer.find();
-  res.render("teas/edit", { t, currentYear, vendors, producers });
+  const pageTitle = "Edit " + t.name;
+  res.render("teas/edit", { t, currentYear, vendors, producers, pageTitle });
 };
 
 module.exports.update = async (req, res) => {
@@ -136,9 +139,6 @@ module.exports.delete = async (req, res) => {
   res.redirect("/tea");
 };
 
-module.exports.newVendor = (req, res) => {
-  res.render("teas/newVendor");
-};
 module.exports.postVendor = async (req, res) => {
   const typedVendor = Vendor.findOne({ name: req.body.vendor });
   if (!typedVendor) {
@@ -150,9 +150,10 @@ module.exports.postVendor = async (req, res) => {
   res.redirect("/tea");
 };
 module.exports.newVendor = async (req, res) => {
+  const pageTitle = "New Vendor";
   const vendors = await Vendor.find();
   const producers = await Producer.find();
-  res.render("teas/newVendor", { vendors, producers });
+  res.render("teas/newVendor", { vendors, producers, pageTitle });
 };
 
 module.exports.postVendor = async (req, res) => {
