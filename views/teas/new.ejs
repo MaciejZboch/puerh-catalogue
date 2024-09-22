@@ -1,210 +1,219 @@
 <% layout('layouts/boilerplate') %>
 <div class="container d-flex flex-column justify-content-md-center text-light">
   <h1 class="text-center">New Tea</h1>
-    <form
-      action="/tea"
-      method="post"
-      novalidate
-      class="validated-form"
-      enctype="multipart/form-data"
-    >
-      <div class="col-6 offset-3">
-        <h2>The basics</h2>
-        <div class="mb-3">
-          <label class="form-label" for="name"><b>Name (required):</b></label>
-          <input
-            required
-            class="form-control"
-            type="text"
-            id="name"
-            name="tea[name]"
-            minlength="3"
-            maxlength="20"
-          />
-          <div class="valid-feedback">Well done!</div>
-          <div class="invalid-feedback">This field is required!</div>
-        </div>
-        <div class="mb-3">
-          <label class="form-label" for="type"><b>Type (required):</b></label>
-          <select
-            required
-            class="form-select"
-            aria-label="type"
-            id="type"
-            name="tea[type]"
-          >
-            <option selected value="Raw / Sheng">Raw / Sheng</option>
-            <option value="Ripe / Shu">Ripe / Shu</option>
-            <option value="blend">A blend of Ripe and Raw</option>
-          </select>
-          <div class="valid-feedback">Well done!</div>
-          <div class="invalid-feedback">This field is required!</div>
-        </div>
-        <div class="mb-3">
-          <div class="mb-3">
-            <label for="formFile" class="form-label">Upload image:</label>
-            <input
-              class="form-control"
-              type="file"
-              id="formFile"
-              name="image"
-              multiple
-              accept="image/png, image/jpeg, image/jpg"
-            />
-            <div class="valid-feedback">Well done!</div>
-          </div>
-          <div class="mb-3">
-            <label for="tea[year]" class="form-label"
-              >Year of production:</label
-            >
-            <input
-              placeholder="Year of production"
-              class="form-control"
-              type="number"
-              id="tea[year]"
-              name="tea[year]"
-              value="year"
-              min="1900"
-              max="<%=currentYear%>"
-              oninput="javascript: if (this.value.length > 4) this.value = this.value.slice(0, 4);"
-
-            />
-            <div class="valid-feedback">Well done!</div>
-          </div>
-
-          <div class="mb-3">
-            <label for="vendor" class="form-label"
-              ><b>Purchased from (required):</b></label
-            >
-            <input
-              required
-              class="form-control"
-              list="datalistOptions"
-              id="vendor"
-              placeholder="Type to search..."
-              name="vendor[name]"
-            />
-            <datalist id="datalistOptions">
-              <%for (let vendor of vendors) {%>
-              <option value="<%=vendor.name%>"><%}%></option>
-            </datalist>
-
-            <div class="valid-feedback">Well done!</div>
-            <div class="invalid-feedback">This field is required!</div>
-          </div>
-          <div class="mb-3">
-            <label for="producer" class="form-label">Producer / factory:</label>
-            <input
-              class="form-control"
-              list="datalistOptions2"
-              id="producer"
-              placeholder="Type to search..."
-              name="producer[name]"
-            />
-            <datalist id="datalistOptions2">
-              <%for (let producer of producers) {%>
-              <option value="<%=producer.name%>"><%}%></option>
-            </datalist>
-
-            <div class="valid-feedback">Well done!</div>
-          </div>
-        </div>
-        <div class="col-6 offset-3">
-        <h2>Regions</h2>
-        <div class="mb-3">
-          <label class="form-label" for="region">Growing region:</label>
-          <input
-            class="form-control"
-            type="text"
-            id="region"
-            name="tea[region]"
-            minlength="3"
-            maxlength="20"
-          />
-          <div class="valid-feedback">Well done!</div>
-        </div>
-
-        <div class="mb-3">
-          <label class="form-label" for="village">Growing village:</label>
-          <input
-            class="form-control"
-            type="text"
-            id="village"
-            name="tea[village]"
-            minlength="3"
-            maxlength="20"
-          />
-          <div class="valid-feedback">Well done!</div>
-        </div>
-        </div>
-        <div class="col-6 offset-3">
-        <h2>Storage / ageing</h2>
-        <div class="mb-3">
-          <label class="form-label" for="location">Ageing location:</label>
-          <input
-            class="form-control"
-            type="text"
-            id="location"
-            name="tea[ageing_location]"
-            minlength="3"
-            maxlength="20"
-          />
-          <div class="valid-feedback">Well done!</div>
-        </div>
-        <div class="mb-3">
-          <label class="form-label" for="storage">Type of storage:</label>
-          <select
-            class="form-select"
-            aria-label="Type of storage"
-            id="storage"
-            name="tea[ageing_conditions]"
-          >
-            <option selected value="Dry">Dry</option>
-            <option value="Natural">Natural</option>
-            <option value="Wet">Wet</option>
-            <option value="Hong-Kong Traditional">Hong-Kong Traditional</option>
-          </select>
-          <div class="valid-feedback">Well done!</div>
-        </div>
-      </div>
-      <div class="col-6 offset-3">
-      <h2>Additional options</h2>
-        <div class="mb-3">
-          <label class="form-label" for="description">Description:</label>
-          <textarea
-            class="form-control"
-            id="description"
-            name="tea[description]"
-            minlength="3"
-            maxlength="200"
-          ></textarea>
-          <div class="valid-feedback">Well done!</div>
-        </div>
-        <div class="mb-3">
-          <label class="form-label" for="shape">Shape:</label>
-          <select
-            class="form-select"
-            aria-label="shape"
-            id="shape"
-            name="tea[shape]"
-          >
-            <option selected value="Loose">Loose</option>
-            <option value="Cake">Cake</option>
-            <option value="Tuo">Tuo</option>
-            <option value="Brick">Brick</option>
-            <option value="Mushroom">Mushroom</option>
-            <option value="Dragon ball">Dragon ball</option>
-            <option value="Tube">Bamboo Tube</option>
-            <option value="Melon">Melon</option>
-            <option value="Other">Other</option>
-          </select>
-          <div class="valid-feedback">Well done!</div>
-        </div>
-        </div>
-        <div class="mb-3">
-          <button class="btn btn-success">Add tea</button>
-        </div>
-      
-    </form>
+  <form
+    action="/tea"
+    method="post"
+    novalidate
+    class="validated-form"
+    enctype="multipart/form-data"
+  >
+  <div class="row mt-5">
   
+    <h2 class="text-left">The basics</h2>
+    <div class="mb-3 col-md-4">
+      <label class="form-label" for="name"><b>Name (required):</b></label>
+      <input
+        required
+        class="form-control"
+        type="text"
+        id="name"
+        name="tea[name]"
+        minlength="3"
+        maxlength="20"
+      />
+      <div class="valid-feedback">Well done!</div>
+      <div class="invalid-feedback">This field is required!</div>
+    </div>
+    <div class="mb-3 col-md-4">
+      <label class="form-label" for="type"><b>Type (required):</b></label>
+      <select
+        required
+        class="form-select"
+        aria-label="type"
+        id="type"
+        name="tea[type]"
+      >
+        <option selected value="Raw / Sheng">Raw / Sheng</option>
+        <option value="Ripe / Shu">Ripe / Shu</option>
+        <option value="blend">A blend of Ripe and Raw</option>
+      </select>
+      <div class="valid-feedback">Well done!</div>
+      <div class="invalid-feedback">This field is required!</div>
+    </div>
+    
+      <div class="mb-3 col-md-4">
+        <label for="formFile" class="form-label">Upload image:</label>
+        <input
+          class="form-control"
+          type="file"
+          id="formFile"
+          name="image"
+          multiple
+          accept="image/png, image/jpeg, image/jpg"
+        />
+        <div class="valid-feedback">Well done!</div>
+      </div>
+</div>
+<div class="row">
+      <div class="mb-3 col-md-4">
+        <label for="tea[year]" class="form-label">Year of production:</label>
+        <input
+          placeholder="Year of production"
+          class="form-control"
+          type="number"
+          id="tea[year]"
+          name="tea[year]"
+          value="year"
+          min="1900"
+          max="<%=currentYear%>"
+          oninput="javascript: if (this.value.length > 4) this.value = this.value.slice(0, 4);"
+        />
+        <div class="valid-feedback">Well done!</div>
+      </div>
+
+      <div class="mb-3 col-md-4">
+        <label for="vendor" class="form-label"
+          ><b>Purchased from (required):</b></label
+        >
+        <input
+          required
+          class="form-control"
+          list="datalistOptions"
+          id="vendor"
+          placeholder="Type to search..."
+          name="vendor[name]"
+        />
+        <datalist id="datalistOptions">
+          <%for (let vendor of vendors) {%>
+          <option value="<%=vendor.name%>"><%}%></option>
+        </datalist>
+
+        <div class="valid-feedback">Well done!</div>
+        <div class="invalid-feedback">This field is required!</div>
+      </div>
+
+      <div class="mb-3 col-md-4">
+        <label for="producer" class="form-label">Producer / factory:</label>
+        <input
+          class="form-control"
+          list="datalistOptions2"
+          id="producer"
+          placeholder="Type to search..."
+          name="producer[name]"
+        />
+        <datalist id="datalistOptions2">
+          <%for (let producer of producers) {%>
+          <option value="<%=producer.name%>"><%}%></option>
+        </datalist>
+
+        <div class="valid-feedback">Well done!</div>
+      </div>
+  </div>
+
+
+
+
+<div class="row mt-5">
+    <div class="col-md mt-5">
+      <h2>Regions</h2>
+      <div class="mb-3">
+        <label class="form-label" for="region">Growing region:</label>
+        <input
+          class="form-control"
+          type="text"
+          id="region"
+          name="tea[region]"
+          minlength="3"
+          maxlength="20"
+        />
+        <div class="valid-feedback">Well done!</div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label" for="village">Growing village:</label>
+        <input
+          class="form-control"
+          type="text"
+          id="village"
+          name="tea[village]"
+          minlength="3"
+          maxlength="20"
+        />
+        <div class="valid-feedback">Well done!</div>
+      </div>
+    </div>
+
+<div class="col-md mt-5">
+      <h2 class="flex-wrap">Storage / ageing</h2>
+      <div class="mb-3">
+        <label class="form-label" for="location">Ageing location:</label>
+        <input
+          class="form-control"
+          type="text"
+          id="location"
+          name="tea[ageing_location]"
+          minlength="3"
+          maxlength="20"
+        />
+        <div class="valid-feedback">Well done!</div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="storage">Type of storage:</label>
+        <select
+          class="form-select"
+          aria-label="Type of storage"
+          id="storage"
+          name="tea[ageing_conditions]"
+        >
+          <option selected value="Dry">Dry</option>
+          <option value="Natural">Natural</option>
+          <option value="Wet">Wet</option>
+          <option value="Hong-Kong Traditional">Hong-Kong Traditional</option>
+        </select>
+        <div class="valid-feedback">Well done!</div>
+      </div>
+    </div>
+
+    <div class="col-md mt-5">
+      <h2>Additional options</h2>
+      <div class="mb-3">
+        <label class="form-label" for="description">Description:</label>
+        <textarea
+          class="form-control"
+          id="description"
+          name="tea[description]"
+          minlength="3"
+          maxlength="200"
+        ></textarea>
+        <div class="valid-feedback">Well done!</div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="shape">Shape:</label>
+        <select
+          class="form-select"
+          aria-label="shape"
+          id="shape"
+          name="tea[shape]"
+        >
+          <option selected value="Loose">Loose</option>
+          <option value="Cake">Cake</option>
+          <option value="Tuo">Tuo</option>
+          <option value="Brick">Brick</option>
+          <option value="Mushroom">Mushroom</option>
+          <option value="Dragon ball">Dragon ball</option>
+          <option value="Tube">Bamboo Tube</option>
+          <option value="Melon">Melon</option>
+          <option value="Other">Other</option>
+        </select>
+        <div class="valid-feedback">Well done!</div>
+      </div>
+    </div>
+    <div class="text-right">
+      <button class="btn btn-success">Add tea</button>
+    </div>
+  </div>
+    </div>
+  </form>
+</div>
 </div>
