@@ -2,7 +2,7 @@
 <div class="container d-flex flex-column justify-content-md-center">
   <div class="row">
     <!--image carousel-->
-    <div class="col-6 offset-3">
+    <div class="col-md-6">
       <div
         id="carouselExampleControls"
         class="carousel slide"
@@ -50,8 +50,8 @@
       </div>
 
       <!--tea info-->
-      <div class="card bg-opacity-75 bg-light p-3" style="width: 18 rem">
-        <div class="card-body mb-3">
+      <div class="card mb-3  text-light bg-dark"
+        <div class="card body">
           <h5 class="card-title"><%=tea.name%> <%=tea.year%></h5>
           <p class="card-text">
             Sold by: <%if (tea.vendor) {%> <%=tea.vendor.name%> <%} else {%>
@@ -63,39 +63,54 @@
           </p>
 
           <p class="card-text"><%=tea.description%></p>
-        </div>
+        
         <ul class="list-group list-group-flush">
-          <li class="list-group-item"><%=tea.type%></li>
+          <li class="list-group-item text-light bg-dark"><%=tea.type%></li>
           <% if (tea.shape) { %>
-          <li class="list-group-item">Shape: <%=tea.shape%></li>
+          <li class="list-group-item text-light bg-dark">Shape: <%=tea.shape%></li>
           <% } %> <% if (tea.village && tea.region) { %>
-          <li class="list-group-item">
+          <li class="list-group-item text-light bg-dark">
             Material from <%=tea.village%> village, <%=tea.region%> region.
           </li>
           <% } if (tea.region && !tea.village) {%>
-          <li class="list-group-item">Material from <%=tea.region%> region.</li>
+          <li class="list-group-item text-light bg-dark">Material from <%=tea.region%> region.</li>
           <% } %> <% if (tea.ageing_location) { %>
-          <li class="list-group-item">Aged in: <%=tea.ageing_location%></li>
+          <li class="list-group-item text-light bg-dark">Aged in: <%=tea.ageing_location%></li>
           <% } %> <% if (tea.ageing_conditions) { %>
-          <li class="list-group-item">Storage: <%=tea.ageing_conditions%></li>
+          <li class="list-group-item text-light bg-dark">Storage: <%=tea.ageing_conditions%></li>
           <% } %>
         </ul>
+        <div class="row text-center">
         <%if (currentUser && !tea.owners.includes(currentUser._id)) {%>
+          <div class="d-grid gap-2 col-4 mx-auto my-2">
         <form action="/tea/<%=tea._id%>/add" method="post">
           <button class="btn btn-success">Add to collection</button>
         </form>
+      </div>
         <%}%> <%if (currentUser && tea.owners.includes(currentUser._id)) {%>
+          
         <form action="/tea/<%=tea._id%>/add?_method=DELETE" method="post">
+          <div class="d-grid gap-2 col-4 mx-auto my-2">
           <button class="btn btn-success">Remove from collection</button>
+        </div>
         </form>
+      
         <%}%> <% if (currentUser && tea.author.equals(currentUser._id)) {%>
+          <div class="d-grid gap-2 col-4 mx-auto my-2">
         <form action="/tea/<%=tea._id%>?_method=DELETE" method="post">
           <button class="btn btn-danger width">Delete tea</button>
         </form>
+      </div>
+      <div class="d-grid gap-2 col-4 mx-auto my-2"">
         <form action="/edit/<%=tea._id%>" method="get">
           <button class="btn btn-warning">Edit tea</button>
         </form>
+      </div>
+      </div>
+      </div>
+      </div>
 
+      <div class="col-md-6 text-light bg-dark">
         <!--reviews-->
         <%}%> <% if (currentUser) { %> Review this tea:
         <div class="mb-3">
@@ -129,7 +144,9 @@
               ></textarea>
               <div class="valid-feedback">Great!</div>
             </div>
+            <div class="text-center">
             <button form="review-form" class="btn btn-success">Submit</button>
+          </div>
           </form>
           <% } %> <% for (let review of tea.reviews) { %>
           <div class="mb-3">
@@ -141,7 +158,9 @@
               method="POST"
             >
               <% if (currentUser && review.author.equals(currentUser._id)) {%>
+                <div>
               <button class="btn btn-sm btn-danger">Delete</button>
+            </div>
               <% } %>
             </form>
           </div>
