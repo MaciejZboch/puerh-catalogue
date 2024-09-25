@@ -1,7 +1,7 @@
 $(document).ready(function () {
   let table = $("#myTable").DataTable({
     columnDefs: [{ orderable: false, targets: [0] }],
-    order: [[2, "desc"]],
+    order: [[2, "asc"]],
     responsive: true,
     language: {
       paginate: {
