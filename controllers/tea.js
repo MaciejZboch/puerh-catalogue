@@ -139,25 +139,31 @@ module.exports.delete = async (req, res) => {
   res.redirect("/tea");
 };
 
-module.exports.postVendor = async (req, res) => {
-  const typedVendor = Vendor.findOne({ name: req.body.vendor });
-  if (!typedVendor) {
-    new Vendor(req.body.vendor);
-    req.flash("success", "Vendor succesfully added!");
-  } else {
-    req.flash("failure", "There is already a vendor with that name!");
-  }
-  res.redirect("/tea");
-};
+// vendor/producer controllers
 module.exports.newVendor = async (req, res) => {
   const pageTitle = "New Vendor";
   const vendors = await Vendor.find();
-  const producers = await Producer.find();
-  res.render("teas/newVendor", { vendors, producers, pageTitle });
+  res.render("teas/newVendor", { vendors, pageTitle });
 };
 
 module.exports.postVendor = async (req, res) => {
-  new Vendor({ name: Vendor.new });
+  const v = await new Vendor({ name: req.body.vendor });
+  await v.save();
+  req.flash("success", "Vendor added!");
+  res.redirect("/tea/newVendor");
+};
+
+module.exports.newProducer = async (req, res) => {
+  const pageTitle = "New Producer";
+  const producers = await Producer.find();
+  res.render("teas/newProducer", { producers, pageTitle });
+};
+
+module.exports.postProducer = async (req, res) => {
+  const p = await new Producer({ name: req.body.producer });
+  await p.save();
+  req.flash("success", "Producer added!");
+  res.redirect("/tea/newProducer");
 };
 
 module.exports.add = async (req, res) => {

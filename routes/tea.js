@@ -60,7 +60,12 @@ router.get("/new", isLoggedIn, catchAsync(tea.newForm));
 router
   .route("/newVendor")
   .get(isLoggedIn, tea.newVendor)
-  .post(catchAsync(tea.newVendor));
+  .post(catchAsync(tea.postVendor));
+
+router
+  .route("/newProducer")
+  .get(isLoggedIn, tea.newProducer)
+  .post(catchAsync(tea.postProducer));
 
 router
   .route("/:id")
