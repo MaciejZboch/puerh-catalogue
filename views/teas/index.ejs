@@ -24,9 +24,9 @@
             <input
               class="form-control w-lg-75"
               list="datalistOptions"
-              id="vendor"
+              id="search"
               placeholder="Type to search..."
-              name="vendor"
+              name="search"
               minlength="3"
               maxlength="20"
             />
@@ -45,9 +45,10 @@
                   <input
                     class="form-check-input"
                     type="radio"
-                    name="search"
+                    name="option"
                     id="vendor"
                     checked
+                    value="vendor"
                   />
                   <label class="form-check-label" for="vendor"> Vendor </label>
                 </div>
@@ -55,8 +56,9 @@
                   <input
                     class="form-check-input"
                     type="radio"
-                    name="search"
+                    name="option"
                     id="producer"
+                    value="producer"
                   />
                   <label class="form-check-label" for="producer">
                     Producer
