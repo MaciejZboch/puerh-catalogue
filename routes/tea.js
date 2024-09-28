@@ -30,6 +30,7 @@ router.get(
   "/browse",
   catchAsync(async (req, res) => {
     let teas = {};
+    const search = req.query.search;
     if (req.query.option === "vendor") {
       const searchedVendor = await Vendor.findOne({ name: req.query.search });
 
@@ -49,7 +50,7 @@ router.get(
         .populate("vendor")
         .populate("producer");
     }
-    res.render("teas/collection", { teas });
+    res.render("teas/browse", { teas, search });
   })
 );
 
