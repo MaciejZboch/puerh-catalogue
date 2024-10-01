@@ -12,7 +12,7 @@ const ImageSchema = new Schema({
 ImageSchema.virtual("thumbnail").get(function () {
   return this.url.replace(
     "/upload",
-    "/upload/w_100,ar_1:1,c_fill,g_auto,e_art:hokusai"
+    "/upload/w_40,ar_1:1,c_fill,g_auto,e_art:hokusai"
   );
 });
 

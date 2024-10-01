@@ -31,17 +31,18 @@ router.get(
   catchAsync(async (req, res) => {
     let teas = {};
     const search = req.query.search;
-    if (req.query.option === "vendor") {
-      const searchedVendor = await Vendor.findOne({ name: req.query.search });
+    const option = req.query.option;
+    if (option === "vendor") {
+      const searchedVendor = await Vendor.findOne({ name: search });
 
       teas = await Tea.find({
         vendor: searchedVendor._id,
       })
         .populate("vendor")
         .populate("producer");
-    } else if (req.query.option === "producer") {
+    } else if (option === "producer") {
       const searchedProducer = await Producer.findOne({
-        name: req.query.search,
+        name: search,
       });
 
       teas = await Tea.find({
@@ -50,7 +51,7 @@ router.get(
         .populate("vendor")
         .populate("producer");
     }
-    res.render("teas/browse", { teas, search });
+    res.render("teas/browse", { teas, search, option });
   })
 );
 

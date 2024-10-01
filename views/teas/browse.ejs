@@ -1,12 +1,15 @@
 <% layout('layouts/boilerplate') %>
-<h1 class="text-center"><%=search%></h1>
-<table id="myTable" class="table">
+<h1 class="text-center">Teas by: <%=search%></h1>
+<table id="browseTable" class="table">
   <thead>
     <tr>
       <th>Image</th>
       <th>Name</th>
+
       <th>Vendor</th>
+
       <th>Producer</th>
+
       <th>Year</th>
       <th>Region</th>
       <th>Village</th>
@@ -24,13 +27,14 @@
         <img src="<%=tea.images[0].thumbnail%>" />
         <%} else {%>
         <img
-          width="100"
-          height="100"
+          width="40"
+          height="40"
           src="https://img.freepik.com/premium-vector/chinese-traditional-tea-tasting-illustration-vector_391639-2027.jpg"
         />
         <%}%>
       </td>
       <td><a href="/tea/<%=tea._id%>"><%=tea.name%></a></td>
+
       <td><% if (tea.vendor) {%> <%=tea.vendor.name%><%}%></td>
       <td><%if (tea.producer) {%><%=tea.producer.name%><%}%></td>
       <td><%=tea.year%></td>
