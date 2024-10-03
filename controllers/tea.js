@@ -148,6 +148,11 @@ module.exports.newVendor = async (req, res) => {
 
 module.exports.postVendor = async (req, res) => {
   const v = await new Vendor({ name: req.body.vendor });
+  console.log(req.file);
+  v.image = req.file.map((f) => ({
+    url: f.path,
+    filename: f.filename,
+  }));
   await v.save();
   req.flash("success", "Vendor added!");
   res.redirect("/tea/newVendor");
@@ -161,6 +166,10 @@ module.exports.newProducer = async (req, res) => {
 
 module.exports.postProducer = async (req, res) => {
   const p = await new Producer({ name: req.body.producer });
+  p.image = req.files.map((f) => ({
+    url: f.path,
+    filename: f.filename,
+  }));
   await p.save();
   req.flash("success", "Producer added!");
   res.redirect("/tea/newProducer");

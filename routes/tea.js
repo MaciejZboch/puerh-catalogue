@@ -64,12 +64,12 @@ router.get("/new", isLoggedIn, catchAsync(tea.newForm));
 router
   .route("/newVendor")
   .get(isLoggedIn, tea.newVendor)
-  .post(catchAsync(tea.postVendor));
+  .post(upload.single("image"), catchAsync(tea.postVendor));
 
 router
   .route("/newProducer")
   .get(isLoggedIn, tea.newProducer)
-  .post(catchAsync(tea.postProducer));
+  .post(upload.single("image"), catchAsync(tea.postProducer));
 
 router
   .route("/:id")

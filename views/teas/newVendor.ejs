@@ -1,5 +1,11 @@
 <% layout('layouts/boilerplate') %>
-<form action="/tea/newVendor" method="post">
+<form action="/tea/newVendor" method="post" enctype="multipart/form-data">
   <input type="text" name="vendor" id="vendor" />
+  <input
+    type="file"
+    id="formFile"
+    name="image"
+    accept="image/png, image/jpeg, image/jpg"
+  />
   <button>Submit</button>
 </form>
