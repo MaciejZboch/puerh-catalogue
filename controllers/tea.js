@@ -116,18 +116,20 @@ module.exports.update = async (req, res) => {
   });
   foundTea.vendor = await Vendor.findOne({ name: req.body.vendor.name });
   foundTea.producer = await Producer.findOne({ name: req.body.producer.name });
+
   if (req.files) {
     const imgs = req.files.map((f) => ({ url: f.path, filename: f.filename }));
-    await foundTea.save();
+
     if (req.body.deleteImages) {
       for (let filename of req.body.deleteImages) {
         await cloudinary.uploader.destroy(filename);
       }
-      foundTea.images.push(...imgs);
     }
+    foundTea.images.push(...imgs);
     await foundTea.updateOne({
       $pull: { images: { filename: { $in: req.body.deleteImages } } },
     });
+    await foundTea.save();
   }
   req.flash("success", "Succesfully updated!");
   res.redirect(`/tea/${foundTea._id}`);
@@ -148,7 +150,7 @@ module.exports.newVendor = async (req, res) => {
 
 module.exports.postVendor = async (req, res) => {
   const v = await new Vendor({ name: req.body.vendor });
-  console.log(req.file);
+
   v.image = req.file.map((f) => ({
     url: f.path,
     filename: f.filename,
@@ -177,7 +179,6 @@ module.exports.postProducer = async (req, res) => {
 
 module.exports.add = async (req, res) => {
   const t = await Tea.findById(req.params.id);
-  console.log(t);
   if (!t.owners.includes(req.user._id)) {
     t.owners.push(req.user._id);
     await t.save();
