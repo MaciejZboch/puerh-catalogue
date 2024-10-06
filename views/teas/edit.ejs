@@ -1,6 +1,6 @@
 <% layout('layouts/boilerplate') %>
 <div class="container d-flex flex-column justify-content-md-center text-light">
-  <h1 class="text-center">New Tea</h1>
+  <h1 class="text-center mb-5">Edit Tea</h1>
   <form
   action="/tea/<%=t._id%>?_method=put"
     method="post"
@@ -8,6 +8,22 @@
     class="validated-form"
     enctype="multipart/form-data"
   >
+
+  <div class="mb-3">
+    <% t.images.forEach(function(img, i) { %>
+    <img width="200" height="200" src="<%=img.square%>" />
+    <div class="form-check-inline">
+      <input
+        type="checkbox"
+        id="image-<%=i%>"
+        name="deleteImages[]"
+        value="<%=img.filename%>"
+      />
+    </div>
+    <label for="image-<%=i%>">Check to delete image</label>
+    <% }) %>
+  </div>
+
   <div class="row mt-5">
   
     <h2 class="text-left">The basics</h2>
@@ -227,20 +243,6 @@
       <div class="text-end mb-5">
         <button class="btn btn-success">Edit tea</button>
       </div>
-    </div>
-    <div class="mb-3">
-      <% t.images.forEach(function(img, i) { %>
-      <img width="200" height="200" src="<%=img.url%>" />
-      <div class="form-check-inline">
-        <input
-          type="checkbox"
-          id="image-<%=i%>"
-          name="deleteImages[]"
-          value="<%=img.filename%>"
-        />
-      </div>
-      <label for="image-<%=i%>">Delete?</label>
-      <% }) %>
     </div>
 
   </div>
