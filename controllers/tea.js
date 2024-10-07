@@ -152,7 +152,7 @@ module.exports.postVendor = async (req, res) => {
   const v = await new Vendor({ name: req.body.vendor });
   console.log(req.file);
   console.log(req.files);
-  v.image = req.file.map((f) => ({
+  v.images = req.files.map((f) => ({
     url: f.path,
     filename: f.filename,
   }));

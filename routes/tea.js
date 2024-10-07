@@ -22,7 +22,8 @@ router.get(
     const teas = await Tea.find({ author: req.user._id })
       .populate("vendor")
       .populate("producer");
-    res.render("teas/collection", { teas });
+    const pageTitle = "My collection";
+    res.render("teas/collection", { teas, pageTitle });
   })
 );
 
@@ -51,7 +52,8 @@ router.get(
         .populate("vendor")
         .populate("producer");
     }
-    res.render("teas/browse", { teas, search, option });
+    const pageTitle = search + "'s teas";
+    res.render("teas/browse", { teas, search, option, pageTitle });
   })
 );
 
@@ -64,12 +66,12 @@ router.get("/new", isLoggedIn, catchAsync(tea.newForm));
 router
   .route("/newVendor")
   .get(isLoggedIn, tea.newVendor)
-  .post(upload.single("image"), catchAsync(tea.postVendor));
+  .post(upload.array("image"), catchAsync(tea.postVendor));
 
 router
   .route("/newProducer")
   .get(isLoggedIn, tea.newProducer)
-  .post(upload.single("image"), catchAsync(tea.postProducer));
+  .post(upload.array("image"), catchAsync(tea.postProducer));
 
 router
   .route("/:id")

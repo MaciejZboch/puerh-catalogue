@@ -8,7 +8,7 @@ const VendorImageSchema = new Schema({
 
 const VendorSchema = new Schema({
   name: String,
-  image: VendorImageSchema,
+  images: [VendorImageSchema],
 });
 
 module.exports = mongoose.model("Vendor", VendorSchema);

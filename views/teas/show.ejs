@@ -1,5 +1,5 @@
 <% layout('layouts/boilerplate') %>
-<div class="container d-flex flex-column justify-content-md-center">
+<div class="container d-flex flex-column justify-content-md-center text-center p-3">
   <div class="row">
     <!--image carousel-->
     <div class="col-md-6">
@@ -50,7 +50,7 @@
       </div>
 
       <!--tea info-->
-      <div class="card mb-3  text-light bg-dark"
+      <div class="card mb-3  text-light bg-color-dark"
         <div class="card body">
           <h5 class="card-title"><%=tea.name%> <%=tea.year%></h5>
           <p class="card-text">
@@ -65,19 +65,19 @@
           <p class="card-text"><%=tea.description%></p>
         
         <ul class="list-group list-group-flush">
-          <li class="list-group-item text-light bg-dark"><%=tea.type%></li>
+          <li class="list-group-item text-light bg-color-dark"><%=tea.type%></li>
           <% if (tea.shape) { %>
-          <li class="list-group-item text-light bg-dark">Shape: <%=tea.shape%></li>
+          <li class="list-group-item text-light bg-color-dark">Shape: <%=tea.shape%></li>
           <% } %> <% if (tea.village && tea.region) { %>
-          <li class="list-group-item text-light bg-dark">
+          <li class="list-group-item text-light bg-color-dark">
             Material from <%=tea.village%> village, <%=tea.region%> region.
           </li>
           <% } if (tea.region && !tea.village) {%>
-          <li class="list-group-item text-light bg-dark">Material from <%=tea.region%> region.</li>
+          <li class="list-group-item text-light bg-color-dark">Material from <%=tea.region%> region.</li>
           <% } %> <% if (tea.ageing_location) { %>
-          <li class="list-group-item text-light bg-dark">Aged in: <%=tea.ageing_location%></li>
+          <li class="list-group-item text-light bg-color-dark">Aged in: <%=tea.ageing_location%></li>
           <% } %> <% if (tea.ageing_conditions) { %>
-          <li class="list-group-item text-light bg-dark">Storage: <%=tea.ageing_conditions%></li>
+          <li class="list-group-item text-light bg-color-dark">Storage: <%=tea.ageing_conditions%></li>
           <% } %>
         </ul>
         <div class="row text-center">
@@ -110,7 +110,7 @@
       </div>
       </div>
 
-      <div class="col-md-6 text-light bg-dark">
+      <div class="col-md-6 text-light bg-color-dark">
         <!--reviews-->
         <%}%> <% if (currentUser) { %> Review this tea:
         <div class="mb-3">

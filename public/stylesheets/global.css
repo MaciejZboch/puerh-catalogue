@@ -16,6 +16,12 @@ table.dataTable td {
   text-overflow: ellipsis;
   overflow: hidden;
 }
+.dt-length {
+  opacity: 40%;
+}
+.dt-info {
+  opacity: 40%;
+}
 #myTable {
   text-align: center;
   max-width: 100%;
@@ -23,6 +29,10 @@ table.dataTable td {
 
 th {
   text-align: center !important;
+}
+td {
+  text-align: center !important;
+  vertical-align: middle !important;
 }
 
 .sorting {
