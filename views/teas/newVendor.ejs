@@ -1,5 +1,11 @@
 <% layout('layouts/boilerplate') %>
-<form action="/tea/newVendor" method="post" enctype="multipart/form-data">
+<form
+  action="/tea/newVendor"
+  method="post"
+  enctype="multipart/form-data"
+  novalidate
+  class="validated-form"
+>
   <input type="text" name="vendor" id="vendor" />
   <input
     type="file"

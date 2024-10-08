@@ -149,7 +149,8 @@ module.exports.newVendor = async (req, res) => {
 };
 
 module.exports.postVendor = async (req, res) => {
-  const v = await new Vendor({ name: req.body.vendor });
+  const v = new Vendor({ name: req.body.vendor });
+  console.log(req.body);
   console.log(req.file);
   console.log(req.files);
   v.images = req.files.map((f) => ({
