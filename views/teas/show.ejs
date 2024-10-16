@@ -1,8 +1,8 @@
 <% layout('layouts/boilerplate') %>
-<div class="container d-flex flex-column justify-content-md-center text-center p-3">
+<div class="container d-flex flex-column justify-content-md-center text-left p-3">
   <div class="row">
     <!--image carousel-->
-    <div class="col-md-6 mb-4">
+    <div class="col-md-6">
       <div
         id="carouselExampleControls"
         class="carousel slide"
@@ -52,32 +52,40 @@
       <!--tea info-->
       <div class="card mb-3  text-light bg-color-dark"
         <div class="card body">
+      
+      
           <h5 class="card-title"><%=tea.name%> <%=tea.year%></h5>
           <p class="card-text">
-            Sold by: <%if (tea.vendor) {%> <%=tea.vendor.name%> <%} else {%>
+            <b> Sold by: </b><%if (tea.vendor) {%> <%=tea.vendor.name%> <%} else {%>
             unknown <%}%>
           </p>
           <p class="card-text">
-            Producer: <%if (tea.producer) {%> <%=tea.producer.name%> <%} else
+           <b>Producer: </b> <%if (tea.producer) {%> <%=tea.producer.name%> <%} else
             {%> unknown <%}%>
           </p>
 
           <p class="card-text"><%=tea.description%></p>
         
+        
+          <p><b>Average Score: </b> <%=tea.average%></p>
+        
+        
         <ul class="list-group list-group-flush">
-          <li class="list-group-item text-light bg-color-dark"><%=tea.type%></li>
+          <li class="list-group-item text-light bg-color-dark"> <b>Type: </b><%=tea.type%></li>
           <% if (tea.shape) { %>
-          <li class="list-group-item text-light bg-color-dark">Shape: <%=tea.shape%></li>
+          <li class="list-group-item text-light bg-color-dark"><b>Shape: </b><%=tea.shape%></li>
           <% } %> <% if (tea.village && tea.region) { %>
           <li class="list-group-item text-light bg-color-dark">
-            Material from <%=tea.village%> village, <%=tea.region%> region.
+            <b>Material from:</b> <%=tea.village%> village, <%=tea.region%> region
           </li>
           <% } if (tea.region && !tea.village) {%>
-          <li class="list-group-item text-light bg-color-dark">Material from <%=tea.region%> region.</li>
+          <li class="list-group-item text-light bg-color-dark"><b> Material from: </b> <%=tea.region%> region</li>
+          <% } if (tea.village && !tea.region) {%>
+            <li class="list-group-item text-light bg-color-dark"><b> Material from: </b> <%=tea.village%> village</li>
           <% } %> <% if (tea.ageing_location) { %>
-          <li class="list-group-item text-light bg-color-dark">Aged in: <%=tea.ageing_location%></li>
+          <li class="list-group-item text-light bg-color-dark"><b> Aged in: </b> <%=tea.ageing_location%></li>
           <% } %> <% if (tea.ageing_conditions) { %>
-          <li class="list-group-item text-light bg-color-dark">Storage: <%=tea.ageing_conditions%></li>
+          <li class="list-group-item text-light bg-color-dark"><b> Storage: </b> <%=tea.ageing_conditions%></li>
           <% } %>
         </ul>
         <div class="row text-center">

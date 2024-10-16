@@ -72,7 +72,6 @@ module.exports.show = async (req, res) => {
     return res.redirect("/tea");
   }
   const pageTitle = tea.name;
-  console.log(tea.average);
   res.render("teas/show", { tea, pageTitle });
 };
 
@@ -142,6 +141,7 @@ module.exports.delete = async (req, res) => {
   res.redirect("/tea");
 };
 
+
 // vendor/producer controllers
 module.exports.newVendor = async (req, res) => {
   const pageTitle = "New Vendor";
@@ -180,6 +180,8 @@ module.exports.postProducer = async (req, res) => {
   res.redirect("/tea/newProducer");
 };
 
+
+//add or remove from collection
 module.exports.add = async (req, res) => {
   const t = await Tea.findById(req.params.id);
   if (!t.owners.includes(req.user._id)) {
