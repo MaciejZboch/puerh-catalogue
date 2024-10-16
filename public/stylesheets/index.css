@@ -10,6 +10,6 @@
   );
 }
 
-.container {
-  vertical-align: middle;
+.justify-text {
+  text-align: justify;
 }

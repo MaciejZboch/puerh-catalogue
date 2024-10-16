@@ -72,6 +72,7 @@ module.exports.show = async (req, res) => {
     return res.redirect("/tea");
   }
   const pageTitle = tea.name;
+  console.log(tea.average);
   res.render("teas/show", { tea, pageTitle });
 };
 
