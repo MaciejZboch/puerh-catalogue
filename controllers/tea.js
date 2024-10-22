@@ -3,9 +3,7 @@ const Vendor = require("../models/vendor");
 const Producer = require("../models/producer");
 const currentYear = new Date().getFullYear();
 const { cloudinary } = require("../cloudinary");
-function isProperLength(t, x) {
-  return (t.length > 3 && t.length < x) || !t;
-}
+
 //index
 module.exports.index = async (req, res) => {
   const pageTitle = "Pu-erh catalogue";
@@ -23,7 +21,11 @@ module.exports.newForm = async (req, res) => {
 };
 
 module.exports.new = async (req, res) => {
+  function isProperLength(t, x) {
+    return (t.length > 3 && t.length < x) || !t;
+  }
   const tea = req.body.tea;
+
   if (!isProperLength(tea.name, 20)) {
     req.flash("error", "Name must be 3 to 20 characters long!");
     return res.redirect("/tea/new");
@@ -141,7 +143,6 @@ module.exports.delete = async (req, res) => {
   res.redirect("/tea");
 };
 
-
 // vendor/producer controllers
 module.exports.newVendor = async (req, res) => {
   const pageTitle = "New Vendor";
@@ -154,10 +155,6 @@ module.exports.postVendor = async (req, res) => {
   console.log(req.body);
   console.log(req.file);
   console.log(req.files);
-  v.images = req.files.map((f) => ({
-    url: f.path,
-    filename: f.filename,
-  }));
   await v.save();
   req.flash("success", "Vendor added!");
   res.redirect("/tea/newVendor");
@@ -179,7 +176,6 @@ module.exports.postProducer = async (req, res) => {
   req.flash("success", "Producer added!");
   res.redirect("/tea/newProducer");
 };
-
 
 //add or remove from collection
 module.exports.add = async (req, res) => {

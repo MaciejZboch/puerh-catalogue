@@ -6,6 +6,7 @@
 <table id="myTable" class="table align-items-center justify-content-center">
   <thead>
     <tr>
+      <th></th>
       <th>Image</th>
       <th>Name</th>
       <th>Vendor</th>
@@ -22,6 +23,11 @@
     <% for (let tea of teas) { %>
 
     <tr>
+      <td>
+        <form action="/tea/<%=tea._id%>/add?_method=DELETE" method="post">
+          <button class="btn btn-success">Delete</button>
+        </form>
+      </td>
       <td>
         <% if (tea.images.length > 0) { %>
         <img src="<%=tea.images[0].thumbnail%>" />

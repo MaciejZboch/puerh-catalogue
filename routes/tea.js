@@ -6,6 +6,7 @@ const Producer = require("../models/producer");
 const catchAsync = require("../utilities/catchAsync");
 const { isLoggedIn, isAuthor, validateTea } = require("../middleware");
 const multer = require("multer");
+const MulterError = require("../utilities/MulterError");
 const { storage } = require("../cloudinary");
 const upload = multer({ storage });
 const tea = require("../controllers/tea");
@@ -19,7 +20,7 @@ router.get(
   "/collection",
   isLoggedIn,
   catchAsync(async (req, res) => {
-    const teas = await Tea.find({ author: req.user._id })
+    const teas = await Tea.find({ owners: req.user._id })
       .populate("vendor")
       .populate("producer");
     const pageTitle = "My collection";
@@ -66,7 +67,7 @@ router.get("/new", isLoggedIn, catchAsync(tea.newForm));
 router
   .route("/newVendor")
   .get(isLoggedIn, tea.newVendor)
-  .post(isLoggedIn, upload.array("image"), catchAsync(tea.postVendor));
+  .post(catchAsync(tea.postVendor));
 
 router
   .route("/newProducer")
