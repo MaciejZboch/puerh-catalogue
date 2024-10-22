@@ -13,6 +13,7 @@
 <table id="browseTable" class="table">
   <thead>
     <tr>
+      <th></th>
       <th>Image</th>
       <th>Name</th>
 
@@ -32,6 +33,16 @@
     <% for (let tea of teas) { %>
 
     <tr>
+      <td>
+        <%if (currentUser && tea.owners.includes(currentUser._id)) {%>
+        <form action="/tea/<%=tea._id%>/add?_method=DELETE" method="post">
+          <button class="btn btn-warning">Delete</button>
+        </form>
+        <%} else if (currentUser && !tea.owners.includes(currentUser._id)) {%>
+        <form action="/tea/<%=tea._id%>/add" method="post">
+          <button class="btn btn-success">Add</button><%}%>
+        </form>
+      </td>
       <td>
         <% if (tea.images.length > 0) { %>
         <img src="<%=tea.images[0].thumbnail%>" />

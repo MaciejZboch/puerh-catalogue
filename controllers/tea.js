@@ -179,15 +179,16 @@ module.exports.postProducer = async (req, res) => {
 
 //add or remove from collection
 module.exports.add = async (req, res) => {
+  console.log(req.baseUrl);
   const t = await Tea.findById(req.params.id);
   if (!t.owners.includes(req.user._id)) {
     t.owners.push(req.user._id);
     await t.save();
     req.flash("success", "Tea added to collection!");
-    res.redirect(`/tea/${t._id}`);
+    res.redirect("back");
   } else {
     req.flash("failure", "This tea is already in your collection!");
-    res.redirect(`/tea/${t._id}`);
+    res.redirect("back");
   }
 };
 
@@ -199,9 +200,11 @@ module.exports.remove = async (req, res) => {
     });
     await t.save();
     req.flash("success", "Tea removed from collection!");
-    res.redirect(`/tea/${t._id}`);
+    //res.redirect(`/tea/${t._id}`);
+    res.redirect(req.body.redirectTo);
   } else {
     req.flash("failure", "This tea is not in your collection!");
-    res.redirect(`/tea/${t._id}`);
+    //res.redirect(`/tea/${t._id}`);
+    res.redirect(req.body.redirectTo);
   }
 };
