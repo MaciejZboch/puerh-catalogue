@@ -1,7 +1,7 @@
 $(document).ready(function () {
   let table = $("#myTable").DataTable({
     columnDefs: [
-      { orderable: false, targets: [0] },
+      { orderable: false, targets: [0, 1] },
       { responsivePriority: 1, targets: 0 },
     ],
     order: [[2, "asc"]],
@@ -26,7 +26,7 @@ $(document).ready(function () {
 $(document).ready(function () {
   let table = $("#browseTable").DataTable({
     columnDefs: [
-      { orderable: false, targets: [0] },
+      { orderable: false, targets: [0, 1] },
       { responsivePriority: 1, targets: 0 },
     ],
     order: [[2, "asc"]],
