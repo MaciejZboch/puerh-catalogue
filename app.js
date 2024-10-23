@@ -82,7 +82,14 @@ const sessionConfig = {
 
 app.use(session(sessionConfig));
 app.use(flash());
-app.use(helmet({ contentSecurityPolicy: false }));
+app.use(
+  helmet({
+    contentSecurityPolicy: false,
+    referrerPolicy: {
+      policy: ["origin", "unsafe-url"],
+    },
+  })
+);
 
 app.use(passport.initialize());
 app.use(passport.session());
