@@ -15,6 +15,7 @@
     <tr>
       <th></th>
       <th></th>
+      <th></th>
       <th>Name</th>
 
       <th>Vendor</th>
@@ -33,6 +34,7 @@
     <% for (let tea of teas) { %>
 
     <tr>
+      <td>Details</td>
       <td>
         <%if (currentUser && tea.owners.includes(currentUser._id)) {%>
         <form action="/tea/<%=tea._id%>/add?_method=DELETE" method="post">

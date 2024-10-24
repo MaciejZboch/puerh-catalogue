@@ -7,7 +7,8 @@
   <thead>
     <tr>
       <th></th>
-      <th>Image</th>
+      <th></th>
+      <th></th>
       <th>Name</th>
       <th>Vendor</th>
       <th>Producer</th>
@@ -23,6 +24,7 @@
     <% for (let tea of teas) { %>
 
     <tr>
+      <td>Details</td>
       <td>
         <form action="/tea/<%=tea._id%>/add?_method=DELETE" method="post">
           <button class="btn btn-outline-warning tableButton">Remove</button>

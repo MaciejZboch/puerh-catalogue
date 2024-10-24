@@ -1,11 +1,19 @@
 $(document).ready(function () {
   let table = $("#myTable").DataTable({
     columnDefs: [
-      { orderable: false, targets: [0, 1] },
-      { responsivePriority: 1, targets: 0 },
+      { orderable: false, targets: [0, 1, 2] },
+      { responsivePriority: 1, targets: 3 },
+      {
+        className: "dtr-control",
+        targets: 0,
+      },
     ],
-    order: [[2, "asc"]],
-    responsive: true,
+    order: [[3, "asc"]],
+    responsive: {
+      details: {
+        type: "column",
+      },
+    },
     language: {
       paginate: {
         previous: "&#8810;",
@@ -26,11 +34,19 @@ $(document).ready(function () {
 $(document).ready(function () {
   let table = $("#browseTable").DataTable({
     columnDefs: [
-      { orderable: false, targets: [0, 1] },
-      { responsivePriority: 1, targets: 0 },
+      { orderable: false, targets: [0, 1, 2] },
+      { responsivePriority: 1, targets: 3 },
+      {
+        className: "dtr-control",
+        targets: 0,
+      },
     ],
-    order: [[2, "asc"]],
-    responsive: true,
+    order: [[3, "asc"]],
+    responsive: {
+      details: {
+        type: "column",
+      },
+    },
     language: {
       paginate: {
         previous: "&#8810;",
