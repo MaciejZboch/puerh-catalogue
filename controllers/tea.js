@@ -207,3 +207,39 @@ module.exports.remove = async (req, res) => {
     res.redirect("back");
   }
 };
+
+//get collection and browse tables
+module.exports.collection = async (req, res) => {
+  const teas = await Tea.find({ owners: req.user._id })
+    .populate("vendor")
+    .populate("producer");
+  const pageTitle = "My collection";
+  res.render("teas/collection", { teas, pageTitle });
+};
+
+module.exports.browse = async (req, res) => {
+  let teas = {};
+  const search = req.query.search;
+  const option = req.query.option;
+  if (option === "vendor") {
+    const searchedVendor = await Vendor.findOne({ name: search });
+
+    teas = await Tea.find({
+      vendor: searchedVendor._id,
+    })
+      .populate("vendor")
+      .populate("producer");
+  } else if (option === "producer") {
+    const searchedProducer = await Producer.findOne({
+      name: search,
+    });
+
+    teas = await Tea.find({
+      producer: searchedProducer._id,
+    })
+      .populate("vendor")
+      .populate("producer");
+  }
+  const pageTitle = search + "'s teas";
+  res.render("teas/browse", { teas, search, option, pageTitle });
+};
