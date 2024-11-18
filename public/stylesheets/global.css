@@ -42,3 +42,7 @@ td {
 .tableButton {
   width: 80px;
 }
+
+.link {
+  text-decoration: none;
+}
