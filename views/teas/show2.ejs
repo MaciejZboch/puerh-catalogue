@@ -1,0 +1,172 @@
+<% layout('layouts/boilerplate') %>
+<section id="show">
+    <div id="first-column">
+  <div
+    id="carouselExampleControls"
+    class="carousel slide"
+    data-bs-ride="carousel"
+  >
+    <%if (tea.images.length ===0) {%>
+    <img
+      crossorigin="anonymous"
+      src="https://media.istockphoto.com/id/531755635/photo/chinese-pu-erh-tea-with-two-cups-and-pot.jpg?s=612x612&w=0&k=20&c=3kbfSX8Vm3DJjvx71NOvEM6j5mSWmw7HdYdRLckJwrg="
+      class="d-block w-100"
+      alt=""
+    /><%}%>
+    <div class="carousel-inner">
+      <% tea.images.forEach((img, i)=> { %>
+      <div class="carousel-item <%= i === 0 ? 'active' : ''%>">
+        <img
+          crossorigin="anonymous"
+          src="<%=img.square%>"
+          class="d-block w-100"
+          alt=""
+        />
+      </div>
+      <%})%>
+    </div>
+    <% if (tea.images.length> 1) { %>
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselExampleControls"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselExampleControls"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+    <% } %>
+  </div>
+  <!--reviews-->
+<% for (let review of tea.reviews) { %>
+    <div id="reviews" class="mb-3">
+      <h5>Rating: <%=review.rating%></h5>
+      <h6>By: <%=review.author.username%></h6>
+      <p>Review: <%=review.body%></p>
+      <form
+        action="/tea/<%=tea._id%>/review/<%=review._id%>?_method=DELETE"
+        method="POST"
+      >
+        <% if (currentUser && review.author.equals(currentUser._id)) {%>
+          <div>
+        <button class="btn btn-sm btn-danger">Delete</button>
+      </div>
+        <% }} %>
+      </form>
+    </div>
+</div>
+
+  <!--tea info-->
+  <div>
+    <h1><%=tea.name%> <%=tea.year%></h5>
+    <p>
+      <b> Sold by: </b><%if (tea.vendor) {%> <a class="link" href="/tea/browse?search=<%=tea.vendor.name%>&option=vendor"><%=tea.vendor.name%></a>  <%} else {%>
+      unknown <%}%>
+    </p>
+    <p>
+      <b>Producer: </b> <%if (tea.producer) {%> <a class="link" href="/tea/browse?search=<%=tea.producer.name%>&option=producer"> <%=tea.producer.name%></a> <%} else
+      {%> unknown <%}%>
+    </p>
+
+    <p><%=tea.description%></p>
+
+    <p><b>Average Score: </b> <%=tea.average%></p>
+
+    <ul>
+      <li>
+        <b>Type: </b><%=tea.type%>
+      </li>
+      <% if (tea.shape) { %>
+      <li>
+        <b>Shape: </b><%=tea.shape%>
+      </li>
+      <% } %> <% if (tea.village && tea.region) { %>
+      <li>
+        <b>Material from:</b> <%=tea.village%> village, <%=tea.region%> region
+      </li>
+      <% } if (tea.region && !tea.village) {%>
+      <li>
+        <b> Material from: </b> <%=tea.region%> region
+      </li>
+      <% } if (tea.village && !tea.region) {%>
+      <li>
+        <b> Material from: </b> <%=tea.village%> village
+      </li>
+      <% } %> <% if (tea.ageing_location) { %>
+      <li>
+        <b> Aged in: </b> <%=tea.ageing_location%>
+      </li>
+      <% } %> <% if (tea.ageing_conditions) { %>
+      <li>
+        <b> Storage: </b> <%=tea.ageing_conditions%>
+      </li>
+      <% } %>
+    </ul>
+
+<!--leave a review-->
+<% if (currentUser) { %> Review this tea:
+    <div class="mb-3">
+      <form
+        action="/tea/<%=tea._id%>/review"
+        method="post"
+        class="mb-3 validated-form"
+        id="review-form"
+      >
+        <div class="mb-3">
+          <label class="form-label" for="rating">Rating</label>
+          <input
+            class="form-range"
+            type="range"
+            name="review[rating]"
+            min="1"
+            max="5"
+            id="rating"
+          />
+        </div>
+
+        <div class="mb-3">
+          <textarea
+            required
+            class="form-control"
+            id="body"
+            name="review[body]"
+            cols="30"
+            rows="3"
+            placeholder="Write your review here..."
+          ></textarea>
+          <div class="valid-feedback">Great!</div>
+        </div>
+        <div class="text-center">
+        <button form="review-form" class="btn btn-success">Submit</button>
+      </div>
+      </form>
+    <%}%>
+      <!--reviews for smaller screens-->
+<% for (let review of tea.reviews) { %>
+    <div id="reviews2" class="mb-3">
+      <h5>Rating: <%=review.rating%></h5>
+      <h6>By: <%=review.author.username%></h6>
+      <p>Review: <%=review.body%></p>
+      <form
+        action="/tea/<%=tea._id%>/review/<%=review._id%>?_method=DELETE"
+        method="POST"
+      >
+        <% if (currentUser && review.author.equals(currentUser._id)) {%>
+          <div>
+        <button class="btn btn-sm btn-danger">Delete</button>
+      </div>
+        <% }} %>
+      </form>
+    </div>
+</div>
+</div>
+</section>

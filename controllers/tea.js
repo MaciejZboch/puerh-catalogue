@@ -74,7 +74,7 @@ module.exports.show = async (req, res) => {
     return res.redirect("/tea");
   }
   const pageTitle = tea.name;
-  res.render("teas/show", { tea, pageTitle });
+  res.render("teas/show2", { tea, pageTitle });
 };
 
 module.exports.editForm = async (req, res) => {

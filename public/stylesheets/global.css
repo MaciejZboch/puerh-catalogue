@@ -1,3 +1,5 @@
+/*global styling*/
+
 .bg-color-mid {
   background-color: #1d2529;
 }
@@ -10,6 +12,7 @@
   background-color: #1d2529;
 }
 
+/*table styling*/
 table.dataTable td {
   max-width: 85px;
   white-space: nowrap;
@@ -45,4 +48,29 @@ td {
 
 .link {
   text-decoration: none;
+}
+
+/*show page styling*/
+* {
+  margin: 0;
+  padding: 0;
+}
+#show {
+  gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#show ul {
+  list-style: none;
+}
+@media (max-width: 1000px) {
+  #reviews {
+    display: none;
+  }
+}
+@media (min-width: 1000px) {
+  #reviews2 {
+    display: none;
+  }
 }
