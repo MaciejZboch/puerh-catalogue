@@ -37,7 +37,12 @@ td {
   text-align: center !important;
   vertical-align: middle !important;
 }
-
+.tearow {
+  opacity: 70%;
+}
+.tearow:hover {
+  opacity: 100%;
+}
 .sorting {
   transform: translateX(0.9em);
 }
@@ -59,18 +64,33 @@ td {
   gap: 20px;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
   justify-content: center;
 }
 #show ul {
   list-style: none;
 }
+.list-group {
+  background-color: #1d2529;
+}
+#reviews,
+#reviews2 {
+  border: 1px solid #495957;
+  border-radius: 5px;
+}
 @media (max-width: 1000px) {
   #reviews {
     display: none;
+  }
+  #show {
+    flex-wrap: nowrap;
   }
 }
 @media (min-width: 1000px) {
   #reviews2 {
     display: none;
   }
+}
+img {
+  border-radius: 5px;
 }
