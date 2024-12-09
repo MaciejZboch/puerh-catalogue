@@ -29,4 +29,10 @@ $(document).ready(function () {
   $("#length_change").change(function () {
     table.page.len($(this).val()).draw();
   });
+  //redirect to show page on row click
+  table.on("click", "tbody tr", function () {
+    let data = table.row(this).data();
+
+    window.location = data[3].substring(14, 38); //getting the link from the third <td> in a row
+  });
 });
