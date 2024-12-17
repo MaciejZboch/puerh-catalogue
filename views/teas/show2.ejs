@@ -49,8 +49,9 @@
     <% } %>
   </div>
   <!--reviews-->
+  <div class="reviewbox">
 <% for (let review of tea.reviews) { %>
-    <div id="reviews" class="mb-3">
+    <div id="reviews">
       <h5>Rating: <%=review.rating%></h5>
       <h6>By: <%=review.author.username%></h6>
       <p>Review: <%=review.body%></p>
@@ -62,28 +63,33 @@
           <div>
         <button class="btn btn-sm btn-danger">Delete</button>
       </div>
-        <% }} %>
-      </form>
+      <% } %>
+    </form>
     </div>
+        <% } %>
+      
+    
+  </div>
 </div>
 
   <!--tea info-->
   <div>
     <h1><%=tea.name%> <%=tea.year%></h5>
-    <p>
-      <b> Sold by: </b><%if (tea.vendor) {%> <a class="link" href="/tea/browse?search=<%=tea.vendor.name%>&option=vendor"><%=tea.vendor.name%></a>  <%} else {%>
-      unknown <%}%>
-    </p>
-    <p>
-      <b>Producer: </b> <%if (tea.producer) {%> <a class="link" href="/tea/browse?search=<%=tea.producer.name%>&option=producer"> <%=tea.producer.name%></a> <%} else
-      {%> unknown <%}%>
-    </p>
+
 
     <p><%=tea.description%></p>
 
-    <p><b>Average Score: </b> <%=tea.average%></p>
+    
 
-    <ul>
+    <%if (tea.vendor) {%> 
+      <li>
+        <b> Sold by: </b><a class="link" href="/tea/browse?search=<%=tea.vendor.name%>&option=vendor"><%=tea.vendor.name%></a>  <%} else {%>
+        unknown <%}%>
+        </li>
+        <%if (tea.producer) {%> 
+        <li><b>Producer: </b><a class="link" href="/tea/browse?search=<%=tea.producer.name%>&option=producer"> <%=tea.producer.name%></a> <%} else
+        {%> unknown 
+        </li><%}%>
       <li>
         <b>Type: </b><%=tea.type%>
       </li>
@@ -111,11 +117,12 @@
       <li>
         <b> Storage: </b> <%=tea.ageing_conditions%>
       </li>
+      <li><b>Average Score: </b> <%=tea.average%></li>
       <% } %>
-    </ul>
+    
 
 <!--leave a review-->
-<% if (currentUser) { %> Review this tea:
+<% if (currentUser) { %>
     <div class="mb-3">
       <form
         action="/tea/<%=tea._id%>/review"
@@ -123,8 +130,8 @@
         class="mb-3 validated-form"
         id="review-form"
       >
-        <div class="mb-3">
-          <label class="form-label" for="rating">Rating</label>
+        <div class="mb-3 mt-3">
+          <label class="form-label" for="rating">My rating</label>
           <input
             class="form-range"
             type="range"
@@ -148,27 +155,34 @@
           <div class="valid-feedback">Great!</div>
         </div>
         <div class="text-center">
-        <button form="review-form" class="btn btn-success">Submit</button>
+        <button form="review-form" class="btn btn-success mb-3">Submit</button>
       </div>
       </form>
     <%}%>
       <!--reviews for smaller screens-->
+      <div class="reviewbox2">
 <% for (let review of tea.reviews) { %>
-    <div id="reviews2" class="mb-3">
+    <div id="reviews2">
       <h5>Rating: <%=review.rating%></h5>
       <h6>By: <%=review.author.username%></h6>
       <p>Review: <%=review.body%></p>
-      <form
-        action="/tea/<%=tea._id%>/review/<%=review._id%>?_method=DELETE"
-        method="POST"
-      >
+    
         <% if (currentUser && review.author.equals(currentUser._id)) {%>
+          <form
+          action="/tea/<%=tea._id%>/review/<%=review._id%>?_method=DELETE"
+          method="POST"
+        >
           <div>
         <button class="btn btn-sm btn-danger">Delete</button>
       </div>
-        <% }} %>
-      </form>
+    </form>
+        <% } %>
+      
     </div>
+        <% } %>
+      
+    
+  </div>
 </div>
 </div>
 </section>
