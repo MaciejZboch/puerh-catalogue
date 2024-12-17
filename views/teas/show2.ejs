@@ -1,128 +1,121 @@
-
-
 <% layout('layouts/boilerplate') %>
 <section id="show">
-    <div id="first-column">
-  <div
-    id="carouselExampleControls"
-    class="carousel slide"
-    data-bs-ride="carousel"
-  >
-    <%if (tea.images.length ===0) {%>
-    <img
-      crossorigin="anonymous"
-      src="https://media.istockphoto.com/id/531755635/photo/chinese-pu-erh-tea-with-two-cups-and-pot.jpg?s=612x612&w=0&k=20&c=3kbfSX8Vm3DJjvx71NOvEM6j5mSWmw7HdYdRLckJwrg="
-      class="d-block w-100"
-      alt=""
-    /><%}%>
-    <div class="carousel-inner">
-      <% tea.images.forEach((img, i)=> { %>
-      <div class="carousel-item <%= i === 0 ? 'active' : ''%>">
-        <img
-          crossorigin="anonymous"
-          src="<%=img.square%>"
-          class="d-block w-100"
-          alt=""
-        />
+  <div id="first-column">
+    <div
+      id="carouselExampleControls"
+      class="carousel slide"
+      data-bs-ride="carousel"
+    >
+      <%if (tea.images.length ===0) {%>
+      <img
+        crossorigin="anonymous"
+        src="https://res.cloudinary.com/dlem22ukx/image/upload/w_500,ar_1:1,c_fill,g_auto/v1734459128/chinese-pu-erh-tea-with-two-cups-and-pot_xemcbr.jpg"
+        class="d-block w-100 mainImage"
+        alt=""
+      /><%}%>
+      <div class="carousel-inner">
+        <% tea.images.forEach((img, i)=> { %>
+        <div class="carousel-item <%= i === 0 ? 'active' : ''%>">
+          <img
+            crossorigin="anonymous"
+            src="<%=img.square%>"
+            class="d-block w-100 mainImage"
+            alt=""
+          />
+        </div>
+        <%})%>
       </div>
-      <%})%>
-    </div>
-    <% if (tea.images.length> 1) { %>
-    <button
-      class="carousel-control-prev"
-      type="button"
-      data-bs-target="#carouselExampleControls"
-      data-bs-slide="prev"
-    >
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button
-      class="carousel-control-next"
-      type="button"
-      data-bs-target="#carouselExampleControls"
-      data-bs-slide="next"
-    >
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-    <% } %>
-  </div>
-  <!--reviews-->
-  <div class="reviewbox">
-<% for (let review of tea.reviews) { %>
-    <div id="reviews">
-      <h5>Rating: <%=review.rating%></h5>
-      <h6>By: <%=review.author.username%></h6>
-      <p>Review: <%=review.body%></p>
-      <form
-        action="/tea/<%=tea._id%>/review/<%=review._id%>?_method=DELETE"
-        method="POST"
+      <% if (tea.images.length> 1) { %>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleControls"
+        data-bs-slide="prev"
       >
-        <% if (currentUser && review.author.equals(currentUser._id)) {%>
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleControls"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+      <% } %>
+    </div>
+    <!--reviews-->
+    <div class="reviewbox">
+      <% for (let review of tea.reviews) { %>
+      <div id="reviews">
+        <h5>Rating: <%=review.rating%></h5>
+        <h6>By: <%=review.author.username%></h6>
+        <p>Review: <%=review.body%></p>
+        <form
+          action="/tea/<%=tea._id%>/review/<%=review._id%>?_method=DELETE"
+          method="POST"
+        >
+          <% if (currentUser && review.author.equals(currentUser._id)) {%>
           <div>
-        <button class="btn btn-sm btn-danger">Delete</button>
+            <button class="btn btn-sm btn-danger">Delete</button>
+          </div>
+          <% } %>
+        </form>
       </div>
       <% } %>
-    </form>
     </div>
-        <% } %>
-      
-    
   </div>
-</div>
 
   <!--tea info-->
   <div>
-    <h1><%=tea.name%> <%=tea.year%></h5>
-
+    <h1><%=tea.name%> <%=tea.year%></h1>
 
     <p><%=tea.description%></p>
 
-    
+    <%if (tea.vendor) {%>
+    <li>
+      <b> Sold by: </b
+      ><a
+        class="link"
+        href="/tea/browse?search=<%=tea.vendor.name%>&option=vendor"
+        ><%=tea.vendor.name%></a
+      >
+      <%} else {%> unknown <%}%>
+    </li>
+    <%if (tea.producer) {%>
+    <li>
+      <b>Producer: </b
+      ><a
+        class="link"
+        href="/tea/browse?search=<%=tea.producer.name%>&option=producer"
+      >
+        <%=tea.producer.name%></a
+      >
+      <%} else {%> unknown
+    </li>
+    <%}%>
+    <li><b>Type: </b><%=tea.type%></li>
+    <% if (tea.shape) { %>
+    <li><b>Shape: </b><%=tea.shape%></li>
+    <% } %> <% if (tea.village && tea.region) { %>
+    <li>
+      <b>Material from:</b> <%=tea.village%> village, <%=tea.region%> region
+    </li>
+    <% } if (tea.region && !tea.village) {%>
+    <li><b> Material from: </b> <%=tea.region%> region</li>
+    <% } if (tea.village && !tea.region) {%>
+    <li><b> Material from: </b> <%=tea.village%> village</li>
+    <% } %> <% if (tea.ageing_location) { %>
+    <li><b> Aged in: </b> <%=tea.ageing_location%></li>
+    <% } %> <% if (tea.ageing_conditions) { %>
+    <li><b> Storage: </b> <%=tea.ageing_conditions%></li>
+    <li><b>Average Score: </b> <%=tea.average%></li>
+    <% } %>
 
-    <%if (tea.vendor) {%> 
-      <li>
-        <b> Sold by: </b><a class="link" href="/tea/browse?search=<%=tea.vendor.name%>&option=vendor"><%=tea.vendor.name%></a>  <%} else {%>
-        unknown <%}%>
-        </li>
-        <%if (tea.producer) {%> 
-        <li><b>Producer: </b><a class="link" href="/tea/browse?search=<%=tea.producer.name%>&option=producer"> <%=tea.producer.name%></a> <%} else
-        {%> unknown 
-        </li><%}%>
-      <li>
-        <b>Type: </b><%=tea.type%>
-      </li>
-      <% if (tea.shape) { %>
-      <li>
-        <b>Shape: </b><%=tea.shape%>
-      </li>
-      <% } %> <% if (tea.village && tea.region) { %>
-      <li>
-        <b>Material from:</b> <%=tea.village%> village, <%=tea.region%> region
-      </li>
-      <% } if (tea.region && !tea.village) {%>
-      <li>
-        <b> Material from: </b> <%=tea.region%> region
-      </li>
-      <% } if (tea.village && !tea.region) {%>
-      <li>
-        <b> Material from: </b> <%=tea.village%> village
-      </li>
-      <% } %> <% if (tea.ageing_location) { %>
-      <li>
-        <b> Aged in: </b> <%=tea.ageing_location%>
-      </li>
-      <% } %> <% if (tea.ageing_conditions) { %>
-      <li>
-        <b> Storage: </b> <%=tea.ageing_conditions%>
-      </li>
-      <li><b>Average Score: </b> <%=tea.average%></li>
-      <% } %>
-    
-
-<!--leave a review-->
-<% if (currentUser) { %>
+    <!--leave a review-->
+    <% if (currentUser) { %>
     <div class="mb-3">
       <form
         action="/tea/<%=tea._id%>/review"
@@ -155,34 +148,33 @@
           <div class="valid-feedback">Great!</div>
         </div>
         <div class="text-center">
-        <button form="review-form" class="btn btn-success mb-3">Submit</button>
-      </div>
+          <button form="review-form" class="btn btn-success mb-3">
+            Submit
+          </button>
+        </div>
       </form>
-    <%}%>
+      <%}%>
       <!--reviews for smaller screens-->
       <div class="reviewbox2">
-<% for (let review of tea.reviews) { %>
-    <div id="reviews2">
-      <h5>Rating: <%=review.rating%></h5>
-      <h6>By: <%=review.author.username%></h6>
-      <p>Review: <%=review.body%></p>
-    
-        <% if (currentUser && review.author.equals(currentUser._id)) {%>
+        <% for (let review of tea.reviews) { %>
+        <div id="reviews2">
+          <h5>Rating: <%=review.rating%></h5>
+          <h6>By: <%=review.author.username%></h6>
+          <p>Review: <%=review.body%></p>
+
+          <% if (currentUser && review.author.equals(currentUser._id)) {%>
           <form
-          action="/tea/<%=tea._id%>/review/<%=review._id%>?_method=DELETE"
-          method="POST"
-        >
-          <div>
-        <button class="btn btn-sm btn-danger">Delete</button>
+            action="/tea/<%=tea._id%>/review/<%=review._id%>?_method=DELETE"
+            method="POST"
+          >
+            <div>
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </div>
+          </form>
+          <% } %>
+        </div>
+        <% } %>
       </div>
-    </form>
-        <% } %>
-      
     </div>
-        <% } %>
-      
-    
   </div>
-</div>
-</div>
 </section>
