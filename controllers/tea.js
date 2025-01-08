@@ -1,9 +1,11 @@
 const Tea = require("../models/tea");
 const Vendor = require("../models/vendor");
+const Review = require("../models/review");
 const Producer = require("../models/producer");
 const currentYear = new Date().getFullYear();
 const { cloudinary } = require("../cloudinary");
-
+const review = require("../models/review");
+const mongoose = require("mongoose");
 //index
 module.exports.index = async (req, res) => {
   const pageTitle = "Pu-erh catalogue";
@@ -73,8 +75,26 @@ module.exports.show = async (req, res) => {
     req.flash("error", "Cannot find that tea!");
     return res.redirect("/tea");
   }
+
+  //caluculating user's average rating for a tea
+  function getAverage(array) {
+    let sum = 0;
+    for (let i = 0; i < array.length; i++) {
+      sum += array[i];
+    }
+    return sum / array.length;
+  }
+
+  let myRating = tea.reviews;
+
+  myRatings = Object.values(myRating)
+    .filter((review) => {
+      return review.author._id.toString() === req.user._id.toString();
+    })
+    .map((review) => review.rating);
+
   const pageTitle = tea.name;
-  res.render("teas/show2", { tea, pageTitle });
+  res.render("teas/show2", { tea, pageTitle, myRatings });
 };
 
 module.exports.editForm = async (req, res) => {

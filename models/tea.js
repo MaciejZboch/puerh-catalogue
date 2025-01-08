@@ -70,7 +70,7 @@ TeaSchema.set("toJSON", { virtuals: true });
 
 TeaSchema.virtual("average").get(function () {
   const reviews = this.reviews;
-  const mappedReviews = reviews.map( (x) => x.rating)
+  const mappedReviews = reviews.map((x) => x.rating);
   function getAverage(array) {
     let sum = 0;
     for (let i = 0; i < array.length; i++) {

@@ -111,9 +111,11 @@
     <li><b> Aged in: </b> <%=tea.ageing_location%></li>
     <% } %> <% if (tea.ageing_conditions) { %>
     <li><b> Storage: </b> <%=tea.ageing_conditions%></li>
+    <% } %> <% if (tea.average) { %>
     <li><b>Average Score: </b> <%=tea.average%></li>
+    <% } %> <% if (myRatings) { %>
+    <li><b>My Scores: </b> <%=myRatings%></li>
     <% } %>
-
     <!--leave a review-->
     <% if (currentUser) { %>
     <div class="mb-3">
