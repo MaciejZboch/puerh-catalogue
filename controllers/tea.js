@@ -230,7 +230,7 @@ module.exports.remove = async (req, res) => {
 
 //get collection and browse tables
 module.exports.collection = async (req, res) => {
-  const teas = await Tea.find({ owners: req.user._id })
+  const teas = await Tea.find({ owners: req.user._id }) //change this to take in a param for the id? that way you can use it both for "my collection" and other users!
     .populate("vendor")
     .populate("producer");
   const pageTitle = "My collection";
