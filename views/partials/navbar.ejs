@@ -20,7 +20,11 @@
       <div class="navbar-nav mx-1">
         <a class="nav-link active text-light" href="/tea">Browse teas</a>
         <a class="nav-link text-light" href="/tea/new">New tea</a>
-        <a class="nav-link text-light" href="/tea/collection">My collection</a>
+        <a
+          class="nav-link text-light"
+          href="/tea/collection/<%=currentUser._id%>"
+          >My collection</a
+        >
       </div>
       <% } %>
       <div class="navbar-nav mx-1">

@@ -1,7 +1,7 @@
 <% layout('layouts/boilerplate') %>
 
 <div class="text-center mb-3 mt-5">
-  <h1>My collection</h1>
+  <h1><%=collector.username%>'s collection</h1>
 </div>
 <table class="table align-items-center justify-content-center teaTable">
   <thead>
@@ -26,8 +26,16 @@
     <tr class="tearow">
       <td>Details</td>
       <td>
+        <%if (currentUser && tea.owners.includes(currentUser._id)) {%>
         <form action="/tea/<%=tea._id%>/add?_method=DELETE" method="post">
-          <button class="btn btn-outline-warning tableButton">Remove</button>
+          <button width="100" class="btn btn-outline-warning tableButton">
+            Remove
+          </button>
+        </form>
+        <%} else if (currentUser && !tea.owners.includes(currentUser._id)) {%>
+        <form action="/tea/<%=tea._id%>/add" method="post">
+          <button class="btn btn-outline-success tableButton">Collect</button
+          ><%}%>
         </form>
       </td>
       <td>

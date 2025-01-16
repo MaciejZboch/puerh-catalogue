@@ -16,7 +16,7 @@ router
   .get(catchAsync(tea.newVendor))
   .post(catchAsync(tea.postVendor));
 
-router.get("/collection", isLoggedIn, catchAsync(tea.collection));
+router.get("/collection/:id", isLoggedIn, catchAsync(tea.collection));
 
 router.get("/browse", catchAsync(tea.browse));
 

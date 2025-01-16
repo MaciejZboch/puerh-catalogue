@@ -2,10 +2,12 @@ const Tea = require("../models/tea");
 const Vendor = require("../models/vendor");
 const Review = require("../models/review");
 const Producer = require("../models/producer");
+const User = require("../models/user");
 const currentYear = new Date().getFullYear();
 const { cloudinary } = require("../cloudinary");
 const review = require("../models/review");
 const mongoose = require("mongoose");
+
 //index
 module.exports.index = async (req, res) => {
   const pageTitle = "Pu-erh catalogue";
@@ -230,11 +232,12 @@ module.exports.remove = async (req, res) => {
 
 //get collection and browse tables
 module.exports.collection = async (req, res) => {
-  const teas = await Tea.find({ owners: req.user._id }) //change this to take in a param for the id? that way you can use it both for "my collection" and other users!
+  const teas = await Tea.find({ owners: req.params.id })
     .populate("vendor")
     .populate("producer");
-  const pageTitle = "My collection";
-  res.render("teas/collection", { teas, pageTitle });
+  const collector = await User.findById(req.params.id);
+  const pageTitle = "User's collection";
+  res.render("teas/collection", { teas, pageTitle, collector });
 };
 
 module.exports.browse = async (req, res) => {

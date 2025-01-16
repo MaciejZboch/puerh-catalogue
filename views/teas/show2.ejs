@@ -51,7 +51,12 @@
       <% for (let review of tea.reviews) { %>
       <div id="reviews">
         <h5>Rating: <%=review.rating%></h5>
-        <h6>By: <%=review.author.username%></h6>
+        <h6>
+          By:
+          <a href="/tea/collection/<%=review.author._id%>"
+            ><%=review.author.username%></a
+          >
+        </h6>
         <p>Review: <%=review.body%></p>
         <form
           action="/tea/<%=tea._id%>/review/<%=review._id%>?_method=DELETE"
