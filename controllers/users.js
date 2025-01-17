@@ -32,7 +32,19 @@ module.exports.register = async (req, res) => {
         res.redirect("/tea");
       });
     } catch (e) {
-      req.flash("error", e.message);
+      if (e.code === 11000) {
+        req.flash(
+          "error",
+          "This email is taken! An account with this email already exists."
+        );
+      } else if (e.name === "UserExistsError") {
+        req.flash(
+          "error",
+          "This username is taken! An account with this username already exists."
+        );
+      } else {
+        req.flash("error", e.message);
+      }
       res.redirect("/register");
     }
   }
