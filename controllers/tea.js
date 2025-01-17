@@ -87,14 +87,17 @@ module.exports.show = async (req, res) => {
     return sum / array.length;
   }
 
-  let myRating = tea.reviews;
+  let myRatings = tea.reviews;
 
-  myRatings = Object.values(myRating)
-    .filter((review) => {
-      return review.author._id.toString() === req.user._id.toString();
-    })
-    .map((review) => review.rating);
-
+  if (req.user) {
+    myRatings = Object.values(myRatings)
+      .filter((review) => {
+        return review.author._id.toString() === req.user._id.toString();
+      })
+      .map((review) => review.rating);
+  } else {
+    myRatings = false;
+  }
   const pageTitle = tea.name;
   res.render("teas/show2", { tea, pageTitle, myRatings });
 };

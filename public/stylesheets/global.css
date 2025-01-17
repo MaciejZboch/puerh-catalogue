@@ -97,4 +97,5 @@ img {
   border-radius: 5px;
 }
 .mainImage {
+  max-width: 500px;
 }
