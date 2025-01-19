@@ -99,3 +99,7 @@ img {
 .mainImage {
   max-width: 500px;
 }
+
+.footer {
+  opacity: 0%;
+}
