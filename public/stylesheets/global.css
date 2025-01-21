@@ -100,6 +100,14 @@ img {
   max-width: 500px;
 }
 
-.footer {
-  opacity: 0%;
+/*new tea page*/
+.vendorNewTea {
+  display: block;
+  width: 405px;
+  height: 38px;
+  border-radius: 5px;
+}
+
+.requiredField {
+  background-color: var(--bs-secondary-bg);
 }
