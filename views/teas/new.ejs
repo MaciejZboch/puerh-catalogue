@@ -77,7 +77,7 @@
         <label for="vendor" class="form-label"
           ><b>Purchased from (required):</b></label
         >
-        <select name="vendor" id="vendor" class="vendorNewTea requiredField">
+        <select name="vendor[name]" id="vendor" class="vendorNewTea requiredField">
           <%for (let vendor of vendors) {%>
           <option value="<%=vendor.name%>"><%=vendor.name%></option><%}%>
         </select>

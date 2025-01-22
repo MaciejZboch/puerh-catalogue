@@ -50,10 +50,23 @@ module.exports.new = async (req, res) => {
     req.flash("error", "Description must be 3 to 200 characters long!");
     return res.redirect("/tea/new");
   }
+
   const newTea = new Tea(tea);
   newTea.author = req.user._id;
   newTea.vendor = await Vendor.findOne({ name: req.body.vendor.name });
   newTea.producer = await Producer.findOne({ name: req.body.producer.name });
+
+  //search db to check if there is something with the same exact name, vendor and year in the DB
+  const sameTea = await Tea.find({
+    name: newTea.name,
+    vendor: newTea.vendor,
+    year: newTea.year,
+  });
+  if (sameTea.length > 0) {
+    req.flash("error", "This tea has already been added!");
+    return res.redirect("/tea/new");
+  }
+
   newTea.images = req.files.map((f) => ({
     url: f.path,
     filename: f.filename,
