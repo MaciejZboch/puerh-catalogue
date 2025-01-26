@@ -65,6 +65,17 @@ const TeaSchema = new Schema({
   owners: [{ type: Schema.Types.ObjectId, ref: "User" }],
 });
 
+//setting up an index to search in all fields
+TeaSchema.index({
+  name: "text",
+  type: "text",
+  region: "text",
+  village: "text",
+  ageing_location: "text",
+  ageing_conditions: "text",
+  shape: "text",
+});
+
 TeaSchema.set("toObject", { virtuals: true });
 TeaSchema.set("toJSON", { virtuals: true });
 

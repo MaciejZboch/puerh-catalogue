@@ -255,7 +255,7 @@ module.exports.collection = async (req, res) => {
 };
 
 module.exports.browse = async (req, res) => {
-  let teas = {};
+  /*let teas = {};
   const search = req.query.search;
   const option = req.query.option;
   if (option === "vendor") {
@@ -276,7 +276,38 @@ module.exports.browse = async (req, res) => {
     })
       .populate("vendor")
       .populate("producer");
+  }*/
+  const search = req.query.search;
+  async function searchTea(searchTerm) {
+    try {
+      const results = await Tea.find({
+        $text: { $search: searchTerm },
+      })
+        .populate("vendor")
+        .populate("producer");
+      const filteredTeas = results.filter(
+        (tea) =>
+          (tea.vendor &&
+            tea.vendor.name &&
+            tea.vendor.name.toLowerCase().includes(searchTerm.toLowerCase())) ||
+          (tea.producer &&
+            tea.producer.name &&
+            tea.producer.name.toLowerCase().includes(searchTerm.toLowerCase()))
+      );
+      console.log(filteredTeas);
+      console.log(results);
+      if (filteredTeas.length === 0) {
+        return results;
+      } else {
+        return filteredTeas;
+      }
+    } catch (err) {
+      console.error(err);
+    }
   }
+
+  const teas = await searchTea(search);
+
   const pageTitle = search + "'s teas";
-  res.render("teas/browse", { teas, search, option, pageTitle });
+  res.render("teas/browse", { teas, search, pageTitle });
 };

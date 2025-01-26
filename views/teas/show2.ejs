@@ -87,9 +87,8 @@
         href="/tea/browse?search=<%=tea.vendor.name%>&option=vendor"
         ><%=tea.vendor.name%></a
       >
-      <%} else {%> unknown <%}%>
     </li>
-    <%if (tea.producer) {%>
+    <%}%> <%if (tea.producer) {%>
     <li>
       <b>Producer: </b
       ><a
@@ -98,7 +97,6 @@
       >
         <%=tea.producer.name%></a
       >
-      <%} else {%> unknown
     </li>
     <%}%>
     <li><b>Type: </b><%=tea.type%></li>
