@@ -74,6 +74,8 @@ TeaSchema.index({
   ageing_location: "text",
   ageing_conditions: "text",
   shape: "text",
+  vendor: "text",
+  producer: "text",
 });
 
 TeaSchema.set("toObject", { virtuals: true });

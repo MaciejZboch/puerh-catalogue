@@ -285,14 +285,11 @@ module.exports.browse = async (req, res) => {
       })
         .populate("vendor")
         .populate("producer");
+      const regex = new RegExp(searchTerm.trim(), "i"); // Trim and case-insensitive regex
       const filteredTeas = results.filter(
         (tea) =>
-          (tea.vendor &&
-            tea.vendor.name &&
-            tea.vendor.name.toLowerCase().includes(searchTerm.toLowerCase())) ||
-          (tea.producer &&
-            tea.producer.name &&
-            tea.producer.name.toLowerCase().includes(searchTerm.toLowerCase()))
+          (tea.vendor && tea.vendor.name && regex.test(tea.vendor.name)) ||
+          (tea.producer && tea.producer.name && regex.test(tea.producer.name))
       );
       console.log(filteredTeas);
       console.log(results);
