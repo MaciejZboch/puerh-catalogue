@@ -1,64 +1,65 @@
 <% layout('layouts/boilerplate') %>
+<div class="mb-5">
+  <div class="text-center mb-3 mt-5">
+    <h1><%=collector.username%>'s collection</h1>
+  </div>
+  <table class="table align-items-center justify-content-center teaTable">
+    <thead>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th>Name</th>
+        <th>Vendor</th>
+        <th>Producer</th>
+        <th>Year</th>
+        <th>Region</th>
+        <th>Village</th>
+        <th>Shape</th>
+        <th>Ageing location</th>
+        <th>Ageing conditions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (let tea of teas) { %>
 
-<div class="text-center mb-3 mt-5">
-  <h1><%=collector.username%>'s collection</h1>
+      <tr class="tearow">
+        <td>Details</td>
+        <td>
+          <%if (currentUser && tea.owners.includes(currentUser._id)) {%>
+          <form action="/tea/<%=tea._id%>/add?_method=DELETE" method="post">
+            <button width="100" class="btn btn-outline-warning tableButton">
+              Remove
+            </button>
+          </form>
+          <%} else if (currentUser && !tea.owners.includes(currentUser._id)) {%>
+          <form action="/tea/<%=tea._id%>/add" method="post">
+            <button class="btn btn-outline-success tableButton">Collect</button
+            ><%}%>
+          </form>
+        </td>
+        <td>
+          <% if (tea.images.length > 0) { %>
+          <img src="<%=tea.images[0].thumbnail%>" />
+          <%} else {%>
+          <img
+            width="40"
+            height="40"
+            src="https://img.freepik.com/premium-vector/chinese-traditional-tea-tasting-illustration-vector_391639-2027.jpg"
+          />
+          <%}%>
+        </td>
+        <td><a href="/tea/<%=tea._id%>" class="link"><%=tea.name%></a></td>
+        <td><% if (tea.vendor) {%> <%=tea.vendor.name%><%}%></td>
+        <td><%if (tea.producer) {%><%=tea.producer.name%><%}%></td>
+        <td><%=tea.year%></td>
+        <td><%=tea.region%></td>
+        <td><%=tea.village%></td>
+        <td><%=tea.shape%></td>
+        <td><%=tea.ageing_location%></td>
+        <td><%=tea.ageing_conditions%></td>
+      </tr>
+      <%}%>
+    </tbody>
+  </table>
 </div>
-<table class="table align-items-center justify-content-center teaTable">
-  <thead>
-    <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th>Name</th>
-      <th>Vendor</th>
-      <th>Producer</th>
-      <th>Year</th>
-      <th>Region</th>
-      <th>Village</th>
-      <th>Shape</th>
-      <th>Ageing location</th>
-      <th>Ageing conditions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% for (let tea of teas) { %>
-
-    <tr class="tearow">
-      <td>Details</td>
-      <td>
-        <%if (currentUser && tea.owners.includes(currentUser._id)) {%>
-        <form action="/tea/<%=tea._id%>/add?_method=DELETE" method="post">
-          <button width="100" class="btn btn-outline-warning tableButton">
-            Remove
-          </button>
-        </form>
-        <%} else if (currentUser && !tea.owners.includes(currentUser._id)) {%>
-        <form action="/tea/<%=tea._id%>/add" method="post">
-          <button class="btn btn-outline-success tableButton">Collect</button
-          ><%}%>
-        </form>
-      </td>
-      <td>
-        <% if (tea.images.length > 0) { %>
-        <img src="<%=tea.images[0].thumbnail%>" />
-        <%} else {%>
-        <img
-          width="40"
-          height="40"
-          src="https://img.freepik.com/premium-vector/chinese-traditional-tea-tasting-illustration-vector_391639-2027.jpg"
-        />
-        <%}%>
-      </td>
-      <td><a href="/tea/<%=tea._id%>" class="link"><%=tea.name%></a></td>
-      <td><% if (tea.vendor) {%> <%=tea.vendor.name%><%}%></td>
-      <td><%if (tea.producer) {%><%=tea.producer.name%><%}%></td>
-      <td><%=tea.year%></td>
-      <td><%=tea.region%></td>
-      <td><%=tea.village%></td>
-      <td><%=tea.shape%></td>
-      <td><%=tea.ageing_location%></td>
-      <td><%=tea.ageing_conditions%></td>
-    </tr>
-    <%}%>
-  </tbody>
-</table>

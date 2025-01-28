@@ -12,6 +12,13 @@
   background-color: #1d2529;
 }
 
+html {
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  align-content: center;
+}
+
 /*table styling*/
 table.dataTable td {
   max-width: 85px;
