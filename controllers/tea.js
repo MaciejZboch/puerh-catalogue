@@ -280,36 +280,64 @@ module.exports.browse = async (req, res) => {
   const search = req.query.search;
   async function searchTea(searchTerm) {
     try {
-      const results = await Tea.find({
-        $text: { $search: searchTerm },
-      })
-        .populate("vendor")
-        .populate("producer");
-      //const regex = new RegExp(searchTerm.trim(), "i"); // Trim and case-insensitive regex
-      /*const filteredTeas = results.filter(
-        (tea) =>
-          (tea.vendor && tea.vendor.name && regex.test(tea.vendor.name)) ||
-          (tea.producer && tea.producer.name && regex.test(tea.producer.name))
-      );*/
-
-      const filteredTeas = results.filter((tea) => {
-        return search === tea.vendor.name;
-      });
-      //the filter only fitlers the results after they are already searched!
-      console.log(filteredTeas);
-      //console.log(results);
-      if (filteredTeas.length === 0) {
-        return results;
-      } else {
-        return filteredTeas;
+      if (!searchTerm || searchTerm.trim() === "") {
+        console.error("Invalid search term");
+        return [];
       }
+
+      const regex = new RegExp(searchTerm, "i");
+
+      const results = await Tea.aggregate([
+        {
+          $lookup: {
+            from: "vendors", // Collection name for Vendor
+            localField: "vendor",
+            foreignField: "_id",
+            as: "vendor",
+          },
+        },
+        {
+          $lookup: {
+            from: "producers", // Collection name for Producer
+            localField: "producer",
+            foreignField: "_id",
+            as: "producer",
+          },
+        },
+        { $unwind: { path: "$vendor", preserveNullAndEmptyArrays: true } }, // Unwind vendor (keep null values)
+        { $unwind: { path: "$producer", preserveNullAndEmptyArrays: true } }, // Unwind producer (keep null values)
+        {
+          $match: {
+            $or: [
+              { name: regex },
+              { type: regex },
+              {
+                $expr: {
+                  $regexMatch: {
+                    input: { $toString: "$year" },
+                    regex: searchTerm,
+                    options: "i",
+                  },
+                },
+              }, // Convert year to string
+              { region: regex },
+              { ageing_location: regex },
+              { ageing_conditions: regex },
+              { "vendor.name": regex }, // Search inside the populated vendor field
+              { "producer.name": regex }, // Search inside the populated producer field
+            ],
+          },
+        },
+      ]);
+
+      return results;
     } catch (err) {
       console.error(err);
+      return [];
     }
   }
 
   const teas = await searchTea(search);
-  console.log(teas);
   const pageTitle = search + "'s teas";
   res.render("teas/browse", { teas, search, pageTitle });
 };
