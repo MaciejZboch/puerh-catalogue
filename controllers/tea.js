@@ -307,6 +307,17 @@ module.exports.browse = async (req, res) => {
         { $unwind: { path: "$vendor", preserveNullAndEmptyArrays: true } }, // Unwind vendor (keep null values)
         { $unwind: { path: "$producer", preserveNullAndEmptyArrays: true } }, // Unwind producer (keep null values)
         {
+          $unwind: {
+            path: "$images",
+            preserveNullAndEmptyArrays: true, // Keeps empty arrays as `null` instead of removing them
+          },
+        },
+        {
+          $addFields: {
+            images: { $ifNull: ["$images", []] }, // Ensures images is always an array
+          },
+        },
+        {
           $match: {
             $or: [
               { name: regex },
