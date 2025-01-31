@@ -118,3 +118,14 @@ img {
 .requiredField {
   background-color: var(--bs-secondary-bg);
 }
+
+/*footer*/
+.footer {
+  text-align: center;
+  padding: 1em 0;
+}
+.content {
+  flex: 1; /* Makes content area grow to fill available space */
+  display: flex;
+  flex-direction: column; /* Stacks content vertically for mobile */
+}

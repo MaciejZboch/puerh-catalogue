@@ -285,14 +285,19 @@ module.exports.browse = async (req, res) => {
       })
         .populate("vendor")
         .populate("producer");
-      const regex = new RegExp(searchTerm.trim(), "i"); // Trim and case-insensitive regex
-      const filteredTeas = results.filter(
+      //const regex = new RegExp(searchTerm.trim(), "i"); // Trim and case-insensitive regex
+      /*const filteredTeas = results.filter(
         (tea) =>
           (tea.vendor && tea.vendor.name && regex.test(tea.vendor.name)) ||
           (tea.producer && tea.producer.name && regex.test(tea.producer.name))
-      );
+      );*/
+
+      const filteredTeas = results.filter((tea) => {
+        return search === tea.vendor.name;
+      });
+      //the filter only fitlers the results after they are already searched!
       console.log(filteredTeas);
-      console.log(results);
+      //console.log(results);
       if (filteredTeas.length === 0) {
         return results;
       } else {
@@ -304,7 +309,7 @@ module.exports.browse = async (req, res) => {
   }
 
   const teas = await searchTea(search);
-
+  console.log(teas);
   const pageTitle = search + "'s teas";
   res.render("teas/browse", { teas, search, pageTitle });
 };

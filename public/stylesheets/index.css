@@ -13,7 +13,10 @@
 .justify-text {
   text-align: justify;
 }
-
-.footer {
-  opacity: 0%;
+.content {
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  max-width: 900px;
 }
