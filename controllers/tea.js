@@ -350,5 +350,6 @@ module.exports.browse = async (req, res) => {
 
   const teas = await searchTea(search);
   const pageTitle = search + "'s teas";
+
   res.render("teas/browse", { teas, search, pageTitle });
 };
