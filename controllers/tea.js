@@ -294,6 +294,7 @@ module.exports.browse = async (req, res) => {
             localField: "vendor",
             foreignField: "_id",
             as: "vendor",
+            pipeline: [{ $match: { status: "approved" } }], // Only get approved vendors
           },
         },
         {
@@ -302,6 +303,7 @@ module.exports.browse = async (req, res) => {
             localField: "producer",
             foreignField: "_id",
             as: "producer",
+            pipeline: [{ $match: { status: "approved" } }], // Only get approved producers
           },
         },
         { $unwind: { path: "$vendor", preserveNullAndEmptyArrays: true } }, // Unwind vendor (keep null values)

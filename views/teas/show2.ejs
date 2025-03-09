@@ -82,19 +82,14 @@
     <%if (tea.vendor) {%>
     <li>
       <b> Sold by: </b
-      ><a
-        class="link"
-        href="/tea/browse?search=<%=tea.vendor.name%>&option=vendor"
+      ><a class="link" href="/tea/browse?search=<%=tea.vendor.name%>"
         ><%=tea.vendor.name%></a
       >
     </li>
     <%}%> <%if (tea.producer) {%>
     <li>
       <b>Producer: </b
-      ><a
-        class="link"
-        href="/tea/browse?search=<%=tea.producer.name%>&option=producer"
-      >
+      ><a class="link" href="/tea/browse?search=<%=tea.producer.name%>">
         <%=tea.producer.name%></a
       >
     </li>
