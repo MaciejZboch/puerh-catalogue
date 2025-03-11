@@ -10,6 +10,7 @@ router.get(
   catchAsync(async (req, res) => {
     const vendors = await Vendor.find({ status: "pending" });
     const producers = await Producer.find({ status: "pending" });
+    console.log("Vendors fetched:", vendors);
     res.render("moderate/dashboard", { vendors, producers });
   })
 );
