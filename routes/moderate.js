@@ -1,18 +1,20 @@
+const express = require("express");
 const mongoose = require("mongoose");
 const Vendor = require("../models/vendor");
 const Producer = require("../models/producer");
 const catchAsync = require("../utilities/catchAsync");
+const router = express.Router();
 
-app.get(
-  "/moderate",
+router.get(
+  "/",
   catchAsync(async (req, res) => {
     const vendors = await Vendor.find({ status: "pending" });
     const producers = await Producer.find({ status: "pending" });
-    res.render("moderate/dashboard");
+    res.render("moderate/dashboard", { vendors, producers });
   })
 );
 
-app.put("/moderate/vendor/:id", async (req, res) => {
+router.put("/vendor/:id", async (req, res) => {
   try {
     const { status } = req.body; // Expecting "approved" or "rejected"
     if (!["approved", "rejected"].includes(status)) {
@@ -32,7 +34,7 @@ app.put("/moderate/vendor/:id", async (req, res) => {
   }
 });
 
-app.put("/moderate/producer/:id", async (req, res) => {
+router.put("/producer/:id", async (req, res) => {
   try {
     const { status } = req.body;
     if (!["approved", "rejected"].includes(status)) {
@@ -55,3 +57,5 @@ app.put("/moderate/producer/:id", async (req, res) => {
     res.status(500).json({ message: "Server error", error });
   }
 });
+
+module.exports = router;

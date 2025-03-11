@@ -1,4 +1,35 @@
 <% layout('layouts/boilerplate') %>
-<div>
-  <ul></ul>
-</div>
+<h1>Admin Panel</h1>
+<h2>Pending Vendors</h2>
+<ul>
+  <% vendors.forEach(vendor => { %>
+  <li id="vendor-<%= vendor._id %>">
+    <strong><%= vendor.name %></strong> - <%= vendor.location || "Unknown location" %>
+    <button onclick="moderateEntry('vendor', '<%= vendor._id %>', 'approved')">
+      Approve
+    </button>
+    <button onclick="moderateEntry('vendor', '<%= vendor._id %>', 'rejected')">
+      Reject
+    </button>
+  </li>
+  <% }); %>
+</ul>
+
+<h2>Pending Producers</h2>
+<ul>
+  <% producers.forEach(producer => { %>
+  <li id="producer-<%= producer._id %>">
+    <strong><%= producer.name %></strong> - <%= producer.country || "Unknown country" %>
+    <button
+      onclick="moderateEntry('producer', '<%= producer._id %>', 'approved')"
+    >
+      Approve
+    </button>
+    <button
+      onclick="moderateEntry('producer', '<%= producer._id %>', 'rejected')"
+    >
+      Reject
+    </button>
+  </li>
+  <% }); %>
+</ul>
