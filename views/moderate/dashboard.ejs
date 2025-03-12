@@ -4,13 +4,23 @@
 <ul>
   <% vendors.forEach(vendor => { %>
   <li id="vendor-<%= vendor._id %>">
-    <strong><%= vendor.name %></strong> - <%= vendor.name  %>
-    <button onclick="moderateEntry('vendor', '<%= vendor._id %>', 'approved')">
+    <strong><%= vendor.name %></strong>
+    <form action="/moderate/vendor/<%=vendor._id%>?_method=put&status=approved"
+    method="post"
+    novalidate
+    class="validated-form">
+    <button>
       Approve
     </button>
-    <button onclick="moderateEntry('vendor', '<%= vendor._id %>', 'rejected')">
+  </form>
+  <form action="/moderate/vendor/<%=vendor._id%>?_method=put&status=rejected"
+    method="post"
+    novalidate
+    class="validated-form">
+    <button>
       Reject
     </button>
+  </form>
   </li>
   <% }); %>
 </ul>
@@ -19,17 +29,23 @@
 <ul>
   <% producers.forEach(producer => { %>
   <li id="producer-<%= producer._id %>">
-    <strong><%= producer.name %></strong> - <%= producer.country || "Unknown country" %>
-    <button
-      onclick="moderateEntry('producer', '<%= producer._id %>', 'approved')"
-    >
-      Approve
-    </button>
-    <button
-      onclick="moderateEntry('producer', '<%= producer._id %>', 'rejected')"
-    >
-      Reject
-    </button>
+    <strong><%= producer.name %></strong>
+    <form action="/moderate/producer/<%=producer._id%>?_method=put&status=approved"
+      method="post"
+      novalidate
+      class="validated-form">
+      <button>
+        Approve
+      </button>
+    </form>
+    <form action="/moderate/producer/<%=producer._id%>?_method=put&status=rejected"
+      method="post"
+      novalidate
+      class="validated-form">
+      <button>
+        Reject
+      </button>
+    </form>
   </li>
   <% }); %>
 </ul>

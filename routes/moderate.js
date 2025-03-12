@@ -10,53 +10,42 @@ router.get(
   catchAsync(async (req, res) => {
     const vendors = await Vendor.find({ status: "pending" });
     const producers = await Producer.find({ status: "pending" });
-    console.log("Vendors fetched:", vendors);
     res.render("moderate/dashboard", { vendors, producers });
   })
 );
 
-router.put("/vendor/:id", async (req, res) => {
-  try {
-    const { status } = req.body; // Expecting "approved" or "rejected"
-    if (!["approved", "rejected"].includes(status)) {
-      return res.status(400).json({ message: "Invalid status" });
+router.put(
+  "/vendor/:id",
+  catchAsync(async (req, res) => {
+    if (req.query.status == "approved") {
+      await Vendor.findByIdAndUpdate(req.params.id, {
+        status: "approved",
+      });
+    } else if (req.query.status == "rejected") {
+      await Vendor.findByIdAndUpdate(req.params.id, {
+        status: "rejected",
+      });
     }
+    req.flash("Success", "Successfully changed status!");
+    res.redirect("/moderate");
+  })
+);
 
-    const vendor = await Vendor.findByIdAndUpdate(
-      req.params.id,
-      { status },
-      { new: true }
-    );
-    if (!vendor) return res.status(404).json({ message: "Vendor not found" });
-
-    res.json({ message: `Vendor ${vendor.name} is now ${status}.`, vendor });
-  } catch (error) {
-    res.status(500).json({ message: "Server error", error });
-  }
-});
-
-router.put("/producer/:id", async (req, res) => {
-  try {
-    const { status } = req.body;
-    if (!["approved", "rejected"].includes(status)) {
-      return res.status(400).json({ message: "Invalid status" });
+router.put(
+  "/producer/:id",
+  catchAsync(async (req, res) => {
+    if (req.query.status == "approved") {
+      await Producer.findByIdAndUpdate(req.params.id, {
+        status: "approved",
+      });
+    } else if (req.query.status == "rejected") {
+      await Producer.findByIdAndUpdate(req.params.id, {
+        status: "rejected",
+      });
     }
-
-    const producer = await Producer.findByIdAndUpdate(
-      req.params.id,
-      { status },
-      { new: true }
-    );
-    if (!producer)
-      return res.status(404).json({ message: "Producer not found" });
-
-    res.json({
-      message: `Producer ${producer.name} is now ${status}.`,
-      producer,
-    });
-  } catch (error) {
-    res.status(500).json({ message: "Server error", error });
-  }
-});
+    req.flash("Success", "Successfully changed status!");
+    res.redirect("/moderate");
+  })
+);
 
 module.exports = router;
