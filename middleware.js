@@ -47,7 +47,17 @@ module.exports.isReviewAuthor = async (req, res, next) => {
   const review = await Review.findById(req.params.reviewId);
   if (!review.author.equals(req.user._id)) {
     req.flash("error", "No permission to do that!");
-    return res.redirect("/campgrounds/" + req.params.id);
+    return res.redirect("/tea/" + req.params.id);
+  }
+  next();
+};
+
+//vendor / producer middleware for mods
+
+module.exports.isMod = async (req, res, next) => {
+  if (!req.user || req.user.moderator !== true) {
+    req.flash("error", "No permission to do that!");
+    return res.redirect("/tea");
   }
   next();
 };

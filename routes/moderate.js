@@ -4,9 +4,11 @@ const Vendor = require("../models/vendor");
 const Producer = require("../models/producer");
 const catchAsync = require("../utilities/catchAsync");
 const router = express.Router();
+const { isMod } = require("../middleware");
 
 router.get(
   "/",
+  isMod,
   catchAsync(async (req, res) => {
     const vendors = await Vendor.find({ status: "pending" });
     const producers = await Producer.find({ status: "pending" });
@@ -16,6 +18,7 @@ router.get(
 
 router.put(
   "/vendor/:id",
+  isMod,
   catchAsync(async (req, res) => {
     if (req.query.status == "approved") {
       await Vendor.findByIdAndUpdate(req.params.id, {
@@ -33,6 +36,7 @@ router.put(
 
 router.put(
   "/producer/:id",
+  isMod,
   catchAsync(async (req, res) => {
     if (req.query.status == "approved") {
       await Producer.findByIdAndUpdate(req.params.id, {
