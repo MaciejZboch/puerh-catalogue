@@ -20,11 +20,16 @@
       <div class="navbar-nav mx-1">
         <a class="nav-link active text-light" href="/tea">Browse teas</a>
         <a class="nav-link text-light" href="/tea/new">New tea</a>
+        <a class="nav-link text-light" href="/tea/newVendor">New vendor</a>
+        <a class="nav-link text-light" href="/tea/newProducer">New producer</a>
         <a
           class="nav-link text-light"
           href="/tea/collection/<%=currentUser._id%>"
           >My collection</a
         >
+        <% if (currentUser.moderator == true) { %>
+        <a class="nav-link text-light" href="/moderate">Moderate</a>
+        <% } %>
       </div>
       <% } %>
       <div class="navbar-nav mx-1">
