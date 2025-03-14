@@ -6,6 +6,7 @@ module.exports.registerForm = (req, res) => {
 };
 
 module.exports.register = async (req, res) => {
+  //validations
   function hasWhiteSpace(s) {
     return s.indexOf(" ") >= 0;
   }
@@ -22,8 +23,10 @@ module.exports.register = async (req, res) => {
     );
     res.redirect("/register");
   } else {
+    //actual user creation
     try {
       const user = new User({ email, username });
+      user.moderator = false;
       const registeredUser = await User.register(user, password);
       req.login(registeredUser, (err) => {
         if (err) return next(err);
