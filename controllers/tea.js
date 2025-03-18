@@ -192,7 +192,7 @@ module.exports.postVendor = async (req, res) => {
   const v = new Vendor({ name: req.body.vendor });
 
   await v.save();
-  req.flash("success", "Vendor added!");
+  req.flash("success", "Vendor submitted for approval!");
   res.redirect("/tea/newVendor");
 };
 
@@ -209,7 +209,7 @@ module.exports.postProducer = async (req, res) => {
     filename: f.filename,
   }));
   await p.save();
-  req.flash("success", "Producer added!");
+  req.flash("success", "Producer submitted for approval!");
   res.redirect("/tea/newProducer");
 };
 

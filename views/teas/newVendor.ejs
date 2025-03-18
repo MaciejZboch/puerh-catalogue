@@ -1,7 +1,15 @@
 <% layout('layouts/boilerplate') %>
-<form action="/tea/newVendor" method="post" novalidate class="validated-form">
-  <label for="vendor">Name of vendor:</label>
-  <input type="text" name="vendor" id="vendor" />
+<div class="text-center">
+  <h1>Add a vendor</h1>
+  <form
+    action="/tea/newVendor"
+    method="post"
+    novalidate
+    class="mt-5 validated-form"
+  >
+    <label for="vendor">Name of vendor:</label>
+    <input type="text" name="vendor" id="vendor" />
 
-  <button>Submit</button>
-</form>
+    <button class="btn btn-success">Submit</button>
+  </form>
+</div>
