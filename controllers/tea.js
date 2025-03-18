@@ -214,7 +214,7 @@ module.exports.postProducer = async (req, res) => {
 };
 
 //add or remove from collection
-module.exports.add = async (req, res) => {
+module.exports.addToCollection = async (req, res) => {
   const t = await Tea.findById(req.params.id);
   if (!t.owners.includes(req.user._id)) {
     t.owners.push(req.user._id);
@@ -227,7 +227,7 @@ module.exports.add = async (req, res) => {
   }
 };
 
-module.exports.remove = async (req, res) => {
+module.exports.removeFromCollection = async (req, res) => {
   const t = await Tea.findById(req.params.id);
   if (t.owners.includes(req.user._id)) {
     await t.updateOne({

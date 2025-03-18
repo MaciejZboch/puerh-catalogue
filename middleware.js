@@ -31,6 +31,28 @@ module.exports.validateTea = (req, res, next) => {
     next();
   }
 };
+module.exports.hasNoSpecialSymbols = (req, res, next) => {
+  const allowedCharacters =
+    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@.";
+
+  for (const key in req.body) {
+    const s = req.body[key]; // Get the value of each field
+
+    if (typeof s !== "string") continue; // Skip non-string values
+
+    for (let char of s) {
+      if (!allowedCharacters.includes(char)) {
+        req.flash(
+          "error",
+          "Special symbols not allowed, please use only letters and numbers!"
+        );
+        return res.redirect(req.get("Referer") || "/");
+      }
+    }
+  }
+
+  next();
+};
 
 //review middleware
 module.exports.validateReview = (req, res, next) => {
