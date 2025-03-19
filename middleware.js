@@ -44,7 +44,7 @@ module.exports.hasNoSpecialSymbols = (req, res, next) => {
       if (!allowedCharacters.includes(char)) {
         req.flash(
           "error",
-          "Special symbols not allowed, please use only letters and numbers!"
+          "Special characters not allowed, please use only letters and numbers!"
         );
         return res.redirect(req.get("Referer") || "/");
       }
