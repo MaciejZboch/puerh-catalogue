@@ -121,6 +121,12 @@ app.use(
   express.static(path.join(__dirname, "/public"))
 );
 //error handler
+app.use((req, res, next) => {
+  const err = new Error("Page Not Found");
+  err.statusCode = 404;
+  next(err);
+});
+
 app.use((err, req, res, next) => {
   const { statusCode = 500 } = err;
   if (!err.message) err.message = "Oh No, something went wrong!";
