@@ -114,6 +114,7 @@
     <% } %> <% if (myRatings) { %>
     <li><b>My Scores: </b> <%=myRatings%></li>
     <% } %>
+
     <!--leave a review-->
     <% if (currentUser) { %>
     <div class="mb-3">
@@ -147,12 +148,20 @@
           ></textarea>
           <div class="valid-feedback">Great!</div>
         </div>
-        <div class="text-center">
-          <button form="review-form" class="btn btn-success mb-3">
+        <div class="text-center d-flex gap-2">
+          <button form="review-form" class="btn btn-success mb-3 flex-fill">
             Submit
           </button>
-        </div>
+        
       </form>
+       
+        <form action="/edit/<%=tea._id%>" method="get" class="d-inline flex-fill">
+          <button class="btn btn-warning mb-3">Edit tea</button>
+        </form>
+        <form action="/tea/<%=tea._id%>?_method=DELETE" method="post" class="d-inline flex-fill">
+          <button class="btn btn-danger mb-3">Delete tea</button>
+        </form>
+      </div>
       <%}%>
       <!--reviews for smaller screens-->
       <div class="reviewbox2">
