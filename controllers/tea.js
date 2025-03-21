@@ -322,6 +322,5 @@ module.exports.browse = async (req, res) => {
   //searching for vendors / producers to populate datalist
   const vendors = await Vendor.find();
   const producers = await Producer.find();
-
   res.render("teas/browse", { teas, search, pageTitle, vendors, producers });
 };
