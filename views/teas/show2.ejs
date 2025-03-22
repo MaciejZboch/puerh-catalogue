@@ -57,12 +57,12 @@
             ><%=review.author.username%></a
           >
         </h6>
-        <p>Review: <%=review.body%></p>
+        <p><%=review.body%></p>
         <form
           action="/tea/<%=tea._id%>/review/<%=review._id%>?_method=DELETE"
           method="POST"
         >
-          <% if (currentUser && review.author.equals(currentUser._id) || currentUser.moderator == true) {%>
+          <% if (currentUser && review.author.equals(currentUser._id) || currentUser && currentUser.moderator == true) {%>
           <div>
             <button class="btn btn-sm btn-danger">Delete</button>
           </div>
@@ -164,16 +164,16 @@
       </div>
       <%}%>
       <!--reviews for smaller screens-->
-      <div class="reviewbox2">
+      <div class="reviewbox2 mt-5">
         <% for (let review of tea.reviews) { %>
         <div id="reviews2">
           <h5>Rating: <%=review.rating%></h5>
           <h6>By: <a class="link" href="/tea/collection/<%=review.author._id%>"
             ><%=review.author.username%></a
           > </h6>
-          <p>Review: <%=review.body%></p>
+          <p><%=review.body%></p>
 
-          <% if (currentUser && review.author.equals(currentUser._id) || currentUser.moderator == true) {%>
+          <% if (currentUser && review.author.equals(currentUser._id) || currentUser && currentUser.moderator == true) {%>
           <form
             action="/tea/<%=tea._id%>/review/<%=review._id%>?_method=DELETE"
             method="POST"
