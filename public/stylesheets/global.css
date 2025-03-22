@@ -108,7 +108,8 @@ img {
 }
 
 /*new tea page*/
-.vendorNewTea {
+.vendorNewTea,
+.producerNewTea {
   display: block;
   width: 405px;
   height: 38px;
@@ -119,6 +120,12 @@ img {
   background-color: var(--bs-secondary-bg);
 }
 
+.newTeaLink {
+  color: white;
+}
+.newTeaLink:hover {
+  font-weight: bold;
+}
 /*footer*/
 .footer {
   text-align: center;

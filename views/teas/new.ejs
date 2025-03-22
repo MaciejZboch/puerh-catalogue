@@ -75,9 +75,9 @@
 
       <div class="mb-3 col-md-4">
         <label for="vendor" class="form-label"
-          ><b>Purchased from (required):</b></label
+          ><a class="link newTeaLink" href="/tea/newVendor">Purchased from (click here to add new vendor):</a></label
         >
-        <select name="vendor[name]" id="vendor" class="vendorNewTea requiredField">
+        <select name="vendor[name]" id="vendor" class=" vendorNewTea requiredField">
           <%for (let vendor of vendors) {%>
           <option value="<%=vendor.name%>"><%=vendor.name%></option><%}%>
         </select>
@@ -87,18 +87,11 @@
       </div>
 
       <div class="mb-3 col-md-4">
-        <label for="producer" class="form-label">Producer / factory:</label>
-        <input
-          class="form-control"
-          list="datalistOptions2"
-          id="producer"
-          placeholder="Type to search..."
-          name="producer[name]"
-        />
-        <datalist id="datalistOptions2">
+        <label for="producer" class="form-label"><a class="link newTeaLink" href="/tea/newProducer">Purchased from (click here to add new vendor):</a></label>
+        <select name="producer[name]" id="producer" class="producerNewTea requiredField">
           <%for (let producer of producers) {%>
-          <option value="<%=producer.name%>"><%}%></option>
-        </datalist>
+          <option value="<%=producer.name%>"><%=producer.name%></option><%}%>
+          </select>
 
         <div class="valid-feedback">Well done!</div>
       </div>
