@@ -67,7 +67,7 @@ module.exports.validateReview = (req, res, next) => {
 
 module.exports.isReviewAuthor = async (req, res, next) => {
   const review = await Review.findById(req.params.reviewId);
-  if (!review.author.equals(req.user._id)) {
+  if (!review.author.equals(req.user._id) && req.user.moderator !== true) {
     req.flash("error", "No permission to do that!");
     return res.redirect("/tea/" + req.params.id);
   }
