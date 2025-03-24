@@ -71,10 +71,10 @@ const sessionConfig = {
   secret: "lolbadsecret",
   store,
   resave: false,
-  saveUintintialilzed: true,
+  saveUintintialilzed: false,
   cookie: {
     httpOnly: true,
-    //secure: true,
+    secure: false,
     expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
     maxAge: 1000 * 60 * 60 * 24 * 7,
   },
@@ -104,6 +104,24 @@ app.use((req, res, next) => {
   res.locals.success = req.flash("success");
   res.locals.error = req.flash("error");
   res.locals.filters = req.query;
+  next();
+});
+
+//stores URL for redirect after login, ignoring static assets
+app.use((req, res, next) => {
+  if (
+    req.method === "GET" &&
+    req.path !== "/login" &&
+    req.path !== "/logout" &&
+    !req.path.startsWith("/tea/stylesheets") && // Ignore CSS
+    !req.path.startsWith("/images") && // Ignore images
+    !req.path.startsWith("/scripts") // Ignore scripts
+  ) {
+    req.session.returnTo = req.originalUrl;
+    req.session.save((err) => {
+      if (err) console.log("Session save error:", err);
+    });
+  }
   next();
 });
 

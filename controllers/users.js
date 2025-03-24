@@ -1,5 +1,5 @@
 const User = require("../models/user");
-
+const passport = require("passport");
 module.exports.registerForm = (req, res) => {
   const pageTitle = "Register";
   res.render("users/register", { pageTitle });
@@ -58,11 +58,23 @@ module.exports.loginForm = (req, res) => {
   res.render("users/login", { pageTitle });
 };
 
-module.exports.login = async (req, res) => {
-  req.flash("success", "Welcome back!");
+module.exports.login = async (req, res, next) => {
   const redirectUrl = req.session.returnTo || "/tea";
-  delete req.session.returnTo;
-  res.redirect(redirectUrl);
+
+  passport.authenticate("local", (err, user, info) => {
+    if (err) return next(err);
+    if (!user) {
+      req.flash("error", "Invalid credentials");
+      return res.redirect("/login");
+    }
+
+    req.logIn(user, (err) => {
+      if (err) return next(err);
+      req.flash("success", "Welcome back!");
+      delete req.session.returnTo;
+      res.redirect(redirectUrl);
+    });
+  })(req, res, next); // Execute passport.authenticate
 };
 
 module.exports.logout = (req, res, next) => {
