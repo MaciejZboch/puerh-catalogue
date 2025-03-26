@@ -1,12 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const passportLocalMongoose = require("passport-local-mongoose");
-
-/*const UserAccess = {
-  MOD: "mod",
-  USER: "user",
-  ADMIN: "admin",
-};*/
+const ImageSchema = require("./image");
 
 const UserSchema = new Schema({
   email: {
@@ -17,6 +12,7 @@ const UserSchema = new Schema({
   moderator: {
     type: Boolean,
   },
+  image: ImageSchema,
 });
 UserSchema.plugin(passportLocalMongoose);
 

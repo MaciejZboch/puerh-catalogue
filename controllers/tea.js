@@ -221,28 +221,6 @@ module.exports.collection = async (req, res) => {
 };
 
 module.exports.browse = async (req, res) => {
-  /*let teas = {};
-  const search = req.query.search;
-  const option = req.query.option;
-  if (option === "vendor") {
-    const searchedVendor = await Vendor.findOne({ name: search });
-
-    teas = await Tea.find({
-      vendor: searchedVendor._id,
-    })
-      .populate("vendor")
-      .populate("producer");
-  } else if (option === "producer") {
-    const searchedProducer = await Producer.findOne({
-      name: search,
-    });
-
-    teas = await Tea.find({
-      producer: searchedProducer._id,
-    })
-      .populate("vendor")
-      .populate("producer");
-  }*/
   const search = req.query.search;
   async function searchTea(searchTerm) {
     try {

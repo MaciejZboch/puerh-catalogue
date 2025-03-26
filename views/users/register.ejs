@@ -18,6 +18,7 @@
           method="post"
           class="validated-form"
           novalidate
+          enctype="multipart/form-data"
         >
           <div class="mb-3">
             <label class="form-label" for="email">Email:</label>
@@ -35,6 +36,7 @@
             <div class="invalid-feedback">Must be a valid email!</div>
             <div class="valid-feedback">Well done!</div>
           </div>
+
           <div class="mb-3">
             <label class="form-label" for="username">Username:</label>
             <input
@@ -54,6 +56,7 @@
             </div>
             <div class="valid-feedback">Well done!</div>
           </div>
+
           <div class="mb-3">
             <label class="form-label" for="password">Password:</label>
             <input
@@ -73,6 +76,20 @@
             </div>
             <div class="valid-feedback">Well done!</div>
           </div>
+
+          <!--image upload-->
+          <div class="mb-3">
+            <label for="formFile" class="form-label">Upload avatar:</label>
+            <input
+              class="form-control"
+              type="file"
+              id="formFile"
+              name="image"
+              accept="image/png, image/jpeg, image/jpg"
+            />
+            <div class="valid-feedback">Well done!</div>
+          </div>
+
           <div class="my-4 text-end">
             <span>Already have an account?</span>
             <a href="/login">Log in!</a>
