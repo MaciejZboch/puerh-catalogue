@@ -1,12 +1,9 @@
 const Tea = require("../models/tea");
 const Vendor = require("../models/vendor");
-const Review = require("../models/review");
 const Producer = require("../models/producer");
 const User = require("../models/user");
 const currentYear = new Date().getFullYear();
 const { cloudinary } = require("../cloudinary");
-const review = require("../models/review");
-const mongoose = require("mongoose");
 const checkTeaLength = require("../utilities/checkTeaLength");
 
 //index

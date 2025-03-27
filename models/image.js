@@ -1,8 +1,5 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const Review = require("./review");
-const Vendor = require("./vendor");
-const Producer = require("./producer");
 
 const ImageSchema = new Schema({
   url: String,
