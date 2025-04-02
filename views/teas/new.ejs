@@ -88,7 +88,7 @@
       </div>
 
       <div class="mb-3 col-md-4">
-        <label for="producer" class="form-label"><a class="link newTeaLink" href="/tea/newProducer">Purchased from (click here to add new vendor):</a></label>
+        <label for="producer" class="form-label"><a class="link newTeaLink" href="/tea/newProducer">Produced by (click here to add new producer):</a></label>
         <select name="producer[name]" id="producer" class="producerNewTea requiredField">
           <%for (let producer of producers) {%>
           <option value="<%=producer.name%>"><%=producer.name%></option><%}%>

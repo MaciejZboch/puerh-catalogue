@@ -28,6 +28,7 @@ module.exports.register = async (req, res) => {
       const user = new User({ email, username });
       user.moderator = false;
       user.image = req.file;
+      user.image = { url: req.file.path, filename: req.file.filename };
       const registeredUser = await User.register(user, password);
       req.login(registeredUser, (err) => {
         if (err) return next(err);
