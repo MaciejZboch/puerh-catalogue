@@ -52,7 +52,12 @@
       <div id="reviews">
         <h5>Rating: <%=review.rating%></h5>
         <h6>
-          By:
+          <% if (review.author.image) { %><img src="<%=review.author.image.thumbnail%>" alt=""><% } else { %> <img
+            width="40"
+            height="40"
+            src="https://img.freepik.com/premium-vector/chinese-traditional-tea-tasting-illustration-vector_391639-2027.jpg"
+          /> <% } %>
+           By:
           <a class="link" href="/tea/collection/<%=review.author._id%>"
             ><%=review.author.username%></a
           >

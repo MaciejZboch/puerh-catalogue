@@ -1,10 +1,11 @@
 <% layout('layouts/boilerplate') %>
 <div class="mb-5">
   <div class="text-center mb-3 mt-5">
-    <h1><%=collector.username%>'s collection</h1>
-    <%if (collector.image) { %>
-    <img src="<%=collector.image.thumbnail%>" alt="" />
-    <% } %>
+    <h1>
+      <%if (collector.image) { %>
+      <img src="<%=collector.image.thumbnail%>" alt="" />
+      <% } %> <%=collector.username%>'s collection
+    </h1>
   </div>
 
   <table class="table align-items-center justify-content-center teaTable">
