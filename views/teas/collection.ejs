@@ -6,6 +6,13 @@
       <img src="<%=collector.image.thumbnail%>" alt="" />
       <% } %> <%=collector.username%>'s collection
     </h1>
+    <form
+      action="/users/<%=collector._id%>?_method=PUT"
+      method="post"
+      class="d-inline flex-fill"
+    >
+      <button class="btn btn-success">Follow</button>
+    </form>
   </div>
 
   <table class="table align-items-center justify-content-center teaTable">

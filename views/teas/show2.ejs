@@ -68,7 +68,7 @@
           method="POST"
         >
           <% if (currentUser && review.author.equals(currentUser._id) || currentUser && currentUser.moderator == true) {%>
-          <div>
+          <div class="d-flex justify-content-end">
             <button class="btn btn-sm btn-danger">Delete</button>
           </div>
           <% } %>
@@ -173,7 +173,12 @@
         <% for (let review of tea.reviews) { %>
         <div id="reviews2">
           <h5>Rating: <%=review.rating%></h5>
-          <h6>By: <a class="link" href="/tea/collection/<%=review.author._id%>"
+          <% if (review.author.image) { %><img src="<%=review.author.image.thumbnail%>" alt=""><% } else { %> <img
+            width="40"
+            height="40"
+            src="https://img.freepik.com/premium-vector/chinese-traditional-tea-tasting-illustration-vector_391639-2027.jpg"
+          /> <% } %>
+          <h6> By: <a class="link" href="/tea/collection/<%=review.author._id%>"
             ><%=review.author.username%></a
           > </h6>
           <p><%=review.body%></p>
@@ -183,7 +188,7 @@
             action="/tea/<%=tea._id%>/review/<%=review._id%>?_method=DELETE"
             method="POST"
           >
-            <div>
+            <div class="d-flex justify-content-end">
               <button class="btn btn-sm btn-danger">Delete</button>
             </div>
           </form>

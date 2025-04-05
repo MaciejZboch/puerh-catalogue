@@ -13,6 +13,12 @@ const UserSchema = new Schema({
     type: Boolean,
   },
   image: ImageSchema,
+  following: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+    },
+  ],
 });
 UserSchema.plugin(passportLocalMongoose);
 

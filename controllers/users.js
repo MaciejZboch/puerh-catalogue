@@ -88,3 +88,16 @@ module.exports.logout = (req, res, next) => {
     res.redirect("/tea");
   });
 };
+
+module.exports.follow = async (req, res, next) => {
+  const currentUserId = req.user._id;
+  const currentUser = await User.findById(currentUserId);
+  const userIdToFollow = req.params.id;
+  // Avoid duplicates
+  if (!currentUser.following.includes(userIdToFollow)) {
+    currentUser.following.push(userIdToFollow);
+    await currentUser.save();
+  }
+  req.flash("success", "Following user!");
+  res.redirect("/tea");
+};
