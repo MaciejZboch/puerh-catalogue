@@ -97,7 +97,24 @@ module.exports.follow = async (req, res, next) => {
   if (!currentUser.following.includes(userIdToFollow)) {
     currentUser.following.push(userIdToFollow);
     await currentUser.save();
+    req.flash("success", "Following user!");
+  } else {
+    req.flash("error", "You're already following this user!");
   }
-  req.flash("success", "Following user!");
-  res.redirect("/tea");
+  res.redirect("/tea/collection/" + userIdToFollow);
+};
+
+module.exports.unfollow = async (req, res, next) => {
+  const currentUserId = req.user._id;
+  const currentUser = await User.findById(currentUserId);
+  const userIdToUnfollow = req.params.id;
+  // Avoid duplicates
+  if (currentUser.following.includes(userIdToUnfollow)) {
+    currentUser.following.pull(userIdToUnfollow);
+    await currentUser.save();
+    req.flash("success", "Unfollowing user!");
+  } else {
+    req.flash("error", "You're already following this user!");
+  }
+  res.redirect("/tea/collection/" + userIdToUnfollow);
 };

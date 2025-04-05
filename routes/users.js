@@ -19,5 +19,6 @@ router
 router.route("/login").get(users.loginForm).post(users.login);
 router.get("/logout", isLoggedIn, users.logout);
 router.put("/users/:id", isLoggedIn, users.follow); //follow route
+router.delete("/users/:id", isLoggedIn, users.unfollow);
 
 module.exports = router;
