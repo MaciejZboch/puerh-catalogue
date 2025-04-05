@@ -198,11 +198,9 @@ module.exports.removeFromCollection = async (req, res) => {
     });
     await t.save();
     req.flash("success", "Tea removed from collection!");
-    //res.redirect(`/tea/${t._id}`);
     res.redirect("back");
   } else {
     req.flash("failure", "This tea is not in your collection!");
-    //res.redirect(`/tea/${t._id}`);
     res.redirect("back");
   }
 };

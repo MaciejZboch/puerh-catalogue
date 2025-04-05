@@ -14,7 +14,7 @@ router
   .get(catchAsync(tea.newVendor))
   .post(hasNoSpecialSymbols, catchAsync(tea.postVendor));
 
-router.get("/collection/:id", isLoggedIn, catchAsync(tea.collection));
+router.get("/collection/:id", catchAsync(tea.collection));
 
 router.get("/browse", catchAsync(tea.browse));
 

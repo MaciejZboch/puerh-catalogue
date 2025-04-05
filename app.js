@@ -44,7 +44,7 @@ mongoose
 
 const db = mongoose.connection;
 
-//misc setup stuff
+//EJS and Express setup
 app.engine("ejs", ejsMate);
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
@@ -52,6 +52,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, "/public")));
 
+//Mongo setup
 app.use(mongoSanitize());
 
 const store = MongoStore.create({
@@ -90,6 +91,7 @@ app.use(
   })
 );
 
+//Passport setup
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
@@ -137,7 +139,8 @@ app.use(
   moderateRoutes,
   express.static(path.join(__dirname, "/public"))
 );
-//error handler
+
+//error handling
 app.use((req, res, next) => {
   const err = new Error("Page Not Found");
   err.statusCode = 404;

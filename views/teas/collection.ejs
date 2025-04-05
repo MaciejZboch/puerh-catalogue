@@ -6,7 +6,9 @@
       <img src="<%=collector.image.thumbnail%>" alt="" />
       <% } %> <%=collector.username%>'s collection
     </h1>
-    <%if (currentUser.following &&
+
+    <!--display Follow or Unfollow depending on if collector is already being followed-->
+    <%if (currentUser && currentUser.following &&
     !currentUser.following.includes(collector._id)) { %>
     <form
       action="/users/<%=collector._id%>?_method=PUT"
@@ -15,7 +17,7 @@
     >
       <button class="btn btn-success">Follow</button>
     </form>
-    <% } else if (currentUser.following &&
+    <% } else if (currentUser && currentUser.following &&
     currentUser.following.includes(collector._id)) { %>
     <form
       action="/users/<%=collector._id%>?_method=DELETE"
