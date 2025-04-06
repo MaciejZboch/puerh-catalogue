@@ -2,6 +2,8 @@ const Tea = require("../models/tea");
 const Vendor = require("../models/vendor");
 const Producer = require("../models/producer");
 const User = require("../models/user");
+const Review = require("../models/review");
+const Activity = require("../models/activity");
 const currentYear = new Date().getFullYear();
 const { cloudinary } = require("../cloudinary");
 const checkTeaLength = require("../utilities/checkTeaLength");
@@ -11,7 +13,31 @@ module.exports.index = async (req, res) => {
   const pageTitle = "Pu-erh catalogue";
   const vendors = await Vendor.find();
   const producers = await Producer.find();
-  res.render("teas/index", { vendors, producers, pageTitle });
+
+  const activities = await Activity.find({})
+    .sort({ createdAt: -1 })
+    .limit(20)
+    .populate("user", "username");
+
+  // Fetch the referenced content
+  const populatedActivities = await Promise.all(
+    activities.map(async (act) => {
+      let data;
+      if (act.type === "review") {
+        data = await Review.findById(act.refId);
+      } else if (act.type === "tea") {
+        data = await Tea.findById(act.refId);
+      }
+      return { ...act.toObject(), content: data };
+    })
+  );
+
+  res.render("teas/index", {
+    vendors,
+    producers,
+    pageTitle,
+    populatedActivities,
+  });
 };
 
 //new
@@ -50,6 +76,14 @@ module.exports.new = async (req, res) => {
     filename: f.filename,
   }));
   await newTea.save();
+
+  //logging activity with timestamp
+  const activity = new Activity({
+    user: req.user._id,
+    type: "tea",
+    refId: newTea._id,
+  });
+  await activity.save();
   res.redirect("/tea/" + newTea._id);
 };
 
