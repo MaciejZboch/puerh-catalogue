@@ -83,3 +83,19 @@ module.exports.isMod = async (req, res, next) => {
   }
   next();
 };
+
+//user middleware
+
+module.exports.isNotStatic = (req, res, next) => {
+  const isStatic = req.path.match(
+    /\.(ico|css|js|png|jpg|jpeg|svg|woff2?|ttf|map)$/
+  );
+  const isAuthRoute =
+    req.path.startsWith("/login") || req.path.startsWith("/signup");
+
+  if (!isStatic && !isAuthRoute && req.method === "GET") {
+    req.session.returnTo = req.originalUrl;
+  }
+
+  next();
+};
