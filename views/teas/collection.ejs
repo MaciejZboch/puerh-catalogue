@@ -9,7 +9,8 @@
 
     <!--display Follow or Unfollow depending on if collector is already being followed-->
     <%if (currentUser && currentUser.following &&
-    !currentUser.following.includes(collector._id)) { %>
+    !currentUser.following.includes(collector._id) && collector._id.toString()
+    != currentUser._id.toString()) { %>
     <form
       action="/users/<%=collector._id%>?_method=PUT"
       method="post"
@@ -18,7 +19,8 @@
       <button class="btn btn-success">Follow</button>
     </form>
     <% } else if (currentUser && currentUser.following &&
-    currentUser.following.includes(collector._id)) { %>
+    currentUser.following.includes(collector._id) && collector._id.toString() !=
+    currentUser._id.toString()) { %>
     <form
       action="/users/<%=collector._id%>?_method=DELETE"
       method="post"

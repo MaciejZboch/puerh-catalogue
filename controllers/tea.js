@@ -244,9 +244,10 @@ module.exports.collection = async (req, res) => {
   const teas = await Tea.find({ owners: req.params.id })
     .populate("vendor")
     .populate("producer");
-  const collector = await User.findById(req.params.id);
+  const collector = await User.findById(req.params.id).populate("following");
+  const followedUsers = collector.following;
   const pageTitle = "User's collection";
-  res.render("teas/collection", { teas, pageTitle, collector });
+  res.render("teas/collection", { teas, pageTitle, collector, followedUsers });
 };
 
 module.exports.browse = async (req, res) => {

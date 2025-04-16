@@ -94,7 +94,10 @@ module.exports.follow = async (req, res, next) => {
   const currentUser = await User.findById(currentUserId);
   const userIdToFollow = req.params.id;
   // Avoid duplicates
-  if (!currentUser.following.includes(userIdToFollow)) {
+  if (
+    !currentUser.following.includes(userIdToFollow) &&
+    userIdToFollow.toString() != currentUserId.toString()
+  ) {
     currentUser.following.push(userIdToFollow);
     await currentUser.save();
     req.flash("success", "Following user!");
@@ -109,7 +112,10 @@ module.exports.unfollow = async (req, res, next) => {
   const currentUser = await User.findById(currentUserId);
   const userIdToUnfollow = req.params.id;
   // Avoid duplicates
-  if (currentUser.following.includes(userIdToUnfollow)) {
+  if (
+    currentUser.following.includes(userIdToUnfollow) &&
+    userIdToUnfollow.toString() != currentUserId.toString()
+  ) {
     currentUser.following.pull(userIdToUnfollow);
     await currentUser.save();
     req.flash("success", "Unfollowing user!");
