@@ -92,4 +92,14 @@
       <%}%>
     </tbody>
   </table>
+  <% if (collector.following.length > 0) { %>
+  <div class="mb-3 mt-5">
+    <p>Following users:</p>
+    <ul>
+      <% for (user of followedUsers) {%>
+      <li><a href="/tea/collection/<%=user._id%>"><%=user.username%></a></li>
+      <%}%>
+    </ul>
+  </div>
+  <% } %>
 </div>
