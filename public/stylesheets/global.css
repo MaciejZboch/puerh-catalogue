@@ -100,7 +100,8 @@ td {
     display: none;
   }
 }
-img {
+img,
+h1 > image {
   border-radius: 5px;
 }
 .mainImage {

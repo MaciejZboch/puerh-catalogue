@@ -42,12 +42,14 @@
     <ul>
       <% populatedActivities.forEach(activity => { %>
       <li>
-        <strong><%= activity.user.username %></strong>
-        <% if (activity.type === 'review') { %> wrote a review: "<%=
-        activity.content.body %>" (Rating: <%= activity.content.rating %>) <% }
-        else if (activity.type === 'tea') { %> added a new tea: "<%=
-        activity.content.name %>" <% } %> -
-        <small><%= new Date(activity.createdAt).toLocaleString() %></small>
+        <a href="/tea/<%= activity.content._id %>">
+          <strong><%= activity.user.username %></strong>
+          <% if (activity.type === 'review') { %> wrote a review: "<%=
+          activity.content.body %>" (Rating: <%= activity.content.rating %>) <%
+          } else if (activity.type === 'tea') { %> added a new tea: "<%=
+          activity.content.name %>" <% } %> -
+          <small><%= new Date(activity.createdAt).toLocaleString() %></small>
+        </a>
       </li>
       <% }) %>
     </ul>
