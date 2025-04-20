@@ -90,41 +90,37 @@ module.exports.new = async (req, res) => {
 //:id
 module.exports.show = async (req, res) => {
   const tea = await Tea.findById(req.params.id)
-    .populate({
-      path: "reviews",
-      populate: {
-        path: "author",
-      },
-    })
     .populate("producer")
     .populate("vendor");
+
   if (!tea) {
     req.flash("error", "Cannot find that tea!");
     return res.redirect("/tea");
   }
 
-  //caluculating user's average rating for a tea
-  function getAverage(array) {
-    let sum = 0;
-    for (let i = 0; i < array.length; i++) {
-      sum += array[i];
-    }
-    return sum / array.length;
+  const reviews = await Review.find({ tea: tea._id }).populate("author");
+
+  //calculate user's average rating for this tea
+  let average = null;
+  if (reviews.length > 0) {
+    const ratings = reviews.map((r) => r.rating);
+    average = ratings.reduce((a, b) => a + b, 0) / ratings.length;
   }
 
-  let myRatings = tea.reviews;
+  let myRatings = [];
 
   if (req.user) {
-    myRatings = Object.values(myRatings)
-      .filter((review) => {
-        return review.author._id.toString() === req.user._id.toString();
-      })
+    myRatings = reviews
+      .filter(
+        (review) => review.author._id.toString() === req.user._id.toString()
+      )
       .map((review) => review.rating);
   } else {
     myRatings = false;
   }
+
   const pageTitle = tea.name;
-  res.render("teas/show2", { tea, pageTitle, myRatings });
+  res.render("teas/show2", { tea, pageTitle, reviews, myRatings, average });
 };
 
 module.exports.editForm = async (req, res) => {

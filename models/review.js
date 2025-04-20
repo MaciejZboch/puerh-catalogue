@@ -9,6 +9,10 @@ const reviewSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "User",
   },
+  tea: {
+    type: Schema.Types.ObjectId,
+    ref: "Tea",
+  },
 });
 
 module.exports = mongoose.model("Review", reviewSchema);

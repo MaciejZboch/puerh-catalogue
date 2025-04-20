@@ -29,12 +29,6 @@ const TeaSchema = new Schema({
       "Other",
     ],
   },
-  reviews: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Review",
-    },
-  ],
   producer: {
     type: Schema.Types.ObjectId,
     ref: "Producer",
@@ -65,18 +59,5 @@ TeaSchema.index({
 
 TeaSchema.set("toObject", { virtuals: true });
 TeaSchema.set("toJSON", { virtuals: true });
-
-TeaSchema.virtual("average").get(function () {
-  const reviews = this.reviews;
-  const mappedReviews = reviews.map((x) => x.rating);
-  function getAverage(array) {
-    let sum = 0;
-    for (let i = 0; i < array.length; i++) {
-      sum += array[i];
-    }
-    return sum / array.length;
-  }
-  return getAverage(mappedReviews);
-});
 
 module.exports = mongoose.model("Tea", TeaSchema);

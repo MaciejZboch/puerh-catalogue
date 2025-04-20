@@ -50,7 +50,7 @@
 
     <!--reviews-->
     <div class="reviewbox">
-      <% for (let review of tea.reviews) { %>
+      <% for (let review of reviews) { %>
       <div id="reviews">
         <h5>Rating: <%=review.rating%></h5>
         <h6>
@@ -116,8 +116,8 @@
     <li><b> Aged in: </b> <%=tea.ageing_location%></li>
     <% } %> <% if (tea.ageing_conditions) { %>
     <li><b> Storage: </b> <%=tea.ageing_conditions%></li>
-    <% } %> <% if (tea.average) { %>
-    <li><b>Average Score: </b> <%=tea.average%></li>
+    <% } %> <% if (average) { %>
+    <li><b>Average Score: </b> <%=average%></li>
     <% } %> <% if (myRatings) { %>
     <li><b>My Scores: </b> <%=myRatings%></li>
     <% } %>
@@ -173,7 +173,7 @@
 
       <!--reviews for mobile-->
       <div class="reviewbox2 mt-5">
-        <% for (let review of tea.reviews) { %>
+        <% for (let review of reviews) { %>
         <div id="reviews2">
           <h5>Rating: <%=review.rating%></h5>
           <% if (review.author.image) { %><img src="<%=review.author.image.thumbnail%>" alt=""><% } else { %> <img

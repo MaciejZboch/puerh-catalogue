@@ -4,11 +4,16 @@ const Activity = require("../models/activity");
 
 module.exports.new = async (req, res) => {
   const tea = await Tea.findById(req.params.id);
+  if (!tea) {
+    req.flash("error", "Tea not found.");
+    return res.redirect("/tea");
+  }
+
   const review = new Review(req.body.review);
   review.author = req.user._id;
-  tea.reviews.push(review);
+  review.tea = tea._id;
+
   await review.save();
-  await tea.save();
 
   //logging activity with timestamp
   const activity = new Activity({
@@ -22,10 +27,7 @@ module.exports.new = async (req, res) => {
 };
 
 module.exports.delete = async (req, res) => {
-  const tea = await Tea.findByIdAndUpdate(req.params.id, {
-    $pull: { reviews: req.params.reviewId },
-  });
   await Review.findByIdAndDelete(req.params.reviewId);
   req.flash("success", "Succesfully deleted a review!");
-  res.redirect(`/tea/${tea._id}`);
+  res.redirect(`/tea/${req.params.id}`);
 };
