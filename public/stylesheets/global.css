@@ -59,7 +59,7 @@ td {
 }
 
 .link {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 /*show page styling*/
