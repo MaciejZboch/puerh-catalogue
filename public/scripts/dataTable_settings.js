@@ -31,8 +31,10 @@ $(document).ready(function () {
   });
   //redirect to show page on row click
   table.on("click", "tbody tr", function () {
-    let data = table.row(this).data();
-
-    window.location = data[3].substring(14, 38); //getting the link from the third <td> in a row
+    const $link = $(this).find("td:eq(3) a"); // find the <a> in the 4th cell
+    const href = $link.attr("href");
+    if (href) {
+      window.location = href;
+    }
   });
 });
