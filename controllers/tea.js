@@ -19,18 +19,22 @@ module.exports.index = async (req, res) => {
     .limit(20)
     .populate("user", "username");
 
-  // Fetch the referenced content
-  const populatedActivities = await Promise.all(
-    activities.map(async (act) => {
-      let data;
-      if (act.type === "review") {
-        data = await Review.findById(act.refId);
-      } else if (act.type === "tea") {
-        data = await Tea.findById(act.refId);
-      }
-      return { ...act.toObject(), content: data };
-    })
-  );
+  const populatedActivities = (
+    await Promise.all(
+      activities.map(async (act) => {
+        let data;
+        if (act.type === "review") {
+          data = await Review.findById(act.refId).populate("tea");
+        } else if (act.type === "tea") {
+          data = await Tea.findById(act.refId);
+        }
+
+        if (!data) return null;
+
+        return { ...act.toObject(), content: data };
+      })
+    )
+  ).filter((activity) => activity !== null); // Remove broken entries
 
   res.render("teas/index", {
     vendors,

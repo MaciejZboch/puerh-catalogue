@@ -39,18 +39,24 @@
     </section>
   </div>
   <div>
-    <ul>
+    <ul class="activity-feed">
       <% populatedActivities.forEach(activity => { %>
-      <li>
-        <a href="/tea/<%= activity.content._id %>">
+        <li>
           <strong><%= activity.user.username %></strong>
-          <% if (activity.type === 'review') { %> wrote a review: "<%=
-          activity.content.body %>" (Rating: <%= activity.content.rating %>) <%
-          } else if (activity.type === 'tea') { %> added a new tea: "<%=
-          activity.content.name %>" <% } %> -
+          
+          <% if (activity.type === 'review') { %>
+            <a href="/tea/<%= activity.content.tea._id %>">
+              wrote a review: "<%= activity.content.body %>" (Rating: <%= activity.content.rating %>)
+            </a>
+    
+          <% } else if (activity.type === 'tea') { %>
+            <a href="/tea/<%= activity.content._id %>">
+              added a new tea: "<%= activity.content.name %>"
+            </a>
+          <% } %>
+    
           <small><%= new Date(activity.createdAt).toLocaleString() %></small>
-        </a>
-      </li>
+        </li>
       <% }) %>
     </ul>
   </div>
