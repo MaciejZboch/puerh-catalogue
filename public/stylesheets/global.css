@@ -1,5 +1,7 @@
 /*global styling*/
-
+a {
+  text-decoration: none !important;
+}
 .bg-color-mid {
   background-color: #1d2529;
 }
@@ -48,7 +50,7 @@ td {
   opacity: 70%;
 }
 .tearow:hover {
-  opacity: 100%;
+  opacity: 100% !important;
 }
 .sorting {
   transform: translateX(0.9em);
@@ -56,10 +58,6 @@ td {
 
 .tableButton {
   width: 80px;
-}
-
-.link {
-  text-decoration: none !important;
 }
 
 /*show page styling*/

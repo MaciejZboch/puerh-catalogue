@@ -45,12 +45,12 @@
           <strong><%= activity.user.username %></strong>
           
           <% if (activity.type === 'review') { %>
-            <a class="link" href="/tea/<%= activity.content.tea._id %>">
+            <a  href="/tea/<%= activity.content.tea._id %>">
               wrote a review: "<%= activity.content.body %>" (Rating: <%= activity.content.rating %>)
             </a>
     
           <% } else if (activity.type === 'tea') { %>
-            <a class="link" href="/tea/<%= activity.content._id %>">
+            <a href="/tea/<%= activity.content._id %>">
               added a new tea: "<%= activity.content.name %>"
             </a>
           <% } %>

@@ -60,7 +60,7 @@
             src="https://img.freepik.com/premium-vector/chinese-traditional-tea-tasting-illustration-vector_391639-2027.jpg"
           /> <% } %>
            By:
-          <a class="link" href="/tea/collection/<%=review.author._id%>"
+          <a href="/tea/collection/<%=review.author._id%>"
             ><%=review.author.username%></a
           >
         </h6>
@@ -89,14 +89,14 @@
     <%if (tea.vendor) {%>
     <li>
       <b> Sold by: </b
-      ><a class="link" href="/tea/browse?search=<%=tea.vendor.name%>"
+      ><a href="/tea/browse?search=<%=tea.vendor.name%>"
         ><%=tea.vendor.name%></a
       >
     </li>
     <%}%> <%if (tea.producer) {%>
     <li>
       <b>Producer: </b
-      ><a class="link" href="/tea/browse?search=<%=tea.producer.name%>">
+      ><a href="/tea/browse?search=<%=tea.producer.name%>">
         <%=tea.producer.name%></a
       >
     </li>
