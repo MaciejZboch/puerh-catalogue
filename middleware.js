@@ -87,9 +87,7 @@ module.exports.isMod = async (req, res, next) => {
 //user middleware
 
 module.exports.isNotStatic = (req, res, next) => {
-  const isStatic = req.path.match(
-    /\.(ico|css|js|png|jpg|jpeg|svg|woff2?|ttf|map)$/
-  );
+  const isStatic = /\.(ico|css|js|png|jpg|jpeg|svg|woff2?|ttf|map)$/.test(req.path);
   const isAuthRoute =
     req.path.startsWith("/login") || req.path.startsWith("/signup");
 
