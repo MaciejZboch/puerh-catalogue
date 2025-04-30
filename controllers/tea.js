@@ -35,7 +35,7 @@ module.exports.index = async (req, res) => {
       })
     )
   ).filter((activity) => activity !== null); // Remove broken entries
-
+console.log
   res.render("teas/index", {
     vendors,
     producers,
@@ -201,10 +201,7 @@ module.exports.newProducer = async (req, res) => {
 
 module.exports.postProducer = async (req, res) => {
   const p = await new Producer({ name: req.body.producer });
-  p.image = req.files.map((f) => ({
-    url: f.path,
-    filename: f.filename,
-  }));
+
   await p.save();
   req.flash("success", "Producer submitted for approval!");
   res.redirect("/tea/newProducer");
