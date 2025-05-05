@@ -2,9 +2,10 @@
 <div class="text-center">
   <h1 class="mb-5">Add a producer</h1>
   <form action="/tea/newProducer" method="post">
-    <label for="producer">Producer's name:</label>
-    <input type="text" name="producer" id="producer" />
-    <button class="btn btn-success">Submit</button>
+    <div class="d-flex justify-content-center align-items-center gap-2">
+      <label for="producer" class="form-label mb-0">Producer's name:</label>
+      <input type="text" name="producer" id="producer" class="form-control w-auto" />
+      <button class="btn btn-success">Submit</button>
+    </div>
   </form>
 </div>
-
