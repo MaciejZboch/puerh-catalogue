@@ -1,1267 +1,638 @@
 [
   {
-    "id": 4184548769895,
-    "gid": "gid://shopify/Product/4184548769895",
-    "vendor": "KingTea",
-    "type": "",
+    "id": 8702454406,
+    "gid": "gid://shopify/Product/8702454406",
+    "vendor": "Menghai Tea Factory",
+    "type": "Ripe Pu-erh Tea",
     "variants": [
       {
-        "id": 30380376031335,
-        "price": 2199,
-        "name": "2009 DaYi \"7542\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 901) - Sample 10g",
-        "public_title": "Sample 10g",
+        "id": 30687045574,
+        "price": 10900,
+        "name": "2007 Menghai Wei Zui Yan Ripe Pu-erh Tea Cake - 357 Gram Cake",
+        "public_title": "357 Gram Cake",
         "sku": ""
       },
       {
-        "id": 30380376064103,
-        "price": 71400,
-        "name": "2009 DaYi \"7542\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 901) - Individual Cake",
-        "public_title": "Individual Cake",
-        "sku": ""
-      },
-      {
-        "id": 30380376096871,
-        "price": 474900,
-        "name": "2009 DaYi \"7542\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 901) - Stack (7pcs)",
-        "public_title": "Stack (7pcs)",
+        "id": 30687236166,
+        "price": 1100,
+        "name": "2007 Menghai Wei Zui Yan Ripe Pu-erh Tea Cake - 25 Gram Sample",
+        "public_title": "25 Gram Sample",
         "sku": ""
       }
     ]
   },
   {
-    "id": 4184545624167,
-    "gid": "gid://shopify/Product/4184545624167",
-    "vendor": "KingTea",
-    "type": "",
+    "id": 8702432070,
+    "gid": "gid://shopify/Product/8702432070",
+    "vendor": "Menghai Tea Factory",
+    "type": "Ripe Pu-erh Tea",
     "variants": [
       {
-        "id": 30380353585255,
-        "price": 699,
-        "name": "2010 DaYi \"7542\" Cake 1st Batch 357g Puerh Sheng Cha Raw Tea - Sample 7g",
-        "public_title": "Sample 7g",
+        "id": 30686777990,
+        "price": 9675,
+        "name": "2007 Menghai Yue Chen Yue Xiang Ripe Pu-erh Tea Cake - 400 Gram Cake",
+        "public_title": "400 Gram Cake",
         "sku": ""
       },
       {
-        "id": 42903838687462,
-        "price": 1599,
-        "name": "2010 DaYi \"7542\" Cake 1st Batch 357g Puerh Sheng Cha Raw Tea - 25g",
-        "public_title": "25g",
-        "sku": ""
-      },
-      {
-        "id": 42903838949606,
-        "price": 2599,
-        "name": "2010 DaYi \"7542\" Cake 1st Batch 357g Puerh Sheng Cha Raw Tea - 50g",
-        "public_title": "50g",
-        "sku": ""
-      },
-      {
-        "id": 42903839080678,
-        "price": 4599,
-        "name": "2010 DaYi \"7542\" Cake 1st Batch 357g Puerh Sheng Cha Raw Tea - 100g",
-        "public_title": "100g",
-        "sku": ""
-      },
-      {
-        "id": 30380353618023,
-        "price": 7999,
-        "name": "2010 DaYi \"7542\" Cake 1st Batch 357g Puerh Sheng Cha Raw Tea - Individual Cake",
-        "public_title": "Individual Cake",
-        "sku": ""
-      },
-      {
-        "id": 30380353683559,
-        "price": 53100,
-        "name": "2010 DaYi \"7542\" Cake 1st Batch 357g Puerh Sheng Cha Raw Tea - Stack (7pcs)",
-        "public_title": "Stack (7pcs)",
+        "id": 30686777926,
+        "price": 1050,
+        "name": "2007 Menghai Yue Chen Yue Xiang Ripe Pu-erh Tea Cake - 25 Gram Sample",
+        "public_title": "25 Gram Sample",
         "sku": ""
       }
     ]
   },
   {
-    "id": 4184542314599,
-    "gid": "gid://shopify/Product/4184542314599",
-    "vendor": "KingTea",
-    "type": "",
+    "id": 8688399174,
+    "gid": "gid://shopify/Product/8688399174",
+    "vendor": "Menghai Tea Factory",
+    "type": "Ripe Pu-erh Tea",
     "variants": [
       {
-        "id": 30380321144935,
-        "price": 699,
-        "name": "2011 DaYi \"7542\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 105/106) - Sample 7g",
-        "public_title": "Sample 7g",
+        "id": 12824974065767,
+        "price": 12700,
+        "name": "2006 Menghai \"San Ji Pu Bing\" Ripe Pu-erh Tea Cake - 1 Cake（357 Grams)",
+        "public_title": "1 Cake（357 Grams)",
         "sku": ""
       },
       {
-        "id": 30380321177703,
-        "price": 7100,
-        "name": "2011 DaYi \"7542\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 105/106) - Individual Cake",
-        "public_title": "Individual Cake",
-        "sku": ""
-      },
-      {
-        "id": 30380321210471,
-        "price": 46900,
-        "name": "2011 DaYi \"7542\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 105/106) - Stack (7pcs)",
-        "public_title": "Stack (7pcs)",
+        "id": 30517932294,
+        "price": 1200,
+        "name": "2006 Menghai \"San Ji Pu Bing\" Ripe Pu-erh Tea Cake - 25 Gram Sample",
+        "public_title": "25 Gram Sample",
         "sku": ""
       }
     ]
   },
   {
-    "id": 4184540020839,
-    "gid": "gid://shopify/Product/4184540020839",
-    "vendor": "KingTea",
-    "type": "",
+    "id": 8688375238,
+    "gid": "gid://shopify/Product/8688375238",
+    "vendor": "Menghai Tea Factory",
+    "type": "Ripe Pu-erh Tea",
     "variants": [
       {
-        "id": 30380303188071,
-        "price": 699,
-        "name": "2011 DaYi \"7542\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 101) - Sample 7g",
-        "public_title": "Sample 7g",
+        "id": 30517703558,
+        "price": 12100,
+        "name": "2006 Menghai \"7752\" Ripe Pu-erh Tea Cake - 357 Gram Cake",
+        "public_title": "357 Gram Cake",
         "sku": ""
       },
       {
-        "id": 30380303220839,
-        "price": 8999,
-        "name": "2011 DaYi \"7542\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 101) - Individual Cake",
-        "public_title": "Individual Cake",
-        "sku": ""
-      },
-      {
-        "id": 30380303253607,
-        "price": 59400,
-        "name": "2011 DaYi \"7542\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 101) - Stack (7pcs)",
-        "public_title": "Stack (7pcs)",
+        "id": 30517703622,
+        "price": 1275,
+        "name": "2006 Menghai \"7752\" Ripe Pu-erh Tea Cake - 25 Gram Sample",
+        "public_title": "25 Gram Sample",
         "sku": ""
       }
     ]
   },
   {
-    "id": 4184535138407,
-    "gid": "gid://shopify/Product/4184535138407",
-    "vendor": "KingTea",
-    "type": "",
+    "id": 8688362246,
+    "gid": "gid://shopify/Product/8688362246",
+    "vendor": "Menghai Tea Factory",
+    "type": "Ripe Pu-erh Tea",
     "variants": [
       {
-        "id": 30380259344487,
-        "price": 799,
-        "name": "2012 DaYi \"7542\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 203) - Sample 10g",
-        "public_title": "Sample 10g",
+        "id": 30517560390,
+        "price": 39925,
+        "name": "2002 Menghai 7592 201 Ripe Pu-erh Tea Cake - 357 Gram Cake",
+        "public_title": "357 Gram Cake",
         "sku": ""
       },
       {
-        "id": 42907179843814,
-        "price": 0,
-        "name": "2012 DaYi \"7542\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 203) - 25g",
-        "public_title": "25g",
+        "id": 30517560454,
+        "price": 3375,
+        "name": "2002 Menghai 7592 201 Ripe Pu-erh Tea Cake - 25 Gram Sample",
+        "public_title": "25 Gram Sample",
         "sku": ""
       },
       {
-        "id": 42907181285606,
-        "price": 0,
-        "name": "2012 DaYi \"7542\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 203) - 50g",
-        "public_title": "50g",
-        "sku": ""
-      },
-      {
-        "id": 42907180105958,
-        "price": 0,
-        "name": "2012 DaYi \"7542\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 203) - 100g",
-        "public_title": "100g",
-        "sku": ""
-      },
-      {
-        "id": 30380259377255,
-        "price": 13600,
-        "name": "2012 DaYi \"7542\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 203) - Individual Cake",
-        "public_title": "Individual Cake",
-        "sku": ""
-      },
-      {
-        "id": 30380259410023,
-        "price": 91000,
-        "name": "2012 DaYi \"7542\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 203) - Stack (7pcs)",
-        "public_title": "Stack (7pcs)",
+        "id": 30517560518,
+        "price": 1625,
+        "name": "2002 Menghai 7592 201 Ripe Pu-erh Tea Cake - 10 Gram Sample",
+        "public_title": "10 Gram Sample",
         "sku": ""
       }
     ]
   },
   {
-    "id": 4184534089831,
-    "gid": "gid://shopify/Product/4184534089831",
-    "vendor": "KingTea",
-    "type": "",
+    "id": 8688291270,
+    "gid": "gid://shopify/Product/8688291270",
+    "vendor": "Menghai Tea Factory",
+    "type": "Ripe Pu-erh Tea",
     "variants": [
       {
-        "id": 30380250726503,
-        "price": 399,
-        "name": "2012 DaYi \"7542\" Cake (Coming Batch) 357g Puerh Sheng Cha Raw Tea - Sample 7g",
-        "public_title": "Sample 7g",
+        "id": 30517098118,
+        "price": 21775,
+        "name": "2005 Menghai 7592 501 Ripe Pu-erh Tea Cake - 357 Gram Cake",
+        "public_title": "357 Gram Cake",
         "sku": ""
       },
       {
-        "id": 42907178664166,
-        "price": 1399,
-        "name": "2012 DaYi \"7542\" Cake (Coming Batch) 357g Puerh Sheng Cha Raw Tea - 25g",
-        "public_title": "25g",
-        "sku": ""
-      },
-      {
-        "id": 42907178828006,
-        "price": 1599,
-        "name": "2012 DaYi \"7542\" Cake (Coming Batch) 357g Puerh Sheng Cha Raw Tea - 50g",
-        "public_title": "50g",
-        "sku": ""
-      },
-      {
-        "id": 42907178926310,
-        "price": 2399,
-        "name": "2012 DaYi \"7542\" Cake (Coming Batch) 357g Puerh Sheng Cha Raw Tea - 100g",
-        "public_title": "100g",
-        "sku": ""
-      },
-      {
-        "id": 30380250759271,
-        "price": 5999,
-        "name": "2012 DaYi \"7542\" Cake (Coming Batch) 357g Puerh Sheng Cha Raw Tea - Individual Cake",
-        "public_title": "Individual Cake",
-        "sku": ""
-      },
-      {
-        "id": 30380250792039,
-        "price": 39800,
-        "name": "2012 DaYi \"7542\" Cake (Coming Batch) 357g Puerh Sheng Cha Raw Tea - Stack (7pcs)",
-        "public_title": "Stack (7pcs)",
+        "id": 30517098182,
+        "price": 1975,
+        "name": "2005 Menghai 7592 501 Ripe Pu-erh Tea Cake - 25 Gram Sample",
+        "public_title": "25 Gram Sample",
         "sku": ""
       }
     ]
   },
   {
-    "id": 4184531730535,
-    "gid": "gid://shopify/Product/4184531730535",
-    "vendor": "KingTea",
-    "type": "",
+    "id": 8675121158,
+    "gid": "gid://shopify/Product/8675121158",
+    "vendor": "Xiaguan Tea Factory",
+    "type": "Raw Pu-erh Tea",
     "variants": [
       {
-        "id": 30380236603495,
-        "price": 399,
-        "name": "2012 DaYi \"7542\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 201) - Sample 10g",
-        "public_title": "Sample 10g",
-        "sku": ""
-      },
-      {
-        "id": 42907169095910,
-        "price": 1299,
-        "name": "2012 DaYi \"7542\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 201) - 25g",
-        "public_title": "25g",
-        "sku": ""
-      },
-      {
-        "id": 42907169292518,
-        "price": 1999,
-        "name": "2012 DaYi \"7542\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 201) - 50g",
-        "public_title": "50g",
-        "sku": ""
-      },
-      {
-        "id": 42907169358054,
-        "price": 3399,
-        "name": "2012 DaYi \"7542\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 201) - 100g",
-        "public_title": "100g",
-        "sku": ""
-      },
-      {
-        "id": 30380236636263,
-        "price": 8300,
-        "name": "2012 DaYi \"7542\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 201) - Individual Cake",
-        "public_title": "Individual Cake",
-        "sku": ""
-      },
-      {
-        "id": 30380236669031,
-        "price": 55400,
-        "name": "2012 DaYi \"7542\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 201) - Stack (7pcs)",
-        "public_title": "Stack (7pcs)",
+        "id": 30400319878,
+        "price": 825,
+        "name": "2012 Xiaguan \"Jia Ji Tuo\" Raw Pu-erh tea in box * 100 grams - 100 Gram Tuo",
+        "public_title": "100 Gram Tuo",
         "sku": ""
       }
     ]
   },
   {
-    "id": 4184528978023,
-    "gid": "gid://shopify/Product/4184528978023",
-    "vendor": "KingTea",
-    "type": "",
+    "id": 8674979782,
+    "gid": "gid://shopify/Product/8674979782",
+    "vendor": "Xiaguan Tea Factory",
+    "type": "Raw Pu-erh Tea",
     "variants": [
       {
-        "id": 30380226478183,
-        "price": 299,
-        "name": "2013 DaYi \"7542\" Cake 150g Puerh Sheng Cha Raw Tea - Sample 7g",
-        "public_title": "Sample 7g",
-        "sku": ""
-      },
-      {
-        "id": 30380226510951,
-        "price": 2299,
-        "name": "2013 DaYi \"7542\" Cake 150g Puerh Sheng Cha Raw Tea - Individual Cake",
-        "public_title": "Individual Cake",
-        "sku": ""
-      },
-      {
-        "id": 30380226543719,
-        "price": 8700,
-        "name": "2013 DaYi \"7542\" Cake 150g Puerh Sheng Cha Raw Tea - 4 pcs",
-        "public_title": "4 pcs",
+        "id": 30399492934,
+        "price": 1450,
+        "name": "2012 Xiaguan FT Taiwan #6 Raw Pu-erh Tea Tuo Cha in Box - 100 Gram Tuo",
+        "public_title": "100 Gram Tuo",
         "sku": ""
       }
     ]
   },
   {
-    "id": 4184526749799,
-    "gid": "gid://shopify/Product/4184526749799",
-    "vendor": "KingTea",
-    "type": "",
+    "id": 8674872710,
+    "gid": "gid://shopify/Product/8674872710",
+    "vendor": "Xiaguan Tea Factory",
+    "type": "Raw Pu-erh Tea",
     "variants": [
       {
-        "id": 30380211896423,
-        "price": 0,
-        "name": "2018 DaYi \"Jia Ji\" (1st Grade) Tuo 100g Puerh Sheng Cha Raw Tea - Sample 9g",
-        "public_title": "Sample 9g",
-        "sku": ""
-      },
-      {
-        "id": 30380211929191,
-        "price": 899,
-        "name": "2018 DaYi \"Jia Ji\" (1st Grade) Tuo 100g Puerh Sheng Cha Raw Tea - Individual Tuo",
-        "public_title": "Individual Tuo",
-        "sku": ""
-      },
-      {
-        "id": 30380211961959,
-        "price": 3999,
-        "name": "2018 DaYi \"Jia Ji\" (1st Grade) Tuo 100g Puerh Sheng Cha Raw Tea - Stack (5pcs)",
-        "public_title": "Stack (5pcs)",
+        "id": 30398672710,
+        "price": 5325,
+        "name": "2011 Xiaguan \"Cang Er Brick\" Raw Pu-erh tea brick - 250 Gram Brick",
+        "public_title": "250 Gram Brick",
         "sku": ""
       }
     ]
   },
   {
-    "id": 4184526061671,
-    "gid": "gid://shopify/Product/4184526061671",
-    "vendor": "KingTea",
-    "type": "",
+    "id": 8674842054,
+    "gid": "gid://shopify/Product/8674842054",
+    "vendor": "Xiaguan Tea Factory",
+    "type": "Raw Pu-erh Tea",
     "variants": [
       {
-        "id": 30380207243367,
-        "price": 499,
-        "name": "2013 DaYi \"7542\" Cake 1st Batch 357g Puerh Sheng Cha Raw Tea (New Ver.) - Sample 10g",
-        "public_title": "Sample 10g",
-        "sku": ""
-      },
-      {
-        "id": 42903834722534,
-        "price": 999,
-        "name": "2013 DaYi \"7542\" Cake 1st Batch 357g Puerh Sheng Cha Raw Tea (New Ver.) - 25g",
-        "public_title": "25g",
-        "sku": ""
-      },
-      {
-        "id": 42903835377894,
-        "price": 1799,
-        "name": "2013 DaYi \"7542\" Cake 1st Batch 357g Puerh Sheng Cha Raw Tea (New Ver.) - 50g",
-        "public_title": "50g",
-        "sku": ""
-      },
-      {
-        "id": 42903835508966,
-        "price": 2999,
-        "name": "2013 DaYi \"7542\" Cake 1st Batch 357g Puerh Sheng Cha Raw Tea (New Ver.) - 100g",
-        "public_title": "100g",
-        "sku": ""
-      },
-      {
-        "id": 30380207276135,
-        "price": 5999,
-        "name": "2013 DaYi \"7542\" Cake 1st Batch 357g Puerh Sheng Cha Raw Tea (New Ver.) - Individual Cake",
-        "public_title": "Individual Cake",
-        "sku": ""
-      },
-      {
-        "id": 30380207308903,
-        "price": 39500,
-        "name": "2013 DaYi \"7542\" Cake 1st Batch 357g Puerh Sheng Cha Raw Tea (New Ver.) - Stack (7pcs)",
-        "public_title": "Stack (7pcs)",
+        "id": 30398481222,
+        "price": 3525,
+        "name": "2011 Xiaguan FT \"Mushroom Tuo\" Raw Pu-erh Tea Tuo in Box - 250 Gram Tuo",
+        "public_title": "250 Gram Tuo",
         "sku": ""
       }
     ]
   },
   {
-    "id": 4184524161127,
-    "gid": "gid://shopify/Product/4184524161127",
-    "vendor": "KingTea",
-    "type": "",
+    "id": 8674749766,
+    "gid": "gid://shopify/Product/8674749766",
+    "vendor": "Xiaguan Tea Factory",
+    "type": "Raw Pu-erh Tea",
     "variants": [
       {
-        "id": 30380198396007,
-        "price": 599,
-        "name": "2013 DaYi \"7542\" Cake 1st Batch 357g Puerh Sheng Cha Raw Tea (Old Ver.) - Sample 10g",
-        "public_title": "Sample 10g",
+        "id": 30397843654,
+        "price": 5075,
+        "name": "2010 Xiaguan FT \"Yi Ming Jing Ren\" Raw Pu-erh tea cake - 357 Gram Cake",
+        "public_title": "357 Gram Cake",
         "sku": ""
       },
       {
-        "id": 43682744762598,
-        "price": 1199,
-        "name": "2013 DaYi \"7542\" Cake 1st Batch 357g Puerh Sheng Cha Raw Tea (Old Ver.) - 25g",
-        "public_title": "25g",
-        "sku": ""
-      },
-      {
-        "id": 43682744828134,
-        "price": 1999,
-        "name": "2013 DaYi \"7542\" Cake 1st Batch 357g Puerh Sheng Cha Raw Tea (Old Ver.) - 50g",
-        "public_title": "50g",
-        "sku": ""
-      },
-      {
-        "id": 43682744860902,
-        "price": 3399,
-        "name": "2013 DaYi \"7542\" Cake 1st Batch 357g Puerh Sheng Cha Raw Tea (Old Ver.) - 100g",
-        "public_title": "100g",
-        "sku": ""
-      },
-      {
-        "id": 30380198428775,
-        "price": 5999,
-        "name": "2013 DaYi \"7542\" Cake 1st Batch 357g Puerh Sheng Cha Raw Tea (Old Ver.) - Individual Cake",
-        "public_title": "Individual Cake",
-        "sku": ""
-      },
-      {
-        "id": 30380198461543,
-        "price": 39900,
-        "name": "2013 DaYi \"7542\" Cake 1st Batch 357g Puerh Sheng Cha Raw Tea (Old Ver.) - Stack (7pcs)",
-        "public_title": "Stack (7pcs)",
+        "id": 467204734997,
+        "price": 625,
+        "name": "2010 Xiaguan FT \"Yi Ming Jing Ren\" Raw Pu-erh tea cake - 25 Grams Sample",
+        "public_title": "25 Grams Sample",
         "sku": ""
       }
     ]
   },
   {
-    "id": 4184519213159,
-    "gid": "gid://shopify/Product/4184519213159",
-    "vendor": "KingTea",
-    "type": "",
+    "id": 8674704390,
+    "gid": "gid://shopify/Product/8674704390",
+    "vendor": "Xiaguan Tea Factory",
+    "type": "Ripe Pu-erh Tea",
     "variants": [
       {
-        "id": 30380182896743,
-        "price": 399,
-        "name": "2014 DaYi \"7542\" Cake 1st Batch  357g Puerh Sheng Cha Raw Tea - Sample 7g",
-        "public_title": "Sample 7g",
-        "sku": ""
-      },
-      {
-        "id": 43682727395558,
-        "price": 999,
-        "name": "2014 DaYi \"7542\" Cake 1st Batch  357g Puerh Sheng Cha Raw Tea - 25g",
-        "public_title": "25g",
-        "sku": ""
-      },
-      {
-        "id": 43682727461094,
-        "price": 1699,
-        "name": "2014 DaYi \"7542\" Cake 1st Batch  357g Puerh Sheng Cha Raw Tea - 50g",
-        "public_title": "50g",
-        "sku": ""
-      },
-      {
-        "id": 43682727493862,
-        "price": 2699,
-        "name": "2014 DaYi \"7542\" Cake 1st Batch  357g Puerh Sheng Cha Raw Tea - 100g",
-        "public_title": "100g",
-        "sku": ""
-      },
-      {
-        "id": 30380182929511,
-        "price": 6400,
-        "name": "2014 DaYi \"7542\" Cake 1st Batch  357g Puerh Sheng Cha Raw Tea - Individual Cake",
-        "public_title": "Individual Cake",
-        "sku": ""
-      },
-      {
-        "id": 30380182962279,
-        "price": 42600,
-        "name": "2014 DaYi \"7542\" Cake 1st Batch  357g Puerh Sheng Cha Raw Tea - Stack (7pcs)",
-        "public_title": "Stack (7pcs)",
+        "id": 30397449990,
+        "price": 1825,
+        "name": "2010 Xiaguan \"FT 7513 Xiao Fa Tuo\" Aged Ripe Pu-erh tea tuo in box - 100 Gram Tuo",
+        "public_title": "100 Gram Tuo",
         "sku": ""
       }
     ]
   },
   {
-    "id": 4184515510375,
-    "gid": "gid://shopify/Product/4184515510375",
-    "vendor": "KingTea",
-    "type": "",
+    "id": 8661388166,
+    "gid": "gid://shopify/Product/8661388166",
+    "vendor": "Xiaguan Tea Factory",
+    "type": "Raw Pu-erh Tea",
     "variants": [
       {
-        "id": 30380170182759,
-        "price": 699,
-        "name": "2015 DaYi \"7542\" Cake  1st Batch 357g Puerh Sheng Cha Raw Tea - Sample 7g",
-        "public_title": "Sample 7g",
+        "id": 30303644230,
+        "price": 7150,
+        "name": "2007 Xiaguan \"FT\" #4 Premium Raw Pu-erh tea cake - 400 Gram Cake",
+        "public_title": "400 Gram Cake",
         "sku": ""
       },
       {
-        "id": 30380170215527,
-        "price": 6300,
-        "name": "2015 DaYi \"7542\" Cake  1st Batch 357g Puerh Sheng Cha Raw Tea - Individual Cake",
-        "public_title": "Individual Cake",
+        "id": 12604769599591,
+        "price": 6550,
+        "name": "2007 Xiaguan \"FT\" #4 Premium Raw Pu-erh tea cake - 400 Gram Cake (Damaged Wrapper 包装破损)",
+        "public_title": "400 Gram Cake (Damaged Wrapper 包装破损)",
         "sku": ""
       },
       {
-        "id": 30380170248295,
-        "price": 41100,
-        "name": "2015 DaYi \"7542\" Cake  1st Batch 357g Puerh Sheng Cha Raw Tea - Stack (7pcs)",
-        "public_title": "Stack (7pcs)",
+        "id": 30302983686,
+        "price": 850,
+        "name": "2007 Xiaguan \"FT\" #4 Premium Raw Pu-erh tea cake - 25 Gram Sample",
+        "public_title": "25 Gram Sample",
         "sku": ""
       }
     ]
   },
   {
-    "id": 4184511217767,
-    "gid": "gid://shopify/Product/4184511217767",
-    "vendor": "KingTea",
-    "type": "",
+    "id": 8661337030,
+    "gid": "gid://shopify/Product/8661337030",
+    "vendor": "Xiaguan Tea Factory",
+    "type": "Ripe Pu-erh Tea",
     "variants": [
       {
-        "id": 30380148228199,
-        "price": 799,
-        "name": "2016 DaYi \"7542\" Cake  1st Batch 357g Puerh Sheng Cha Raw Tea - Sample 10g",
-        "public_title": "Sample 10g",
-        "sku": ""
-      },
-      {
-        "id": 30380148260967,
-        "price": 8900,
-        "name": "2016 DaYi \"7542\" Cake  1st Batch 357g Puerh Sheng Cha Raw Tea - Individual Cake",
-        "public_title": "Individual Cake",
-        "sku": ""
-      },
-      {
-        "id": 30380148293735,
-        "price": 59200,
-        "name": "2016 DaYi \"7542\" Cake  1st Batch 357g Puerh Sheng Cha Raw Tea - Stack (7pcs)",
-        "public_title": "Stack (7pcs)",
+        "id": 30302574406,
+        "price": 2525,
+        "name": "2006 Xiaguan \"Loose Ripe Pu-erh Tea\" 100 grams per box - 100 Gram Box",
+        "public_title": "100 Gram Box",
         "sku": ""
       }
     ]
   },
   {
-    "id": 4184502567015,
-    "gid": "gid://shopify/Product/4184502567015",
-    "vendor": "KingTea",
-    "type": "",
+    "id": 8661244422,
+    "gid": "gid://shopify/Product/8661244422",
+    "vendor": "Xiaguan Tea Factory",
+    "type": "Raw Pu-erh Tea",
     "variants": [
       {
-        "id": 30380105203815,
-        "price": 999,
-        "name": "2017 DaYi \"7542\" Cake  1st Batch 357g Puerh Sheng Cha Raw Tea - Sample 10g",
-        "public_title": "Sample 10g",
-        "sku": ""
-      },
-      {
-        "id": 30380105236583,
-        "price": 8500,
-        "name": "2017 DaYi \"7542\" Cake  1st Batch 357g Puerh Sheng Cha Raw Tea - Individual Cake",
-        "public_title": "Individual Cake",
-        "sku": ""
-      },
-      {
-        "id": 30380105269351,
-        "price": 56500,
-        "name": "2017 DaYi \"7542\" Cake  1st Batch 357g Puerh Sheng Cha Raw Tea - Stack (7pcs)",
-        "public_title": "Stack (7pcs)",
+        "id": 30301757958,
+        "price": 2300,
+        "name": "2006 Xiaguan \"Dali Tuo\" Raw Pu-erh Tea in Box - 150 Gram Tuo",
+        "public_title": "150 Gram Tuo",
         "sku": ""
       }
     ]
   },
   {
-    "id": 4184495128679,
-    "gid": "gid://shopify/Product/4184495128679",
-    "vendor": "KingTea",
-    "type": "",
+    "id": 8661204102,
+    "gid": "gid://shopify/Product/8661204102",
+    "vendor": "Xiaguan Tea Factory",
+    "type": "Raw Pu-erh Tea",
     "variants": [
       {
-        "id": 30380057165927,
-        "price": 399,
-        "name": "2018 DaYi \"7542\" Cake 1st Batch 357g Puerh Sheng Cha Raw Tea - Sample 7g",
-        "public_title": "Sample 7g",
+        "id": 30301477894,
+        "price": 2375,
+        "name": "2005 Xiaguan \"Te Ji Raw Pu-erh tea tuo\" - 100 Gram Tuo",
+        "public_title": "100 Gram Tuo",
         "sku": ""
       },
       {
-        "id": 43687275397350,
-        "price": 999,
-        "name": "2018 DaYi \"7542\" Cake 1st Batch 357g Puerh Sheng Cha Raw Tea - 25g",
-        "public_title": "25g",
-        "sku": ""
-      },
-      {
-        "id": 43687275495654,
-        "price": 1599,
-        "name": "2018 DaYi \"7542\" Cake 1st Batch 357g Puerh Sheng Cha Raw Tea - 50g",
-        "public_title": "50g",
-        "sku": ""
-      },
-      {
-        "id": 43687275561190,
-        "price": 2399,
-        "name": "2018 DaYi \"7542\" Cake 1st Batch 357g Puerh Sheng Cha Raw Tea - 100g",
-        "public_title": "100g",
-        "sku": ""
-      },
-      {
-        "id": 30380057198695,
-        "price": 7999,
-        "name": "2018 DaYi \"7542\" Cake 1st Batch 357g Puerh Sheng Cha Raw Tea - Individual Cake",
-        "public_title": "Individual Cake",
-        "sku": ""
-      },
-      {
-        "id": 30380057231463,
-        "price": 53100,
-        "name": "2018 DaYi \"7542\" Cake 1st Batch 357g Puerh Sheng Cha Raw Tea - Stack (7pcs)",
-        "public_title": "Stack (7pcs)",
+        "id": 30301478022,
+        "price": 10525,
+        "name": "2005 Xiaguan \"Te Ji Raw Pu-erh tea tuo\" - 1 Bag of 5 Tuo (500 grams)",
+        "public_title": "1 Bag of 5 Tuo (500 grams)",
         "sku": ""
       }
     ]
   },
   {
-    "id": 4183751819367,
-    "gid": "gid://shopify/Product/4183751819367",
-    "vendor": "KingTea",
-    "type": "",
+    "id": 8654111366,
+    "gid": "gid://shopify/Product/8654111366",
+    "vendor": "Xiaguan Tea Factory",
+    "type": "Raw Pu-erh Tea",
     "variants": [
       {
-        "id": 30375913750631,
-        "price": 0,
-        "name": "2006 DaYi \"8582\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 602/603) - Sample 9g",
-        "public_title": "Sample 9g",
+        "id": 30229411270,
+        "price": 5450,
+        "name": "2001 Xiaguan 8653 Iron Cake Raw Pu-erh Tea - 25 gram sample",
+        "public_title": "25 gram sample",
         "sku": ""
       },
       {
-        "id": 30375913783399,
-        "price": 21900,
-        "name": "2006 DaYi \"8582\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 602/603) - Individual Cake",
-        "public_title": "Individual Cake",
+        "id": 30229585670,
+        "price": 2425,
+        "name": "2001 Xiaguan 8653 Iron Cake Raw Pu-erh Tea - 10 gram sample",
+        "public_title": "10 gram sample",
         "sku": ""
       },
       {
-        "id": 30375913816167,
-        "price": 145600,
-        "name": "2006 DaYi \"8582\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 602/603) - Stack (7pcs)",
-        "public_title": "Stack (7pcs)",
+        "id": 30300898886,
+        "price": 65350,
+        "name": "2001 Xiaguan 8653 Iron Cake Raw Pu-erh Tea - 357 grams",
+        "public_title": "357 grams",
         "sku": ""
       }
     ]
   },
   {
-    "id": 4183748542567,
-    "gid": "gid://shopify/Product/4183748542567",
-    "vendor": "KingTea",
-    "type": "",
+    "id": 8642860102,
+    "gid": "gid://shopify/Product/8642860102",
+    "vendor": "Yunnan Sourcing Brand Pu-erh",
+    "type": "Raw Pu-erh Tea",
     "variants": [
       {
-        "id": 30375889797223,
-        "price": 0,
-        "name": "2007 DaYi \"8582\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 702) - Sample 9g",
-        "public_title": "Sample 9g",
+        "id": 30116067014,
+        "price": 12650,
+        "name": "2010 Yunnan Sourcing \"Wu Liang Shan\" Raw Pu-erh Tea Cake - 1 cake (250 grams)",
+        "public_title": "1 cake (250 grams)",
         "sku": ""
       },
       {
-        "id": 30375889829991,
+        "id": 30116131142,
+        "price": 1625,
+        "name": "2010 Yunnan Sourcing \"Wu Liang Shan\" Raw Pu-erh Tea Cake - 25 grams sample portion",
+        "public_title": "25 grams sample portion",
+        "sku": ""
+      }
+    ]
+  },
+  {
+    "id": 8642796358,
+    "gid": "gid://shopify/Product/8642796358",
+    "vendor": "Yunnan Sourcing Brand Pu-erh",
+    "type": "Raw Pu-erh Tea",
+    "variants": [
+      {
+        "id": 30115289286,
+        "price": 14425,
+        "name": "2010 Yunnan Sourcing \"Bang Dong Village\" Raw Wild Arbor Pu-erh Tea Cake of Mengku - 1 cake (250 grams)",
+        "public_title": "1 cake (250 grams)",
+        "sku": ""
+      },
+      {
+        "id": 30115379654,
+        "price": 1775,
+        "name": "2010 Yunnan Sourcing \"Bang Dong Village\" Raw Wild Arbor Pu-erh Tea Cake of Mengku - 25 grams sample portion",
+        "public_title": "25 grams sample portion",
+        "sku": ""
+      }
+    ]
+  },
+  {
+    "id": 8642769862,
+    "gid": "gid://shopify/Product/8642769862",
+    "vendor": "Yunnan Sourcing Brand Pu-erh",
+    "type": "Raw Pu-erh Tea",
+    "variants": [
+      {
+        "id": 30114873606,
         "price": 18800,
-        "name": "2007 DaYi \"8582\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 702) - Individual Cake",
-        "public_title": "Individual Cake",
+        "name": "2010 Yunnan Sourcing \"Bu Lang Jie Liang\" Raw Pu-erh Tea Cake - 1 cake (250 grams)",
+        "public_title": "1 cake (250 grams)",
         "sku": ""
       },
       {
-        "id": 30375889862759,
-        "price": 125200,
-        "name": "2007 DaYi \"8582\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 702) - Stack (7pcs)",
-        "public_title": "Stack (7pcs)",
+        "id": 30114873670,
+        "price": 2275,
+        "name": "2010 Yunnan Sourcing \"Bu Lang Jie Liang\" Raw Pu-erh Tea Cake - 25 grams sample portion",
+        "public_title": "25 grams sample portion",
         "sku": ""
       }
     ]
   },
   {
-    "id": 4183733665895,
-    "gid": "gid://shopify/Product/4183733665895",
-    "vendor": "KingTea",
-    "type": "",
+    "id": 8642694342,
+    "gid": "gid://shopify/Product/8642694342",
+    "vendor": "Yunnan Sourcing Brand Pu-erh",
+    "type": "Raw Pu-erh Tea",
     "variants": [
       {
-        "id": 30375827800167,
-        "price": 499,
-        "name": "2007 DaYi \"8582\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 701) - Sample 9g",
-        "public_title": "Sample 9g",
+        "id": 30113771782,
+        "price": 13700,
+        "name": "2010 Yunnan Sourcing \"You Le Ya Nuo\" Raw Pu-erh Tea Cake - 1 cake (250 grams)",
+        "public_title": "1 cake (250 grams)",
         "sku": ""
       },
       {
-        "id": 44411851800806,
-        "price": 1599,
-        "name": "2007 DaYi \"8582\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 701) - 25g",
-        "public_title": "25g",
-        "sku": ""
-      },
-      {
-        "id": 44411854029030,
-        "price": 2599,
-        "name": "2007 DaYi \"8582\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 701) - 50g",
-        "public_title": "50g",
-        "sku": ""
-      },
-      {
-        "id": 44411858485478,
-        "price": 4599,
-        "name": "2007 DaYi \"8582\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 701) - 100g",
-        "public_title": "100g",
-        "sku": ""
-      },
-      {
-        "id": 30375827832935,
-        "price": 12300,
-        "name": "2007 DaYi \"8582\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 701) - Individual Cake",
-        "public_title": "Individual Cake",
-        "sku": ""
-      },
-      {
-        "id": 30375827865703,
-        "price": 81700,
-        "name": "2007 DaYi \"8582\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 701) - Stack (7pcs)",
-        "public_title": "Stack (7pcs)",
+        "id": 30113915462,
+        "price": 1725,
+        "name": "2010 Yunnan Sourcing \"You Le Ya Nuo\" Raw Pu-erh Tea Cake - 25 grams sample portion",
+        "public_title": "25 grams sample portion",
         "sku": ""
       }
     ]
   },
   {
-    "id": 4183728881767,
-    "gid": "gid://shopify/Product/4183728881767",
-    "vendor": "KingTea",
-    "type": "",
+    "id": 8642645510,
+    "gid": "gid://shopify/Product/8642645510",
+    "vendor": "Yunnan Sourcing Brand Pu-erh",
+    "type": "Raw Pu-erh Tea",
     "variants": [
       {
-        "id": 30375804698727,
-        "price": 999,
-        "name": "2008 DaYi \"8582\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 804-806) - Sample 7g",
-        "public_title": "Sample 7g",
+        "id": 30113138310,
+        "price": 17725,
+        "name": "2010 Yunnan Sourcing \"Nannuo Ya Kou\" Raw Pu-erh Tea Cake - 1 cake (250 grams)",
+        "public_title": "1 cake (250 grams)",
         "sku": ""
       },
       {
-        "id": 43696055255270,
-        "price": 1999,
-        "name": "2008 DaYi \"8582\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 804-806) - 25g",
-        "public_title": "25g",
-        "sku": ""
-      },
-      {
-        "id": 43696055517414,
-        "price": 3399,
-        "name": "2008 DaYi \"8582\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 804-806) - 50g",
-        "public_title": "50g",
-        "sku": ""
-      },
-      {
-        "id": 43696055943398,
-        "price": 6399,
-        "name": "2008 DaYi \"8582\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 804-806) - 100g",
-        "public_title": "100g",
-        "sku": ""
-      },
-      {
-        "id": 30375804731495,
-        "price": 16200,
-        "name": "2008 DaYi \"8582\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 804-806) - Individual Cake",
-        "public_title": "Individual Cake",
-        "sku": ""
-      },
-      {
-        "id": 30375804764263,
-        "price": 107600,
-        "name": "2008 DaYi \"8582\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 804-806) - Stack (7pcs)",
-        "public_title": "Stack (7pcs)",
+        "id": 30113274310,
+        "price": 2150,
+        "name": "2010 Yunnan Sourcing \"Nannuo Ya Kou\" Raw Pu-erh Tea Cake - 25 grams sample portion",
+        "public_title": "25 grams sample portion",
         "sku": ""
       }
     ]
   },
   {
-    "id": 4183725637735,
-    "gid": "gid://shopify/Product/4183725637735",
-    "vendor": "KingTea",
-    "type": "",
+    "id": 8633417606,
+    "gid": "gid://shopify/Product/8633417606",
+    "vendor": "Yunnan Sourcing Brand Pu-erh",
+    "type": "Raw Pu-erh Tea",
     "variants": [
       {
-        "id": 43696065413350,
-        "price": 999,
-        "name": "2008 DaYi \"8582\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 801) - Sample 7g",
-        "public_title": "Sample 7g",
+        "id": 29995333254,
+        "price": 16250,
+        "name": "2010 Yunnan Sourcing \"Jing Gu Yang Ta\" Raw Pu-erh Tea Cake - 1 cake (250 grams)",
+        "public_title": "1 cake (250 grams)",
         "sku": ""
       },
       {
-        "id": 30375789101159,
-        "price": 22400,
-        "name": "2008 DaYi \"8582\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 801) - Individual Cake",
-        "public_title": "Individual Cake",
-        "sku": ""
-      },
-      {
-        "id": 30375789133927,
-        "price": 148700,
-        "name": "2008 DaYi \"8582\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 801) - Stack (7pcs)",
-        "public_title": "Stack (7pcs)",
+        "id": 29995494982,
+        "price": 1950,
+        "name": "2010 Yunnan Sourcing \"Jing Gu Yang Ta\" Raw Pu-erh Tea Cake - 25 grams sample portion",
+        "public_title": "25 grams sample portion",
         "sku": ""
       }
     ]
   },
   {
-    "id": 4183721115751,
-    "gid": "gid://shopify/Product/4183721115751",
-    "vendor": "KingTea",
-    "type": "",
+    "id": 8633307718,
+    "gid": "gid://shopify/Product/8633307718",
+    "vendor": "Yunnan Sourcing Brand Pu-erh",
+    "type": "Raw Pu-erh Tea",
     "variants": [
       {
-        "id": 30375777599591,
-        "price": 0,
-        "name": "2010 DaYi \"8582\" Cake 357g Puerh Sheng Cha Raw Tea (Coming Batches) - Sample 9g",
-        "public_title": "Sample 9g",
+        "id": 29994457670,
+        "price": 19525,
+        "name": "2009 Yunnan Sourcing \"Nostalgia\" Raw Pu-erh Tea of Jingmai Mountain - 1 cake (200 grams)",
+        "public_title": "1 cake (200 grams)",
         "sku": ""
       },
       {
-        "id": 30375777632359,
-        "price": 7300,
-        "name": "2010 DaYi \"8582\" Cake 357g Puerh Sheng Cha Raw Tea (Coming Batches) - Individual Cake",
-        "public_title": "Individual Cake",
+        "id": 29994605254,
+        "price": 2800,
+        "name": "2009 Yunnan Sourcing \"Nostalgia\" Raw Pu-erh Tea of Jingmai Mountain - 25 grams sample portion",
+        "public_title": "25 grams sample portion",
         "sku": ""
       },
       {
-        "id": 30375777665127,
-        "price": 48600,
-        "name": "2010 DaYi \"8582\" Cake 357g Puerh Sheng Cha Raw Tea (Coming Batches) - Stack (7pcs)",
-        "public_title": "Stack (7pcs)",
+        "id": 32828304785511,
+        "price": 1350,
+        "name": "2009 Yunnan Sourcing \"Nostalgia\" Raw Pu-erh Tea of Jingmai Mountain - 10 Grams Sample",
+        "public_title": "10 Grams Sample",
         "sku": ""
       }
     ]
   },
   {
-    "id": 4183716986983,
-    "gid": "gid://shopify/Product/4183716986983",
-    "vendor": "KingTea",
-    "type": "",
+    "id": 8633258886,
+    "gid": "gid://shopify/Product/8633258886",
+    "vendor": "Yunnan Sourcing Brand Pu-erh",
+    "type": "Raw Pu-erh Tea",
     "variants": [
       {
-        "id": 30375763345511,
-        "price": 0,
-        "name": "2010 DaYi \"8582\" Cake 357g Puerh Sheng Cha Raw Tea - Sample 9g",
-        "public_title": "Sample 9g",
+        "id": 29993924998,
+        "price": 13550,
+        "name": "2009 Yunnan Sourcing \"Mang Fei\" Raw Pu-erh Tea Cake - 1 cake (357 grams)",
+        "public_title": "1 cake (357 grams)",
         "sku": ""
       },
       {
-        "id": 30375763378279,
-        "price": 7800,
-        "name": "2010 DaYi \"8582\" Cake 357g Puerh Sheng Cha Raw Tea - 001 Batch Individual Cake",
-        "public_title": "001 Batch Individual Cake",
-        "sku": ""
-      },
-      {
-        "id": 37253863571636,
-        "price": 7300,
-        "name": "2010 DaYi \"8582\" Cake 357g Puerh Sheng Cha Raw Tea - 002 Batch Individual Cake",
-        "public_title": "002 Batch Individual Cake",
-        "sku": ""
-      },
-      {
-        "id": 37253877727412,
-        "price": 51800,
-        "name": "2010 DaYi \"8582\" Cake 357g Puerh Sheng Cha Raw Tea - 001 Batch Stack (7pcs)",
-        "public_title": "001 Batch Stack (7pcs)",
-        "sku": ""
-      },
-      {
-        "id": 30375763411047,
-        "price": 48600,
-        "name": "2010 DaYi \"8582\" Cake 357g Puerh Sheng Cha Raw Tea - 002 Batch Stack (7pcs)",
-        "public_title": "002 Batch Stack (7pcs)",
+        "id": 29993925126,
+        "price": 1400,
+        "name": "2009 Yunnan Sourcing \"Mang Fei\" Raw Pu-erh Tea Cake - 25 grams sample portion",
+        "public_title": "25 grams sample portion",
         "sku": ""
       }
     ]
   },
   {
-    "id": 4183711744103,
-    "gid": "gid://shopify/Product/4183711744103",
-    "vendor": "KingTea",
-    "type": "",
+    "id": 8633142726,
+    "gid": "gid://shopify/Product/8633142726",
+    "vendor": "Yunnan Sourcing Brand Pu-erh",
+    "type": "Raw Pu-erh Tea",
     "variants": [
       {
-        "id": 30375745454183,
-        "price": 699,
-        "name": "2011 DaYi \"8582\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 101) - Sample 10g",
-        "public_title": "Sample 10g",
+        "id": 29993142598,
+        "price": 58700,
+        "name": "2009 Yunnan Sourcing * Road to Yi Wu \"Ding Jia Zhai\" Raw Pu-erh Tea Cake - 1 cake (357 grams)",
+        "public_title": "1 cake (357 grams)",
         "sku": ""
       },
       {
-        "id": 30375745486951,
-        "price": 6300,
-        "name": "2011 DaYi \"8582\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 101) - Individual Cake",
-        "public_title": "Individual Cake",
+        "id": 29992577350,
+        "price": 4925,
+        "name": "2009 Yunnan Sourcing * Road to Yi Wu \"Ding Jia Zhai\" Raw Pu-erh Tea Cake - 25 grams sample portion",
+        "public_title": "25 grams sample portion",
         "sku": ""
       },
       {
-        "id": 30375745519719,
-        "price": 41800,
-        "name": "2011 DaYi \"8582\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 101) - Stack (7pcs)",
-        "public_title": "Stack (7pcs)",
+        "id": 29992950918,
+        "price": 2275,
+        "name": "2009 Yunnan Sourcing * Road to Yi Wu \"Ding Jia Zhai\" Raw Pu-erh Tea Cake - 10 grams sample portion",
+        "public_title": "10 grams sample portion",
         "sku": ""
       }
     ]
   },
   {
-    "id": 4183707385959,
-    "gid": "gid://shopify/Product/4183707385959",
-    "vendor": "KingTea",
-    "type": "",
+    "id": 8631706886,
+    "gid": "gid://shopify/Product/8631706886",
+    "vendor": "Yunnan Sourcing Brand Pu-erh",
+    "type": "Raw Pu-erh Tea",
     "variants": [
       {
-        "id": 30375735165031,
-        "price": 399,
-        "name": "2012 DaYi \"8582\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 202) - Sample 9g",
-        "public_title": "Sample 9g",
+        "id": 29981922566,
+        "price": 58700,
+        "name": "2009 Yunnan Sourcing * Road to Yi Wu \"Man Zhuan\" Raw Pu-erh Tea Cake - 357 gram cake",
+        "public_title": "357 gram cake",
         "sku": ""
       },
       {
-        "id": 30375735197799,
-        "price": 5200,
-        "name": "2012 DaYi \"8582\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 202) - Individual Cake",
-        "public_title": "Individual Cake",
+        "id": 29982162118,
+        "price": 4925,
+        "name": "2009 Yunnan Sourcing * Road to Yi Wu \"Man Zhuan\" Raw Pu-erh Tea Cake - 25 gram sample",
+        "public_title": "25 gram sample",
         "sku": ""
       },
       {
-        "id": 30375735230567,
-        "price": 34700,
-        "name": "2012 DaYi \"8582\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 202) - Stack (7pcs)",
-        "public_title": "Stack (7pcs)",
+        "id": 29982162182,
+        "price": 2275,
+        "name": "2009 Yunnan Sourcing * Road to Yi Wu \"Man Zhuan\" Raw Pu-erh Tea Cake - 10 gram sample",
+        "public_title": "10 gram sample",
         "sku": ""
       }
     ]
   },
   {
-    "id": 4183703617639,
-    "gid": "gid://shopify/Product/4183703617639",
-    "vendor": "KingTea",
-    "type": "",
+    "id": 8631459142,
+    "gid": "gid://shopify/Product/8631459142",
+    "vendor": "Yunnan Sourcing Brand Pu-erh",
+    "type": "Raw Pu-erh Tea",
     "variants": [
       {
-        "id": 30375722123367,
-        "price": 0,
-        "name": "2012 DaYi \"8582\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 201) - Sample 9g",
-        "public_title": "Sample 9g",
+        "id": 29590925934695,
+        "price": 21375,
+        "name": "2009 Yunnan Sourcing \"Ai Lao Jue Se\" Raw Pu-erh Tea - 1 Cake (357 Grams)",
+        "public_title": "1 Cake (357 Grams)",
         "sku": ""
       },
       {
-        "id": 30375722156135,
-        "price": 6200,
-        "name": "2012 DaYi \"8582\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 201) - Individual Cake",
-        "public_title": "Individual Cake",
-        "sku": ""
-      },
-      {
-        "id": 30375722188903,
-        "price": 41800,
-        "name": "2012 DaYi \"8582\" Cake 357g Puerh Sheng Cha Raw Tea (Batch 201) - Stack (7pcs)",
-        "public_title": "Stack (7pcs)",
+        "id": 29981241542,
+        "price": 2000,
+        "name": "2009 Yunnan Sourcing \"Ai Lao Jue Se\" Raw Pu-erh Tea - 25 grams sample",
+        "public_title": "25 grams sample",
         "sku": ""
       }
     ]
   },
   {
-    "id": 4183663738983,
-    "gid": "gid://shopify/Product/4183663738983",
-    "vendor": "KingTea",
-    "type": "",
+    "id": 8630476230,
+    "gid": "gid://shopify/Product/8630476230",
+    "vendor": "Yunnan Sourcing Brand Pu-erh",
+    "type": "Raw Pu-erh Tea",
     "variants": [
       {
-        "id": 30375504052327,
-        "price": 0,
-        "name": "2013 DaYi \"8582\" Cake 357g Puerh Sheng Cha Raw Tea - Sample 9g",
-        "public_title": "Sample 9g",
+        "id": 29974420614,
+        "price": 27800,
+        "name": "2009 Yunnan Sourcing \"You Le Zhi Chun\" Raw Pu-erh Tea - 357 grams",
+        "public_title": "357 grams",
         "sku": ""
       },
       {
-        "id": 30375504085095,
-        "price": 5999,
-        "name": "2013 DaYi \"8582\" Cake 357g Puerh Sheng Cha Raw Tea - Individual Cake",
-        "public_title": "Individual Cake",
+        "id": 29974709062,
+        "price": 2475,
+        "name": "2009 Yunnan Sourcing \"You Le Zhi Chun\" Raw Pu-erh Tea - 25 grams sample",
+        "public_title": "25 grams sample",
         "sku": ""
       },
       {
-        "id": 30375504117863,
-        "price": 39900,
-        "name": "2013 DaYi \"8582\" Cake 357g Puerh Sheng Cha Raw Tea - Stack (7pcs)",
-        "public_title": "Stack (7pcs)",
-        "sku": ""
-      }
-    ]
-  },
-  {
-    "id": 4183658299495,
-    "gid": "gid://shopify/Product/4183658299495",
-    "vendor": "KingTea",
-    "type": "",
-    "variants": [
-      {
-        "id": 30375472136295,
-        "price": 599,
-        "name": "2016 DaYi \"8582\" Cake 357g Puerh Sheng Cha Raw Tea （Batch 1602) - Sample 9g",
-        "public_title": "Sample 9g",
-        "sku": ""
-      },
-      {
-        "id": 30375472169063,
-        "price": 5200,
-        "name": "2016 DaYi \"8582\" Cake 357g Puerh Sheng Cha Raw Tea （Batch 1602) - Individual Cake",
-        "public_title": "Individual Cake",
-        "sku": ""
-      },
-      {
-        "id": 30375472201831,
-        "price": 34500,
-        "name": "2016 DaYi \"8582\" Cake 357g Puerh Sheng Cha Raw Tea （Batch 1602) - Stack (7pcs)",
-        "public_title": "Stack (7pcs)",
-        "sku": ""
-      }
-    ]
-  },
-  {
-    "id": 4183648403559,
-    "gid": "gid://shopify/Product/4183648403559",
-    "vendor": "KingTea",
-    "type": "",
-    "variants": [
-      {
-        "id": 30375437697127,
-        "price": 699,
-        "name": "2016 DaYi \"8582\" Cake 357g Puerh Sheng Cha Raw Tea （Batch 1601) - Sample 9g",
-        "public_title": "Sample 9g",
-        "sku": ""
-      },
-      {
-        "id": 30375437762663,
-        "price": 6300,
-        "name": "2016 DaYi \"8582\" Cake 357g Puerh Sheng Cha Raw Tea （Batch 1601) - Individual Cake",
-        "public_title": "Individual Cake",
-        "sku": ""
-      },
-      {
-        "id": 30375437828199,
-        "price": 41900,
-        "name": "2016 DaYi \"8582\" Cake 357g Puerh Sheng Cha Raw Tea （Batch 1601) - Stack (7pcs)",
-        "public_title": "Stack (7pcs)",
-        "sku": ""
-      }
-    ]
-  },
-  {
-    "id": 4183642275943,
-    "gid": "gid://shopify/Product/4183642275943",
-    "vendor": "KingTea",
-    "type": "",
-    "variants": [
-      {
-        "id": 30375418593383,
-        "price": 9900,
-        "name": "2019 DaYi \"Mi Yun Bao He\" (Honey Treasure Box) 2 Cakes 150g *2 Puerh Sheng Shou Cha - Individual Box",
-        "public_title": "Individual Box",
-        "sku": ""
-      },
-      {
-        "id": 40230365790388,
-        "price": 699,
-        "name": "2019 DaYi \"Mi Yun Bao He\" (Honey Treasure Box) 2 Cakes 150g *2 Puerh Sheng Shou Cha - 10g Sample of BuLangShan Shou Puerh",
-        "public_title": "10g Sample of BuLangShan Shou Puerh",
-        "sku": ""
-      }
-    ]
-  },
-  {
-    "id": 4183527653479,
-    "gid": "gid://shopify/Product/4183527653479",
-    "vendor": "KingTea",
-    "type": "",
-    "variants": [
-      {
-        "id": 30374930350183,
-        "price": 599,
-        "name": "2016 DaYi \"7532\" Cake 357g Puerh Sheng Cha Raw Tea - Sample 10g",
-        "public_title": "Sample 10g",
-        "sku": ""
-      },
-      {
-        "id": 30374930382951,
-        "price": 7300,
-        "name": "2016 DaYi \"7532\" Cake 357g Puerh Sheng Cha Raw Tea - Individual Cake",
-        "public_title": "Individual Cake",
-        "sku": ""
-      },
-      {
-        "id": 30374930415719,
-        "price": 48500,
-        "name": "2016 DaYi \"7532\" Cake 357g Puerh Sheng Cha Raw Tea - Stack (7pcs)",
-        "public_title": "Stack (7pcs)",
-        "sku": ""
-      }
-    ]
-  },
-  {
-    "id": 4183468310631,
-    "gid": "gid://shopify/Product/4183468310631",
-    "vendor": "KingTea",
-    "type": "",
-    "variants": [
-      {
-        "id": 30374673121383,
-        "price": 699,
-        "name": "2013 DaYi \"8542\" Cake  1st Batch 357g Puerh Sheng Cha Raw Tea - Sample 9g",
-        "public_title": "Sample 9g",
-        "sku": ""
-      },
-      {
-        "id": 30374673154151,
-        "price": 4500,
-        "name": "2013 DaYi \"8542\" Cake  1st Batch 357g Puerh Sheng Cha Raw Tea - Individual Cake",
-        "public_title": "Individual Cake",
-        "sku": ""
-      },
-      {
-        "id": 30374673186919,
-        "price": 29800,
-        "name": "2013 DaYi \"8542\" Cake  1st Batch 357g Puerh Sheng Cha Raw Tea - Stack (7pcs)",
-        "public_title": "Stack (7pcs)",
-        "sku": ""
-      }
-    ]
-  },
-  {
-    "id": 4183391895655,
-    "gid": "gid://shopify/Product/4183391895655",
-    "vendor": "KingTea",
-    "type": "",
-    "variants": [
-      {
-        "id": 30374330269799,
-        "price": 0,
-        "name": "2019 DaYi \"8582\" Cake  1st Batch 357g Puerh Sheng Cha Raw Tea - Sample 9g",
-        "public_title": "Sample 9g",
-        "sku": ""
-      },
-      {
-        "id": 30374330302567,
-        "price": 3999,
-        "name": "2019 DaYi \"8582\" Cake  1st Batch 357g Puerh Sheng Cha Raw Tea - Individual Cake",
-        "public_title": "Individual Cake",
-        "sku": ""
-      },
-      {
-        "id": 30374330335335,
-        "price": 26500,
-        "name": "2019 DaYi \"8582\" Cake  1st Batch 357g Puerh Sheng Cha Raw Tea - Stack (7pcs)",
-        "public_title": "Stack (7pcs)",
-        "sku": ""
-      }
-    ]
-  },
-  {
-    "id": 4183375118439,
-    "gid": "gid://shopify/Product/4183375118439",
-    "vendor": "KingTea",
-    "type": "",
-    "variants": [
-      {
-        "id": 42903833608422,
-        "price": 599,
-        "name": "2019 DaYi \"7542\" Cake 357g Puerh Sheng Cha Raw Tea - Sample 10g",
-        "public_title": "Sample 10g",
-        "sku": ""
-      },
-      {
-        "id": 30374186942567,
-        "price": 999,
-        "name": "2019 DaYi \"7542\" Cake 357g Puerh Sheng Cha Raw Tea - 25g",
-        "public_title": "25g",
-        "sku": ""
-      },
-      {
-        "id": 42903832789222,
-        "price": 1799,
-        "name": "2019 DaYi \"7542\" Cake 357g Puerh Sheng Cha Raw Tea - 50g",
-        "public_title": "50g",
-        "sku": ""
-      },
-      {
-        "id": 42903833346278,
-        "price": 2999,
-        "name": "2019 DaYi \"7542\" Cake 357g Puerh Sheng Cha Raw Tea - 100g",
-        "public_title": "100g",
-        "sku": ""
-      },
-      {
-        "id": 32002069463143,
-        "price": 5999,
-        "name": "2019 DaYi \"7542\" Cake 357g Puerh Sheng Cha Raw Tea - 1902 Batch Individual Cake",
-        "public_title": "1902 Batch Individual Cake",
-        "sku": ""
-      },
-      {
-        "id": 32002074116199,
-        "price": 39900,
-        "name": "2019 DaYi \"7542\" Cake 357g Puerh Sheng Cha Raw Tea - 1902 Batch Stack (7pcs)",
-        "public_title": "1902 Batch Stack (7pcs)",
-        "sku": ""
-      },
-      {
-        "id": 30374186975335,
-        "price": 9899,
-        "name": "2019 DaYi \"7542\" Cake 357g Puerh Sheng Cha Raw Tea - 1901 Batch Individual Cake",
-        "public_title": "1901 Batch Individual Cake",
-        "sku": ""
-      },
-      {
-        "id": 30374187008103,
-        "price": 92400,
-        "name": "2019 DaYi \"7542\" Cake 357g Puerh Sheng Cha Raw Tea - 1901 Batch Stack (7pcs)",
-        "public_title": "1901 Batch Stack (7pcs)",
-        "sku": ""
-      }
-    ]
-  },
-  {
-    "id": 4183367221351,
-    "gid": "gid://shopify/Product/4183367221351",
-    "vendor": "KingTea",
-    "type": "",
-    "variants": [
-      {
-        "id": 30374126649447,
-        "price": 1599,
-        "name": "2015 DaYi \"7742\" Cake 357g Puerh Sheng Cha Raw Tea - Sample 10g",
-        "public_title": "Sample 10g",
-        "sku": ""
-      },
-      {
-        "id": 30374126682215,
-        "price": 14200,
-        "name": "2015 DaYi \"7742\" Cake 357g Puerh Sheng Cha Raw Tea - Individual Cake",
-        "public_title": "Individual Cake",
-        "sku": ""
-      },
-      {
-        "id": 30374126714983,
-        "price": 94900,
-        "name": "2015 DaYi \"7742\" Cake 357g Puerh Sheng Cha Raw Tea - Stack (7pcs)",
-        "public_title": "Stack (7pcs)",
+        "id": 32828306194535,
+        "price": 1125,
+        "name": "2009 Yunnan Sourcing \"You Le Zhi Chun\" Raw Pu-erh Tea - 10 Grams Sample",
+        "public_title": "10 Grams Sample",
         "sku": ""
       }
     ]
