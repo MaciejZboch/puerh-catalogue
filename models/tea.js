@@ -42,6 +42,8 @@ const TeaSchema = new Schema({
     ref: "User",
   },
   owners: [{ type: Schema.Types.ObjectId, ref: "User" }],
+  sizeInGrams: Number,
+  price: Number,
 });
 
 //setting up an index to search in all fields
