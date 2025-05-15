@@ -46,6 +46,11 @@ const TeaSchema = new Schema({
   price: Number,
 });
 
+//setting price per gram virtual
+TeaSchema.virtual("pricePerGram").get(function () {
+  return this.price / this.sizeInGrams;
+});
+
 //setting up an index to search in all fields
 TeaSchema.index({
   name: "text",

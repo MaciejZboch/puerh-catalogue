@@ -104,7 +104,9 @@
     <li><b>Type: </b><%=tea.type%></li>
     <% if (tea.shape) { %>
     <li><b>Shape: </b><%=tea.shape%></li>
-    <% } %> <% if (tea.village && tea.region) { %>
+    <% } %> <% if (tea.sizeInGrams) { %>
+      <li><b> Weight: </b> <%=tea.ageing_conditions%> grams</li>
+      <% } %> <% if (tea.village && tea.region) { %>
     <li>
       <b>Material from:</b> <%=tea.village%> village, <%=tea.region%> region
     </li>
@@ -116,9 +118,12 @@
     <li><b> Aged in: </b> <%=tea.ageing_location%></li>
     <% } %> <% if (tea.ageing_conditions) { %>
     <li><b> Storage: </b> <%=tea.ageing_conditions%></li>
-    <% } %> <% if (average) { %>
+    <% } %> <% if (tea.price) { %>
+      <li><b> Last known price: </b> <%=tea.price%>$</li>
+      <li><b> Price per gram: </b> <%=tea.pricePerGram%></li>
+        <% } %> <% if (average) { %>
     <li><b>Average Score: </b> <%=average%></li>
-    <% } %> <% if (myRatings) { %>
+    <% } %> <% if (myRatings.length > 0) { %>
     <li><b>My Scores: </b> <%=myRatings%></li>
     <% } %>
 
