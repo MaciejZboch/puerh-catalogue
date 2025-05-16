@@ -7,6 +7,7 @@ const Activity = require("../models/activity");
 const currentYear = new Date().getFullYear();
 const { cloudinary } = require("../cloudinary");
 const checkTeaLength = require("../utilities/checkTeaLength");
+const mongoose = require("mongoose");
 
 //index
 module.exports.index = async (req, res) => {
@@ -35,7 +36,6 @@ module.exports.index = async (req, res) => {
       })
     )
   ).filter((activity) => activity !== null); // Remove broken entries
-console.log
   res.render("teas/index", {
     vendors,
     producers,
@@ -174,6 +174,9 @@ module.exports.update = async (req, res) => {
 
 module.exports.delete = async (req, res) => {
   await Tea.findByIdAndDelete(req.params.id);
+  await Activity.deleteMany({
+    refId: new mongoose.Types.ObjectId(req.params.id),
+  });
   req.flash("success", "Succesfully deleted!");
   res.redirect("/tea");
 };

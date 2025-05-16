@@ -41,6 +41,7 @@
   <div>
     <ul class="activity-feed">
       <% populatedActivities.forEach(activity => { %>
+        <% if (activity.content.tea || activity.type === 'tea') { %>
         <li>
           <strong><%= activity.user.username %></strong>
           
@@ -57,7 +58,7 @@
     
           <small><%= new Date(activity.createdAt).toLocaleString() %></small>
         </li>
-      <% }) %>
+      <% }}) %>
     </ul>
   </div>
 </div>
