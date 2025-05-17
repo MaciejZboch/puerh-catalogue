@@ -114,6 +114,7 @@ app.use((req, res, next) => {
     req.method === "GET" &&
     req.path !== "/login" &&
     req.path !== "/logout" &&
+    req.path !== "/favicon.ico" &&
     !req.path.startsWith("/tea/stylesheets") && // Ignore CSS
     !req.path.startsWith("/images") && // Ignore images
     !req.path.startsWith("/scripts") // Ignore scripts
