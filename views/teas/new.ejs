@@ -90,6 +90,7 @@
       <div class="mb-3 col-md-4">
         <label for="producer" class="form-label"><a class="link newTeaLink" href="/tea/newProducer">Produced by (click here to add new producer):</a></label>
         <select name="producer[name]" id="producer" class="producerNewTea requiredField">
+          <option selected value>Unknown</option>
           <%for (let producer of producers) {%>
           <option value="<%=producer.name%>"><%=producer.name%></option><%}%>
           </select>
@@ -153,7 +154,8 @@
           id="storage"
           name="tea[ageing_conditions]"
         >
-          <option selected value="Dry">Dry</option>
+        <option selected value="Unknown">Unknown</option>
+          <option value="Dry">Dry</option>
           <option value="Natural">Natural</option>
           <option value="Wet">Wet</option>
           <option value="Hong-Kong Traditional">Hong-Kong Traditional</option>
@@ -183,8 +185,8 @@
           id="shape"
           name="tea[shape]"
         >
-          <option selected value="Loose">Loose</option>
-          <option value="Cake">Cake</option>
+          <option value="Loose">Loose</option>
+          <option selected value="Cake">Cake</option>
           <option value="Tuo">Tuo</option>
           <option value="Brick">Brick</option>
           <option value="Mushroom">Mushroom</option>

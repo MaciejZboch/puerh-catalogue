@@ -166,7 +166,7 @@
           </button>
         
       </form>
-       <% if (currentUser && currentUser._id.toString() === tea.author._id.toString()) { %>
+       <% if (currentUser && tea.author && currentUser._id.toString() === tea.author._id.toString()) { %>
         <form action="/edit/<%=tea._id%>" method="get" class="d-inline flex-fill">
           <button class="btn btn-warning mb-3">Edit tea</button>
         </form>

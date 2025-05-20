@@ -129,6 +129,7 @@
           value="<%=t.producer.name%>" <%}%>
         />
         <datalist id="datalistOptions2">
+          <option selected value>Unknown</option>
           <%for (let producer of producers) {%>
           <option value="<%=producer.name%>"><%}%></option>
         </datalist>
@@ -196,7 +197,8 @@
           name="tea[ageing_conditions]"
           value="<%=t.ageing_conditions%>"
         >
-          <option selected value="Dry">Dry</option>
+        <option selected value="Unknown">Unknown</option>
+          <option value="Dry">Dry</option>
           <option value="Natural">Natural</option>
           <option value="Wet">Wet</option>
           <option value="Hong-Kong Traditional">Hong-Kong Traditional</option>
@@ -228,8 +230,8 @@
           name="tea[shape]"
           value="<%=t.shape%>"
         >
-          <option selected value="Loose">Loose</option>
-          <option value="Cake">Cake</option>
+          <option value="Loose">Loose</option>
+          <option selected value="Cake">Cake</option>
           <option value="Tuo">Tuo</option>
           <option value="Brick">Brick</option>
           <option value="Mushroom">Mushroom</option>

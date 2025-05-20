@@ -13,7 +13,7 @@ const TeaSchema = new Schema({
   ageing_location: String,
   ageing_conditions: {
     type: String,
-    enum: ["Dry", "Natural", "Wet", "Hong-Kong Traditional"],
+    enum: ["Dry", "Natural", "Wet", "Hong-Kong Traditional", "Unknown"],
   },
   shape: {
     type: String,
