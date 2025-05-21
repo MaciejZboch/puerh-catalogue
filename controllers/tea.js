@@ -264,62 +264,79 @@ module.exports.browse = async (req, res) => {
       const results = await Tea.aggregate([
         {
           $lookup: {
-            from: "vendors", // Collection name for Vendor
+            from: "vendors",
             localField: "vendor",
             foreignField: "_id",
             as: "vendor",
-            pipeline: [{ $match: { status: "approved" } }], // Only get approved vendors
           },
         },
         {
           $lookup: {
-            from: "producers", // Collection name for Producer
+            from: "producers",
             localField: "producer",
             foreignField: "_id",
             as: "producer",
-            pipeline: [{ $match: { status: "approved" } }], // Only get approved producers
           },
         },
-        { $unwind: { path: "$vendor", preserveNullAndEmptyArrays: true } }, // Unwind vendor (keep null values)
-        { $unwind: { path: "$producer", preserveNullAndEmptyArrays: true } }, // Unwind producer (keep null values)
+        { $unwind: { path: "$vendor", preserveNullAndEmptyArrays: true } },
+        { $unwind: { path: "$producer", preserveNullAndEmptyArrays: true } },
         {
           $unwind: {
             path: "$images",
-            preserveNullAndEmptyArrays: true, // Keeps empty arrays as `null` instead of removing them
+            preserveNullAndEmptyArrays: true,
           },
         },
         {
           $addFields: {
-            images: { $ifNull: ["$images", []] }, // Ensures images is always an array
+            images: { $ifNull: ["$images", []] },
           },
         },
         {
           $match: {
-            $or: [
-              { name: regex },
-              { type: regex },
+            $and: [
               {
-                $expr: {
-                  $regexMatch: {
-                    input: { $toString: "$year" },
-                    regex: searchTerm,
-                    options: "i",
+                $or: [
+                  { name: regex },
+                  { type: regex },
+                  {
+                    $expr: {
+                      $regexMatch: {
+                        input: { $toString: "$year" },
+                        regex: searchTerm,
+                        options: "i",
+                      },
+                    },
                   },
-                },
-              }, // Convert year to string
-              { region: regex },
-              { ageing_location: regex },
-              { ageing_conditions: regex },
-              { "vendor.name": regex }, // Search inside the populated vendor field
-              { "producer.name": regex }, // Search inside the populated producer field
+                  { region: regex },
+                  { ageing_location: regex },
+                  { ageing_conditions: regex },
+                  { "vendor.name": regex },
+                  { "producer.name": regex },
+                ],
+              },
+              {
+                $or: [
+                  { vendor: { $eq: null } },
+                  { "vendor.status": "approved" },
+                  { "vendor.status": { $exists: false } },
+                ],
+              },
+              {
+                $or: [
+                  { producer: { $eq: null } },
+                  { "producer.status": "approved" },
+                  { "producer.status": { $exists: false } },
+                ],
+              },
             ],
           },
         },
       ]);
 
+      console.log("Search results count:", results.length);
       return results;
     } catch (err) {
-      console.error(err);
+      console.error("Aggregation error:", err);
       return [];
     }
   }
