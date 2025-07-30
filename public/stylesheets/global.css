@@ -46,6 +46,13 @@ td {
   text-align: center !important;
   vertical-align: middle !important;
 }
+
+.teaCellPrimary {
+  color: #f8f9fa !important;
+}
+.teaCellSecondary {
+  color: #b0bfc8 !important;
+}
 .tearow {
   opacity: 70%;
 }

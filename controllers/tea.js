@@ -333,7 +333,6 @@ module.exports.browse = async (req, res) => {
         },
       ]);
 
-      console.log("Search results count:", results.length);
       return results;
     } catch (err) {
       console.error("Aggregation error:", err);

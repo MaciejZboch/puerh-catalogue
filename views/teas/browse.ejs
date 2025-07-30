@@ -75,16 +75,16 @@
         />
         <%}%>
       </td>
-      <td><a href="/tea/<%=tea._id%>" class="link"><%=tea.name%></a></td>
 
-      <td><% if (tea.vendor) {%> <%=tea.vendor.name%><%}%></td>
-      <td><%if (tea.producer) {%><%=tea.producer.name%><%}%></td>
-      <td><%=tea.year%></td>
-      <td><%=tea.region%></td>
-      <td><%=tea.village%></td>
-      <td><%=tea.shape%></td>
-      <td><%=tea.ageing_location%></td>
-      <td><%=tea.ageing_conditions%></td>
+      <td> <b><a href="/tea/<%=tea._id%>"><%=tea.name%></a></b></td>
+      <td class="teaCellPrimary"> <b><% if (tea.vendor) {%> <%=tea.vendor.name%><%}%></b></td>
+      <td class="teaCellPrimary"> <b><%if (tea.producer) {%><%=tea.producer.name%><%}%></b></td>
+      <td class="teaCellSecondary"><%=tea.year%></td>
+      <td class="teaCellSecondary"><%=tea.region%></td>
+      <td class="teaCellSecondary"><%=tea.village%></td>
+      <td class="teaCellSecondary"><%=tea.shape%></td>
+      <td class="teaCellSecondary"><%=tea.ageing_location%></td>
+      <td class="teaCellSecondary"><%=tea.ageing_conditions%></td>
     </tr>
     <%}%>
   </tbody>

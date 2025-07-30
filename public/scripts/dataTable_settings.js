@@ -1,8 +1,9 @@
 $(document).ready(function () {
   let table = $(".teaTable").DataTable({
     columnDefs: [
-      { orderable: false, targets: [0, 1, 2] },
-      { responsivePriority: 1, targets: 3 },
+      
+      { orderable: false, targets: [0, 1] },
+      { responsivePriority: 1, targets: 2 },
       {
         className: "dtr-control",
         targets: 0,
