@@ -2,7 +2,7 @@ https://puerh-catalogue.onrender.com/tea
 
 **A fullstack webapp for reviewing, collecting and searching for tea.**
 
-Featuring:
+**Featuring:**
 <ul>
   <li>Tea info and prices scraped from online tea stores</li>
   <li>Robust search engine</li>
@@ -13,7 +13,7 @@ Featuring:
   <li>Image carousels for user-uploaded images</li>
 </ul>
 
-Main technologies used:
+**Main technologies used:**
 <ul>
   <li>Node.js with Express</li>
   <li>MongoDB with Mongoose</li>
