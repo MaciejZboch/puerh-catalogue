@@ -1,6 +1,7 @@
-https://puerh-catalogue.onrender.com/tea
 
-**A fullstack webapp for reviewing, collecting and searching for tea.**
+<h1>Pu-Erh Catalogue</h1>
+<h2>A fullstack webapp for reviewing, collecting and searching for tea.</h2>
+https://puerh-catalogue.onrender.com/tea
 
 **Featuring:**
 <ul>
