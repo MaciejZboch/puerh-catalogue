@@ -10,6 +10,7 @@ Featuring:
   <li>Moderation system for user-added content with admin panel</li>
   <li>Latest activity feed</li>
   <li>Ability to follow other users</li>
+  <li>Image carousels for user-uploaded images</li>
 </ul>
 
 Main technologies used:
