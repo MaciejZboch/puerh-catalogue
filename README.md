@@ -13,3 +13,11 @@ Featuring:
 </ul>
 
 Main technologies used:
+<ul>
+  <li>Node.js with Express</li>
+  <li>MongoDB with Mongoose</li>
+  <li>Bootstrap</li>
+  <li>jQuery</li>
+  <li>Multer</li>
+  <li>Passport</li>
+</ul>
