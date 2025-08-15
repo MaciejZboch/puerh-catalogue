@@ -1,9 +1,11 @@
 
 <h1>Pu-Erh Catalogue</h1>
 <h2>A fullstack webapp for reviewing, collecting and searching for tea.</h2>
-Link: https://puerh-catalogue.onrender.com/tea
+Link: https://puerh-catalogue.onrender.com/tea<br/>
+  <br/>
+  
+  **Featuring:**
 
-**Featuring:**
 <ul>
   <li>Tea info and prices scraped from online tea stores</li>
   <li>Robust search engine</li>
