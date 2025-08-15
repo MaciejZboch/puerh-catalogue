@@ -1,5 +1,5 @@
 
-<h1 style="text-align:center">Pu-Erh Catalogue</h1>
+<h1 style="text-align:center;">Pu-Erh Catalogue</h1>
 <h2>A fullstack webapp for reviewing, collecting and searching for tea.</h2>
 https://puerh-catalogue.onrender.com/tea
 
